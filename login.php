@@ -39,12 +39,14 @@ include('_php/session.php');
 				<div class="two"><a href="forgotpassword.php">Forgot Password?</a></div>
 				
 			<!-- Login Error Msg -->
-		<?php if (isset($_SESSION['LoginErrors'])): ?>
+			<div>
+			<?php if (isset($_SESSION['LoginErrors'])): ?>
 			<div class="form-errors">
 			<?php foreach($_SESSION['LoginErrors'] as $error): ?>
 			<p><?php echo $error ?></p>
 			<?php endforeach; ?>
 			<?php endif; ?>
+			</div>
 		</fieldset>
 		</form>
 
