@@ -1,0 +1,46 @@
+Faculty View:
+Login:
+* Need an error message for wrong password. 
+* Needs to have a five-ten tries wrong password thing.
+* Needs to have a way to reset the password. 
+* Needs to have a sign-up page for both students and teachers. When a teacher signs up maybe it could generate a key or something for them to give to students to use when they sign up maybe? Would have to figure out a way for that to work with multiple courses though. 
+Classes:
+* Needs to have the classes pulled from the database which means we need to have a way that is grabbing the correct classes for the correct teacher. The database table for the course needs to have the semester connected to it and then the semester needs to be pulled from the database as well.
+* Classes and semesters need to have a way to expire so they don’t show up after the course is complete. Maybe the professor can set an expiration date when they are adding the course? 
+* Needs a way to add a new course, connect it to the teacher, and connect it to the students.
+* Needs a way for the professor to delete a course.
+* When you click on a course it needs to go to a page with three buttons: reporting (which already exists), manage students, and manage course. 
+* In manage course they need to be able to edit the information on the course and attach the created surveys to it.
+* In the manage class section they need to be able to add students, delete students, reset passwords, edit profiles, ect. if needed. 
+* Also in the manage classes section they need to be able to place the students in groups and move the students from group to group. Either that, or we need a manage groups button to be added to the page after you click on a course. (See number 5 on this list to see what page I’m talking about)
+Reporting:
+* Clean up individual reports for students. 
+* Average the individual evaluations scores
+* Needs to attach the name of the person who did the evaluation to the evaluation.
+* Clean up class evaluations. 
+* Fix the bug that sometimes occurs when you run a class evaluation.
+Your surveys:
+* Need to have surveys pulled from the database. When a professor makes a survey, it needs to be put in the database. Then that survey needs to be able to be pulled from it and added to the student page when they go to complete the survey. 
+* Needs a create new survey button with the appropriate functionality to go with it.
+* Need to have a delete button for the survey.
+Feedback section:
+* Clean it up
+Settings:
+* May need to add more to that section? I’m not sure if it works or not since I haven’t tested it.
+Student View:
+Login:
+* Students need to have a way to reset their password if they forget it.
+Classes:
+* Clean it up. 
+* Same notes as teacher view with it pulling from db.
+When students go to fill out a survey after clicking on a class:
+* Clean it up.
+* Grab it from the database.
+* The submission needs go into the database.
+* The students that they can evaluate need to only be pulled from the group they were in. Once they have evaluated a student, they need to be greyed out or disappear from the list so they can’t be evaluated more than once.
+* Needs validation so it can’t be submitted without being fully filled out. Right now it creates an error message. 
+Your Surveys:
+* Needs to list the course, then inside the course it should have a list of the course. You then click in that course it will have the list of group members with the evaluation you gave to them.   
+Settings:
+* Need to add this to the students account so they can change their password and stuff. 
+

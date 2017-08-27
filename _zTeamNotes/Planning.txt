@@ -1,0 +1,27 @@
+
+	JOE- "As much as I would prefer to start with a clean sheet, I believe our Stakeholders would probably 
+	like to see us adapt and refactor.  
+
+	Encourage separation of concerns, enhance readability and maintainability.
+	1. Spli out the PHP backend code into a separate file (or files). 
+		Include a hidden id field on each page (such as “form_id”)?
+			In case the backend needs to know from where a function call came.  
+			If we need page specific code, prepend the function name with the form id string and a ‘_’.  
+			Each page should also have a standard error feedback mechanism, such as a hidden text area with a standard name 
+			(“std_error_message” perhaps).  
+		If a bit of PHP code has an error, populate the error field  and unhide it.
+
+	2. We could probably get away with using a single code file as small as this is likely to be, but that makes me a bit nervous
+	about confusing the code merge logic. 
+	3. Using several code files such as: site_code.php, student_code.php, instructor_code.php & database_code.php (or something like).
+
+	4. Keep as much of the database code as we can in stored procedures to allow us to QA the database logic separately 
+	and thus isolate problems much more readily.
+
+	5. Avoid AJAX type calls. 
+
+
+	If we decide to adopt something like I have just described, QA in isolation.  
+	1. HTML/Javascript/CSS that could be exercised with simplistic dummy data kind of PHP code. 
+	2. Real PHP code, that could be exercised with stripped down HTML that makes no effort to format nicely. 
+ 	3. Database operations that could be tested with SQL statements from the MySQL Workbench. 

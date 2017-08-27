@@ -1,0 +1,53 @@
+/*
+	Knightly Knowledge
+	Spring 2017
+	
+	COLOR CODES:
+	Purple:			#633393
+	Dark Purple:	#42337E
+	Grey:			#B0B6BB
+	Light Grey:		#C9CED1
+	Black: 			#000000
+	White:			#FFFFFF
+*/
+
+/* BODY */
+body { text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:1em; background-color:#FFFFFF; margin: 0;}
+.wrapper {width:75%; margin:0 auto;max-width:960px; background-color:#FFFFFF; padding:0 4%}
+
+/* HEADER */
+header { background-color: #633393; width: 100%; }
+
+/* LOGIN FORM */
+form {  float:left; width: 500px; padding-top: 40px; }
+
+fieldset { background-color: #C9CED1; margin: 0 auto; padding: 40px; border: solid 2px #000000;}
+
+legend { border: solid 2px #000000; width: 112%; background-color: #633393; color: #FFFFFF;  padding: 15px; }
+
+div { clear: both; padding-top: 10px; }
+
+div.two label { font-weight:bold; float: left; width: 100px; text-align: right; padding-right: 10px; padding-left: 50px;
+	position: relative;}
+
+div.two input, div.two select{ float: left; width: 150px; text-align: left; }
+
+div.two select { width: 157px; }
+
+div.one { text-align: center; }
+
+#submit{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
+	font-size:12px; font-weight:bold;color: #FFFFFF; }
+
+/* NAVIGATION */
+
+
+/* MAIN */
+
+
+/* FOOTER */
+
+/* MISC */
+.clear {clear: both; }
+#loginLogo { float: left; margin: 0 auto; width: 50%; }
+

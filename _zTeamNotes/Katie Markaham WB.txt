@@ -1,0 +1,55 @@
+8/14-8/16
+8/14 --	Reviewd Reports and Notes from previous teams
+     --	Setup communication channels
+8/15 --	Setup Local Dev. Environment
+
+	
+8/17-8/23
+8/17 --	Joined 6:55PM -- Group Meeting - Google Hangouts Call
+	ROLE --Development team (backend or front end) Possible assist with documentation/reports
+	
+8/18 -- Sarah shared stakeholder notes -- Reviewed 
+
+8/19 -- Reviewd info on GitHub Watched Tutorials
+     -- Setup GitHub Desktop
+
+8/20 -- SWOT Analysis
+     	Submitted to Team Google Drive & D2L
+	Reviewed Team members SWOT on Team Google Drive
+
+8/22 -- Dev Team Reviewing Code
+	--Should we keep php or switch
+	--Joe Recommends restructure of existing (pulling php out)
+
+8/24-8/27
+
+8/24 -- Group Meeting - Google Hangouts Call
+	ROLE --Backend Development (PHP, DB) will switch if needed.
+
+	Reviewed Report 1 & Team Contract
+	 Leigh is amazing! 
+	 Sarah voted Lead in FrontEnd Dev
+	 Joel voted Lead in BackEnd Dev
+
+8/25 -- Worked on Login Verification & Messaging
+	Combined SQL Scripts and corrected issues.
+	Setup LocalHost DB 
+	Joel set me up with a DB Server User Account.
+	 $dbhost = '45.55.170.45';
+	 $dbname = 'mga_db'; 
+         $dbuser = 'katie';
+         $dbpass = 'katie*******';
+	
+8/26 -- Worked on Login Limit and Lockout 
+	Set to 3 now but should be 5-10 eventually.
+	
+8/27 -- Reconfigured Website File Structure
+	Separated backend php out
+	Tested main pages for broken links etc.
+	Cleaned up files
+	Added notes files
+
+8/28 -- Work on Password Reset	
+	Check on Reports and Docs
+	Finish Portfolio
+	

@@ -1,0 +1,72 @@
+/*
+	Knightly Knowledge
+	Spring 2017
+	
+	COLOR CODES:
+	Purple:			#633393
+	Dark Purple:	#42337E
+	Grey:			#B0B6BB
+	Light Grey:		#C9CED1
+	Black: 			#000000
+	White:			#FFFFFF
+*/
+
+/* BODY */
+body { text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:1em; background-color:#FFFFFF; margin: 0; }
+#main { transition: margin-left .5s; padding: 16px; text-align: left; }
+.wrapper {width:75%; margin:0 auto ;max-width:960px; background-color:#FFFFFF; padding:0 4%}
+.dashboardIcon { float: left; margin-left: 200px; padding-bottom: 100px; }
+.logo { margin-top: 0px; width: 60%; }
+
+/* HEADER */
+header { background-color: #FFFFFF; width: 100%; margin:0px auto;}
+
+
+#purpleBar { background-color: #42337E; color: #FFFFFF; padding: 20px; text-align: left; transition: margin-left .5s; }
+
+/* POINTER */
+.pointer { font-size:30px; cursor: pointer; float: left; margin-left: 20px; margin-top: 10px; }
+
+
+
+/* SIDE NAV */
+.sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #42337E; 
+	overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
+
+.sidenav a { padding: 8px 8px 8px 32px; text-decoration: none; font-size: 25px; color: #FFFFFF; display: block; 
+	transition: 0.3s }
+
+.sidenav a:hover, .offcanvas a:focus{ color: #f1f1f1; }
+
+.sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 36px; margin-left: 50px; }
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* MISC */
+div.one { text-align: center; }
+div.two label { font-weight:bold; float: left; width: 100px; text-align: right; padding-right: 10px; padding-left: 50px;
+	position: relative;}
+div.two input, div.two select{ float: left; width: 150px; text-align: left; }
+div.two select { width: 157px; }
+#submit{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
+	font-size:12px; font-weight:bold;color: #FFFFFF; }
+#continue{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
+	font-size:12px; font-weight:bold;color: #FFFFFF; }
+#changepassword{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
+	font-size:12px; font-weight:bold;color: #FFFFFF; }
+#submitEval{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
+	font-size:12px; font-weight:bold;color: #FFFFFF; }
+.indent { margin-left: 30px; transition: margin-left .5s;}
+.center { text-align: center; }
+.clear {clear: both; }
+.underline {text-decoration: underline; }
+. {text-decoration: bold; }
+div.dashboardIcon {text-align:center; }
+#settings {  display:table; text-align:right; padding-left:26%;  }
+table {font-family: arial, sans-serif; border-collapse: collapse; width: 100%; }
+td, th {border: 1px solid #dddddd; text-align: left; padding: 2px; }
+tr:nth-child(even) { background-color: #dddddd;}
