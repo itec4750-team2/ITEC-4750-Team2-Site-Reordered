@@ -39,13 +39,14 @@ include('_php/session.php');
 				<div class="two"><a href="forgotpassword.php">Forgot Password?</a></div>
 				
 			<!-- Login Error Msg -->
-			<div>
-			<?php if (isset($_SESSION['LoginErrors'])): ?>
-			<div class="form-errors">
-			<?php foreach($_SESSION['LoginErrors'] as $error): ?>
-			<p><?php echo $error ?></p>
-			<?php endforeach; ?>
-			<?php endif; ?>
+			<div class "errors">
+			<?php
+				if(isset($_SESSION['LoginErrors'])){
+				echo $_SESSION['LoginErrors'];
+			//	unset($_SESSION['LoginErrors']);
+				}		
+				//echo '<pre>'; print_r($_SESSION); echo '</pre>';  //error checking session	
+			?>
 			</div>
 		</fieldset>
 		</form>

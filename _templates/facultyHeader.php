@@ -3,12 +3,15 @@
 include('../_php/session.php');
 
 //redirect to student dashboard
-if($Role!= 'Faculty')
-{
-	if($Role='Student'){ header('Location: ../_studentPages/studentDashboard.php');}
-	else{header('Location: ../login.php');}
+if(isset($_SESSION['Role'])){
+	if($Role!= 'Faculty'){
+		if($Role='Student'){ header('Location: ../_studentPages/studentDashboard.php');}
+		else{
+			$_SESSION['LoginErrors'] = "Please Login.";
+			header('Location: ../login.php');
+			}
+	}
 }
-
 ?>
 
 <!DOCTYPE html>
