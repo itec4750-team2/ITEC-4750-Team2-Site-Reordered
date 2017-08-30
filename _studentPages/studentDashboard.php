@@ -4,11 +4,13 @@ include('../_templates/studentNav.php');
 ?>
 
 	<div class="wrapper">
-
+	<!-- Main Content Section-->
 		<div id="main">
-				
-			<h2 class="center">Welcome, <?php echo $FName . " " . $LName?></h2>
-			<br><br>
+			<?php // if(isset($_SESSION)){echo '<pre>'; print_r($_SESSION); echo '</pre>';}//error checking session	?>				
+			
+			<h2 class="center">Welcome <?php if(isset($_SESSION['FName'])){echo $FName . " " . $LName;}?></h2>
+			
+			<br/><br/>
 		
 			<div class="dashboardIcon">
 				<a href="classes_student.php">
@@ -32,10 +34,4 @@ include('../_templates/studentNav.php');
 		
 		</div>
 	</div>
-	
-	<footer>
-			
-	</footer>
-	
-</body>
-</html>
+<?php include('_templates/footer.php');?>	

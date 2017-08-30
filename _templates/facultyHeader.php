@@ -1,5 +1,4 @@
 <?php 
-
 include('../_php/session.php');
 
 //redirect to student dashboard
@@ -7,11 +6,17 @@ if(isset($_SESSION['Role'])){
 	if($Role!= 'Faculty'){
 		if($Role='Student'){ header('Location: ../_studentPages/studentDashboard.php');}
 		else{
-			$_SESSION['LoginErrors'] = "Please Login.";
+			$_SESSION['ErrorBlock'] = "Please Login.";
 			header('Location: ../login.php');
 			}
 	}
 }
+/*--
+--- -- --- WORK FLAG
+---This else should do something else...ideas? Maybe return to login? KM -- 8/29 AM
+---
+--*/
+else{ echo "Role not defined.";}
 ?>
 
 <!DOCTYPE html>
