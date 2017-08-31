@@ -14,7 +14,10 @@ if(isset($_POST['Login']))
 <?php
 function SignIn($email, $password, $con) 
 { 
-	include('session.php');
+
+	include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/_php/session.php');
+
 	$echomsg = "";
 	$_SESSION['ErrorBlock'] = $echomsg;
 	$_SESSION = array();
