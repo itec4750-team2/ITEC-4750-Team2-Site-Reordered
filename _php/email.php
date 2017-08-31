@@ -15,7 +15,9 @@ $message = '
   <title>MGA Survey Password Reset Request</title>
 </head>
 <body>
-  <p>To reset your password, please visit the following link: <br/> </p>
+  <p>We received your request to reset your password.<br/>
+	 To reset your password, click on the button below (or copy/paste the URL into your browser). <br/> 
+  </p>
  <p>'.
  $emailLinkStr
  .'</p>
@@ -31,7 +33,7 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $headers .= 'To: ' . $email . "\r\n";
 $headers .= 'From: MGA Survey Admins <surveyadmin@mga.edu>' . "\r\n";
 
-$headers .= 'Bcc: kate.n.markham@gmail.com' . "\r\n";
+//$headers .= 'Bcc: Somebodysemail@mga.edu' . "\r\n";
 
 // Mail it
 mail($to, $subject, $message, $headers);

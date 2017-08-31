@@ -5,6 +5,7 @@
 	
 	session_start();
 
+	//login session variables
 	$LoginID = "";
 	$FName = "";
 	$LName = "";
@@ -14,6 +15,8 @@
 	$Locked = "";
 	$ErrorBlock = "";
 	$Token = ""; 
+	$FacClasses = "";
+	
 	
    //Read your session (if it is set)
    	if(isset($_SESSION['LoginID'])) $LoginID = $_SESSION['LoginID'];
@@ -25,5 +28,8 @@
 	if(isset($_SESSION['Token'])) $Token = $_SESSION["Token"];
 	if(isset($_SESSION['Locked'])) $Locked = $_SESSION["Locked"];
 	if(isset($_SESSION['ErrorBlock'])) $ErrorBlock = $_SESSION["ErrorBlock"];
-
+	
+	//working on output for classes
+	if(isset($_SESSION['FacClasses'])) $FacClasses = $_SESSION["FacClasses"];
+  
 ?>
