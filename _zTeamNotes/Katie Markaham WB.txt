@@ -49,7 +49,18 @@
 	Cleaned up files
 	Added notes files
 
-8/28 -- Work on Password Reset	
-	Check on Reports and Docs
-	Finish Portfolio
+8/28 -- Checked on Reports and Docs
+	Finished Portfolio
+
+8/29 -- Created Password Reset
+	 moved php to new file (from forgotpassword.php & resetpassword.php
+	 created Email form letter email.php
+	 tested on local machine
+	 finally got session to behave... except that messages still aren't 
+	   displayed from other pages. might just use a get from header.
+	Created footer, mainNav & mainHeader templates in _templates folder
+	Moved logout to _php folder
+
+
+	
 	
