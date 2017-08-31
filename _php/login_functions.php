@@ -10,8 +10,8 @@ if(isset($_POST['Login']))
 <?php
 function SignIn($email, $password) 
 { 
-	include('config.php');
-	include('session.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/_php/session.php');
 	$echomsg = "";
 	$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 	$_SESSION['LoginErrors'] = array();
