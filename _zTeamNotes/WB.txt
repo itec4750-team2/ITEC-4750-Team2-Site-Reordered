@@ -1,0 +1,122 @@
+Login:
+
+		Create
+			* Needs to have a sign-up page for both students and teachers. 
+		Read
+			-- Need an error message for wrong password. --KM
+		Update
+			-- Needs to have a way to reset the password.(Token) --KM
+			-- Needs to have a five-ten tries wrong password thing. (Locked) --KM
+		Delete
+			* N/A
+
+Faculty Dashboard			
+	Classes:
+			Create
+				* Needs a way to add a new course
+				* Professor s/b able to set an expiration date when they are adding the course. 
+				-- connect it to the teacher --KM
+				*connect it to the students
+					
+				When a teacher signs up maybe it could generate a token
+				to give to students to use when they sign up maybe.
+				Would have to figure out a way for that to work with multiple courses though.  ClassNO + Teacher LNAME	
+				  
+				
+			Read
+				-- Needs to have the classes pulled from the database.--KM
+				-- Needs to pull the correct classes for the correct teacher. --KM
+				-- The semester needs to be pulled from the database. --KM
+				* Classes should not show up after the course is complete. 
+			Update
+				* When you click on a course it needs to go to a page with three buttons: 
+				Reporting (which already exists)
+				Manage students
+				* In the manage class section they need to be able to 
+					//maybe show all enrolled students with options
+				
+					C-add students 
+					 -add GroupID * Also in the manage classes section they need to be able to place the students in groups 
+					R-show enrolled students 
+					U-reset passwords
+					U-edit profiles, ect. if needed. 
+					 -change GroupID
+					D-delete students
+					
+					Either that, or we need a manage groups button to be added to the page after you click on a course. 
+					
+
+				Manage course
+				* In manage course they need to be able to 
+					U-Edit the information on the course
+					U-Attach the created surveys to it.
+			Delete
+				* Needs a way for the professor to delete a course.
+			
+			Database Changes
+				-- Added ClassNO
+				
+				-- The database table for the course needs to have the semester connected to it.
+					-- Added semester table --KM
+					-- Added SemesterID to class table --KM
+						Table semester 
+							--SemesterID
+							--SemesterName
+							--Year
+				-- Classes and semesters need to have a way to expire 
+					-- Added ExpDate to class table --KM
+						
+					
+				-- LoginID stored in Class Table (Teacher and Course Connection) --KM
+				* Create group table --KM
+					--GroupID
+					--GroupName
+					--ClassID
+					
+				
+	Surveys:
+			Create
+			* Clean up class evaluations.
+			* Fix the bug that sometimes occurs when you run a class' surveys.
+			
+			Read
+			* Clean up individual reports for students. 
+			 
+			* Average the individual evaluations scores.
+			* Needs to attach the name of the person who did the evaluation to the evaluation. 
+			//Clarify -- I thought these were annonymous. -KM
+			Update
+			Delete
+	Surveys
+		
+Your surveys:(Student Page -- Group Member Evaluations)
+* Need to have surveys pulled from the database. 
+* When a professor makes a survey, it needs to be put in the database. 
+* Then that survey needs to be able to be pulled from it and added to the student page when they go to complete the survey. 
+* Needs a create new survey button with the appropriate functionality to go with it.
+* Need to have a delete button for the survey.
+* Needs to list the course, then inside the course it should have a list of the course. 
+  You then click in that course it will have the list of group members with the evaluation you gave to them.   
+
+Settings:
+* Add more to that section? 
+* Change their password and stuff. 
+Feedback section:
+* Clean it up
+
+Student View:
+Login:
+-- Students need to have a way to reset their password if they forget it. --KM
+Classes:
+* Clean it up. 
+* Same notes as teacher view with it pulling from db.
+When students go to fill out a survey after clicking on a class:
+	* Clean it up.
+	* Grab it from the database.
+	* The submission needs go into the database.
+	* The students that they can evaluate need to only be pulled from the group they were in. 
+		Pull only students in their group
+	* Needs validation so it can’t be submitted without being fully filled out. Right now it creates an error message. 
+
+
+

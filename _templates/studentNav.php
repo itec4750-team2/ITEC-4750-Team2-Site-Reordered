@@ -9,7 +9,7 @@
 		<!-- <a href="createnew.php">Create New Survey</a> -->
 		<!--<a href="settings.php">Settings</a>-->
 		<a href="studentfeedback.php">Feedback</a>
-		<a href="../logout.php">Logout</a>
+		<a href="../_php/logout.php">Logout</a>
 		</div>
 		<div>
 		<span class="pointer" onclick="openNav()">&#9776; Menu</span>

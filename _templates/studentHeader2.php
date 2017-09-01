@@ -2,16 +2,32 @@
 include('../_php/session.php');
 
 //redirect to student dashboard
-if($Role!= 'Student')
-{
-	if($Role='Faculty'){ header('Location: ../_facultyPages/facultyDashboard.php');}
-	else{header('Location: ../login.php');}
+if(isset($_SESSION['Role'])){
+	if($Role!= 'Student'){
+		if($Role='Faculty'){ header('Location: ../_facultyPages/facultyDashboard.php');}
+		else{
+			$_SESSION['ErrorBlock'] = "Please Login.";
+			header('Location: ../login.php');
+			}
+	}
 }
+/*--
+--- -- --- WORK FLAG
+---This else should do something else...ideas? Maybe return to login? KM -- 8/29 AM
+---
+--*/
+else{ echo "Role not defined.";}
 ?>
-
 	
 <!DOCTYPE html>
 <html lang="en">
+
+<!--
+--- -- --- WORK FLAG
+--- We should check all these scripts and see what they are doing.
+--- Maybe consolidate down to one student header and add bread crumbs at top. KM -- 8/29 AM
+-->
+
 <head> <!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Student Evaluation</title>
@@ -29,10 +45,8 @@ if($Role!= 'Student')
 	</a>	
 	</header>
 	<!--Navigation Bar (purple) -->
-
 	
 	<div id="purpleBar">
 		<span class="indent">Knightly Knowledge - <a href="studentDashboard.php" style="color: #FFFFFF">Student Dashboard</a>
-
 	
 <?php ?>
