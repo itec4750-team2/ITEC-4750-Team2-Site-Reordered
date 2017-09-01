@@ -8,35 +8,22 @@ include('../_templates/studentNav.php');
 
 		<div id="main">
 			<h2 class="center">Your Classes</h2>
+					<!--
+		--- -- --- WORK FLAG
+		--- Thie classes need to be hidden for expired classes. 
+		--- Calculation should be done on the faculty_classes page. KM -- 8/31 AM
+		-->
 			<table>
 			  <tr>
-				<th>Class</th>
-				<th>Semester</th>
+				<th>Class ID</th>
+				<th>Class Number</th>
+				<th>Class Name</th>
+				<th>Semester</th><th></th>
+				<th>Class Expire Date</th>
 			  </tr>
-			  <tr>
-				<td><a href="studentEval.php">ONLINE Senior Capstone</a></td>
-				<td>Spring 2017</td>
-			  </tr>
-			  <tr>
-				<td><a href="studentEval.php">ONLINE Senior Capstone/a></td>
-				<td>Summer 2017</td>
-				</tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
+			  
+			<?php echo $StuClasses; ?> <!-- Sarah this is set up to echo table rows and table data.-->
+
 			</table>
 
 			<hr>

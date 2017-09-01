@@ -16,7 +16,7 @@
 	$ErrorBlock = "";
 	$Token = ""; 
 	$FacClasses = "";
-	
+	$StuClasses = "";
 	
    //Read your session (if it is set)
    	if(isset($_SESSION['LoginID'])) $LoginID = $_SESSION['LoginID'];
@@ -31,5 +31,6 @@
 	
 	//working on output for classes
 	if(isset($_SESSION['FacClasses'])) $FacClasses = $_SESSION["FacClasses"];
+	if(isset($_SESSION['StuClasses'])) $StuClasses = $_SESSION["StuClasses"];
   
 ?>
