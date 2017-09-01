@@ -25,34 +25,7 @@ include('../_templates/facultyNav.php');
 			  </tr>
 			  
 			<?php echo $FacClasses; ?> <!-- Sarah this is set up to echo table rows and table data.-->
-			
-			<!--
-			
-			  <tr>
-				<td><a href="reporting.php">ONLINE Senior Capstone</a></td>
-				<td>Spring 2017</td>
-			  </tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
-			  <tr>
-				<td><a href="#">Placeholder</a></td>
-				<td>Placeholder</td>
-				</tr>
-				-->
+
 			</table>
 
 			<hr>

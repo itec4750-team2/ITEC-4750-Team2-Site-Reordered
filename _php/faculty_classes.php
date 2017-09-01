@@ -1,27 +1,23 @@
 <?php
-
-   //Call when ??
+   /*
+   -- Will Update to a MVC framework
+   -- Clicking Classes from faculty dashboard runs this script 
+   -- This populates table on class.php --KM 8/31
+   */
 
    include('config.php');
    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
    include('session.php');
    $FacClasses = ""; 
-   if(!empty('$Role')){echo $Role. '<br/>';} //Testing
-   if(!empty('$FName')){echo $FName . " " . $LName. '<br/>';}//Testing
-   if(!empty('$LoginID')){echo $LoginID. '<br/>';}//Testing
    
    if(!$con ) {
       die('Could not connect: ' . mysqli_connect_error_error());
-   }
-
-  // $getClassStr = "SELECT * FROM class WHERE LoginID = '$LoginID'";
-  // $getClass = mysqli_query($con, $getClassStr);
-  
+		}
   
     $getClassStr = "SELECT * 
-	FROM class 
-	Inner Join semester 
-	ON class.SemesterID = semester.SemesterID 
+	FROM((class
+	INNER JOIN class_assign ON class.ClassID=class_assign.ClassID)
+	INNER JOIN semester ON semester.SemesterID=class.SemesterID)
 	WHERE LoginID = '$LoginID'";
 	
     $getClass = mysqli_query($con, $getClassStr);
@@ -40,10 +36,8 @@
 	} else {
 		echo "0 results";
 	}
-	echo $FacClasses;
-	$_SESSION['FacClasses'] = $FacClasses;
+	
+	$_SESSION['FacClasses'] = $FacClasses; 
 	
 	header('Location: ../_facultyPages/classes.php');
-	
-   
 ?>
