@@ -1,7 +1,7 @@
 /*
 	Knightly Knowledge
 	Spring 2017
-	
+
 	COLOR CODES:
 	Purple:			#633393
 	Dark Purple:	#42337E
@@ -30,10 +30,10 @@ header { background-color: #FFFFFF; width: 100%; margin:0px auto;}
 
 
 /* SIDE NAV */
-.sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #42337E; 
+.sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #42337E;
 	overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
 
-.sidenav a { padding: 8px 8px 8px 32px; text-decoration: none; font-size: 25px; color: #FFFFFF; display: block; 
+.sidenav a { padding: 8px 8px 8px 32px; text-decoration: none; font-size: 25px; color: #FFFFFF; display: block;
 	transition: 0.3s }
 
 .sidenav a:hover, .offcanvas a:focus{ color: #f1f1f1; }
@@ -70,3 +70,106 @@ div.dashboardIcon {text-align:center; }
 table {font-family: arial, sans-serif; border-collapse: collapse; width: 100%; }
 td, th {border: 1px solid #dddddd; text-align: left; padding: 2px; }
 tr:nth-child(even) { background-color: #dddddd;}
+
+/* Faculty Feedback Form Reference: https://www.w3schools.com/howto/howto_css_contact_form.asp*/
+
+input[type=text], input[type=email], input[type=tel], select, textarea {
+	width: 100%;
+	padding: 11px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin: 6px 0px 16px 0px;
+}
+
+input[type=submit], input[type=reset] {
+	background-color: #42337E;
+	color: #fff;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	text-align:center;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+	background-color: #473c75;
+}
+
+.container {
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 22px;
+}
+
+/* Code for checkboxes and Radio Buttons.
+References: http://doodlenerd.com/html-control/css-checkbox-generator?
+http://doodlenerd.com/html-control/css-radio-button-generator */
+
+.control-group {
+	padding-left: 20px;
+}
+.control {
+	font-family: arial;
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 5px;
+	padding-top: 3px;
+	cursor: pointer;
+	font-size: 16px;
+}
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.control_indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	height: 18px;
+	width: 18px;
+	background: #e6e6e6;
+	border: .25px solid #A9A9A9;
+}
+
+.control:hover input ~ .control_indicator {
+	background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+	background: #473c75;
+}
+
+.control_indicator:after {
+	box-sizing: unset;
+	content: '';
+	position: absolute;
+	display: none;
+}
+.control input:checked ~ .control_indicator:after {
+	display: block;
+}
+.control-checkbox .control_indicator:after {
+	left: 8px;
+	top: 4px;
+	width: 3px;
+	height: 8px;
+	border: solid #ffffff;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+.control-radio .control_indicator {
+	border-radius: 50%;
+}
+.control-radio .control_indicator:after {
+	left: 7px;
+	top: 7px;
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	background: #ffffff;
+}
