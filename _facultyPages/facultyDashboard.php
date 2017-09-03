@@ -8,12 +8,12 @@ include('../_templates/facultyNav.php');
 		<div id="main">
 			<?php //if(isset($_SESSION)){echo '<pre>'; print_r($_SESSION); echo '</pre>';}//error checking session	?>
 			
-			<h2 class="center">Welcome <?php if(!empty($FName)){echo $FName . " " . $LName;}?></h2>
+			<h2 class="center">Welcome <?php if(isset($_SESSION['FName'])){echo $FName . " " . $LName;}?></h2>
 						
 			<br/><br/>
 		
 			<div class="dashboardIcon">
-				<a href="../_php/faculty_classes.php">
+				<a href="../_facultyPages/classes.php">
 					<img src="../_images/lecture.png" alt="Classes" />
 					<figcaption>Classes</figcaption>
 				</a>
