@@ -13,7 +13,7 @@ include('../_templates/studentNav.php');
 			<br/><br/>
 		
 			<div class="dashboardIcon">
-				<a href="../_php/student_classes.php">
+				<a href="classes_student.php">
 					<img src="../_images/lecture.png" alt="Classes" />
 					<figcaption>Classes</figcaption>
 				</a>
