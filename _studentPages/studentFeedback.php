@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>	<!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Knightly Knowledge - Feedback</title>
 		<link href="../_css/style1.css" rel="stylesheet" />
 		<script src="../_js/dashboard.js" type="text/javascript"></script>
@@ -10,17 +11,17 @@
 
 	<body>
 		<header>
-			<a href="facultyDashboard.php">
+			<a href="studentDashboard.php">
 			<img class="logo" src="../_images/knight.jpg" alt="MGA Knight Logo" />
 			</a>
 		</header>
 
 		<div id="purpleBar">
-			<span class="indent">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
+			<span class="indent">Knightly Knowledge - <a href="studentDashboard.php" style="color: #FFFFFF">Student Dashboard</a>
 			- <a href="classes.php" style="color: #FFFFFF">Classes</a></span>
 		</div>
 
-		<?php include('../_templates/facultyNav.php');?>
+		<?php include('../_templates/studentNav.php');?>
 
 		<br>
 		<div class="container" id="main">

@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>	<!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Knightly Knowledge - Feedback</title>
 		<link href="../_css/style1.css" rel="stylesheet" />
 		<script src="../_js/dashboard.js" type="text/javascript"></script>
