@@ -22,7 +22,16 @@ class Class_DO{
 				//return $this->commit($stmt);
 				$stmt->execute();
 				$stmt->close();
-				header("Location: ../_facultyPages/facultyDashboard.php");
+				
+				//Instructor Creating Class is assigned to it.
+				$sql2 = "INSERT INTO class_Assign (ClassID, LoginID) VALUES (?,?);";
+				$stmt2 = $con->prepare($sql2);
+				$stmt2->bind_param("ii", $values["ClassID"], $values["LoginID"]);
+				//return $this->commit($stmt);
+				$stmt2->execute();
+				$stmt2->close();		
+				
+				echo "<div><br/> Success! <br/></div>"; 
 				}else{ echo "Only faculty can add classes. /n Please Login."; }}}}
 				 else{ echo "Only faculty can add classes. \n Please Login."; }}
 
