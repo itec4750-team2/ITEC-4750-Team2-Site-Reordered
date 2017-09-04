@@ -1,4 +1,8 @@
 
+-- #1 Run NEW ITEC 4750 DB Setup First
+-- #2 Run RelationshipAssignments
+-- #3 Optional Class Data in Fall2017ITEC
+
 use mga_db;
 -- 
 -- Table structure for table `class_assign`
@@ -11,7 +15,8 @@ CREATE TABLE `class_assign` (
   `LoginID` int,
   PRIMARY KEY (`ClassAssignID`),
   FOREIGN KEY (`ClassID`) REFERENCES `class`(`ClassID`) ON DELETE CASCADE,
-  FOREIGN KEY (`LoginID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE  
+  FOREIGN KEY (`LoginID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE
+  
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -20,6 +25,14 @@ CREATE TABLE `class_assign` (
 --
 
 INSERT INTO `class_assign` (`ClassAssignID`, `ClassID`, `LoginID`) VALUES
+-- Dr. Spangler's Classes
+(20,  87123,  1),
+(21,  86756,  1),
+(19,  87361,  1),
+(22,  86654,  1),
+(91, 1, 1),
+
+-- Students
 (1, 1, 100),
 (2, 1, 101),
 (3, 1, 102),
@@ -59,6 +72,7 @@ CREATE TABLE `group_assign` (
 --
 
 INSERT INTO `group_assign` (`GroupAssignID`, `GroupID`, `LoginID`) VALUES
+-- last team
 (1, '1-2', 100),
 (2, '1-2', 101),
 (3, '1-2', 102),
@@ -66,6 +80,7 @@ INSERT INTO `group_assign` (`GroupAssignID`, `GroupID`, `LoginID`) VALUES
 (5, '1-2', 104),
 (6, '1-2', 105),
 (7, '1-2', 106),
+-- 2017 Fall Team
 (8, '86756-2', 115),
 (9, '86756-2', 116),
 (10, '86756-2', 117),

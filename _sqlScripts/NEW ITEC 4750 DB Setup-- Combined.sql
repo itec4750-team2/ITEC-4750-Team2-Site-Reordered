@@ -1,3 +1,9 @@
+
+-- #1 Run NEW ITEC 4750 DB Setup First
+-- #2 Run RelationshipAssignments
+-- #3 Optional Class Data in Fall2017ITEC
+
+
 -- phpMyAdmin SQL Dump
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
@@ -10,9 +16,6 @@
 -- Dummy Database setup Combined from Summer Team's MySQL Script
 -- Changed password data inserted into 'login table' to SHA1 checksum to agree with current login page 
 -- Added Current team members' 'login table' information for 'default' insert
-
--- Create Local mga_db and run sql
-
 
 -- Config file should be setup for localhost for running locally --
 
@@ -76,19 +79,9 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`LoginID`, `Email`, `Pword`, `Role`, `FName`, `LName`) VALUES
+-- instructors
 (1, 'scott.spangler@mga.edu', SHA1('sspangler17'), 'Faculty', 'Scott', 'Spangler'),
-(2, 'alan.stines@mga.edu', SHA1('astines17'), 'Faculty', 'Alan', 'Stines'),
-(3, 'tina.ashford@mga.edu', SHA1('tashford17'), 'Faculty', 'Tina', 'Ashford'),
-(4, 'shannon.beasley@mga.edu', SHA1('sbeasley17'), 'Faculty', 'Shannon', 'Beasley'),
-(5, 'pedro.colon1@mga.edu', SHA1('pcolon17'), 'Faculty', 'Pedro', 'Colon'),
-(6, 'myungjae.kwak@mga.edu', SHA1('mkwak17'), 'Faculty', 'Myungjae', 'Kwak'),
-(7, 'neil.rigole@mga.edu', SHA1('nrigole17'), 'Faculty', 'Neil', 'Rigole'),
-(8, 'johnathan.yerby@mga.edu', SHA1('jyerby17'), 'Faculty', 'Johnathan', 'Yerby'),
-(9, 'john.girard@mga.edu', SHA1('jgirard17'), 'Faculty', 'John', 'Girard'),
-(10, 'yingfeng.wang@mga.edu', SHA1('ywang17'), 'Faculty', 'Yingfeng', 'Wang'),
-(11, 'nelbert.stclair@mga.edu', SHA1('nstclair17'), 'Faculty', 'Doc', 'St. Clair'),
-(12, 'kimbley.lingelback@mga.edu', SHA1('klingelback17'), 'Faculty', 'Kimbley', 'Lingelback'),
-(13, 'jonathan.jenkins2@mga.edu', SHA1('jjenkins17'), 'Faculty', 'Jonathan', 'Jenkins');
+(2, 'alan.stines@mga.edu', SHA1('astines17'), 'Faculty', 'Alan', 'Stines');
 
 -- --------------------------------------------------------
 
@@ -97,7 +90,7 @@ INSERT INTO `login` (`LoginID`, `Email`, `Pword`, `Role`, `FName`, `LName`) VALU
 --
 
 INSERT INTO `login` (`LoginID`, `Email`, `Pword`, `Role`, `FName`, `LName`) VALUES
-
+-- previous teams
 (100, 'chase.cummings@mga.edu', SHA1('ccummings17'), 'Student', 'Chase', 'Cummings'),
 (101, 'chelsea.bennett@mga.edu', SHA1('cbennett17'), 'Student', 'Chelsea', 'Bennett'),
 (102, 'luke.ayler@mga.edu', SHA1('layler17'), 'Student', 'Luke', 'Ayler'),
@@ -113,6 +106,8 @@ INSERT INTO `login` (`LoginID`, `Email`, `Pword`, `Role`, `FName`, `LName`) VALU
 (112, 'jack.campbell@mga.edu', SHA1('jcampbell17'), 'Student', 'Jack', 'Campbell'),
 (113, 'theresa.brown@mga.edu', SHA1('tbrown17'), 'Student', 'theresa', 'Brown'),
 (114, 'ronak.brahmbhatt@mga.edu', SHA1('rbrahmbhatt17'), 'Student', 'Ronak', 'Brahmbhatt'),
+
+-- 2017 Fall Team
 (115, 'joseph.dent@mga.edu', SHA1('jdent17'), 'Student', 'Joe', 'Dent'),
 (116, 'andrew.dixon@mga.edu', SHA1('adixon17'), 'Student', 'Andrew', 'Dixon'),
 (117, 'sarah.goodman@mga.edu', SHA1('sgoodman17'), 'Student', 'Sarah', 'Goodman'),
@@ -133,11 +128,9 @@ INSERT INTO `login` (`LoginID`, `Email`, `Pword`, `Role`, `FName`, `LName`) VALU
   `ClassID` int(8) NOT NULL,
   `ClassNO` varchar(12) NOT NULL,
   `ClassName` varchar(255) NOT NULL,
-  `LoginID` int, 
   `ExpDate` DATE,
   `SemesterID`int,
   PRIMARY KEY (`ClassID`),
-  FOREIGN KEY (`LoginID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE,
   FOREIGN KEY (`SemesterID`) REFERENCES `semester`(`SemesterID`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -145,11 +138,12 @@ INSERT INTO `login` (`LoginID`, `Email`, `Pword`, `Role`, `FName`, `LName`) VALU
 -- Dumping data for table `class`
 --
 
-INSERT INTO `class` (`ClassID`, `ClassNO`, `ClassName`,`LoginID`, `ExpDate`, `SemesterID`) VALUES
-(1, 'ITEC 4750','Senior Capstone', 1, '2017-08-01', 2),
-(86756,'ITEC 4750','ONLINE Senior Capstone', 2, '2017-12-13', 2),
-(87123,'ITEC 4750','V-CON Senior Capstone', 2, '2017-12-13', 2);
-
+INSERT INTO `class` (`ClassID`, `ClassNO`, `ClassName`, `ExpDate`, `SemesterID`) VALUES
+(1, 'ITEC 4750','Senior Capstone', '2017-08-01', 1),
+(86756,'ITEC 4750','ONLINE Senior Capstone','2017-12-13', 2),
+(87123,'ITEC 4750','V-CON Senior Capstone', '2017-12-13', 2),
+(87361,'ITEC 3235','ONLINE Human Comp Interaction', '2017-12-13', 2),
+(86654,'ITEC 3235','Human Computer Interaction', '2017-12-13', 2);
 -- --------------------------------------------------------
 
 --
