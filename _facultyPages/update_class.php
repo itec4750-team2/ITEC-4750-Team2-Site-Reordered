@@ -34,8 +34,9 @@ if(isset($_GET['id'])){$ClassID = $_GET['id'];}
 <form name="update-class" method="POST">
 
 <div>
-	<label>Class Item#: </label>
-	<label><?php echo $ClassID ?></label>
+	<label for="ClassID">Class Item Number</label>
+	<input type="number" name="ClassID" id="ClassID" placeholder="Item Number" value= <?php echo "'". $ClassID ."'";?>required>
+</div>
 
 <div>
 	<label for="ClassNO">Class Number</label>
