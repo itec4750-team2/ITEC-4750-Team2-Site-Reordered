@@ -8,7 +8,7 @@ include('../_templates/studentNav.php');
 		<div id="main">
 			<?php // if(isset($_SESSION)){echo '<pre>'; print_r($_SESSION); echo '</pre>';}//error checking session	?>				
 			
-			<h2 class="center">Welcome <?php if(isset($_SESSION['FName'])){echo $FName . " " . $LName;}?></h2>
+			<h2 class="center">Welcome <?php if(!empty($FName)){echo $FName . " " . $LName;}?></h2>
 			
 			<br/><br/>
 		
