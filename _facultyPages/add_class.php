@@ -5,12 +5,15 @@ include('../_templates/facultyNav.php');
 include("../_php/config.php");
 require("../_php/_models/class_model.php");	
 require("../_php/_objects/class_do.php");
+require("../_php/_objects/drop_do.php");
 
 //$root = realpath($_SERVER["DOCUMENT_ROOT"]);
 //require("$root/_php/_models/class_model.php"); 
 //require("$root/_php/_objects/class_do.php"); 
+//require("$root/_php/_objects/drop_do.php");
 //include("$root/_php/config.php");
 
+$dropdo = new Drop_DO($_SESSION['LoginID']);
 ?>
 	
 <!-- Main Content Section-->
@@ -39,22 +42,32 @@ require("../_php/_objects/class_do.php");
 	<input type="date" name="ExpDate" id="ExpDate" placeholder="Expiration Date" required>
 </div>
 
-<?php
-// -- It's not pretty but it works.
-// -- Dropdown needs to be put into function. KM 9/3/17
+<div><?php
+// -- calls dropdown box  --  drop_do.php
+// -- lists all semesters for instructor to choose from.
+// -- could do similar for class names 
 
-$sql = "SELECT SemesterID, SemesterName, Year From semester";
-$semSelect = mysqli_query($con, $sql);
+$rows=$dropdo->semSelect();
 echo '<select name="SemesterID" required>'; // Open
-// Loop to echo options
-while($row = mysqli_fetch_array($semSelect)){
-	echo '<option value="'.$row['SemesterID'].'">'.$row['SemesterName']." ".$row['Year'].'</option>';
-}echo '</select>';// Close
-?>
+foreach ($rows as $ddo) {
+  echo '<option value="'.$ddo['SemesterID'].'">'.$ddo['SemesterName']." ".$ddo['Year'].'</option>';
+}
+  echo '</select>';// Close
 
-<div class="one">
-<input type="submit" value="Add Class" name="AddClass" id="AddClass">
+?></div>
+
+
+</div> <div class="one"> <input type="submit" value="Add Class" name="AddClass" id="AddClass"></div>
+
+<div>
+</br>
+Visit:
+<br/>
+<a href="classes.php">MY Classes</a><br/>
+<a href="all_classes.php">All Classes</a><br/>
+<a href="facultyDashboard.php">Home</a><br/>
 </div>
+
 </div>
 
 <?php 
@@ -68,11 +81,9 @@ $newClass = new Classes(array(
 	"ExpDate" => $_POST["ExpDate"]
 ));
 $newClass->createClass();
-
-if($newClass){
-	header("Location: ../_facultyPages/all_classes.php");
-}}
+}
 ?>
+
 </form>
 </main>
 </div>
