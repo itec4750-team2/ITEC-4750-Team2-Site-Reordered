@@ -1,7 +1,7 @@
 /*
 	Knightly Knowledge
 	Spring 2017
-	
+
 	COLOR CODES:
 	Purple:			#633393
 	Dark Purple:	#42337E
@@ -12,8 +12,8 @@
 */
 
 /* BODY */
-body { text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:1em; background-color:#FFFFFF; margin: 0; }
-#main { transition: margin-left .5s; padding: 16px; text-align: left; }
+body { text-align:center; font-family:Arial, Helvetica, sans-serif; background-color:#FFFFFF; margin: 0; }
+#main { transition: margin-left .5s; padding: 16px; text-align: left; font-size:1.1em;}
 .wrapper {width:75%; margin:0 auto ;max-width:960px; background-color:#FFFFFF; padding:0 4%}
 .dashboardIcon { float: left; margin-left: 200px; padding-bottom: 100px; }
 .logo { margin-top: 0px; width: 60%; }
@@ -30,10 +30,10 @@ header { background-color: #FFFFFF; width: 100%; margin:0px auto;}
 
 
 /* SIDE NAV */
-.sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #42337E; 
+.sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #42337E;
 	overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
 
-.sidenav a { padding: 8px 8px 8px 32px; text-decoration: none; font-size: 25px; color: #FFFFFF; display: block; 
+.sidenav a { padding: 8px 8px 8px 32px; text-decoration: none; font-size: 25px; color: #FFFFFF; display: block;
 	transition: 0.3s }
 
 .sidenav a:hover, .offcanvas a:focus{ color: #f1f1f1; }
@@ -70,3 +70,26 @@ div.dashboardIcon {text-align:center; }
 table {font-family: arial, sans-serif; border-collapse: collapse; width: 100%; }
 td, th {border: 1px solid #dddddd; text-align: left; padding: 2px; }
 tr:nth-child(even) { background-color: #dddddd;}
+
+/* Feedback Forms */
+.feedbackBtn {background-color:#42337E; border-color:#42337E; margin-left:.5em;}
+.feedbackBtn:hover {
+	background-color: #473c75; border-color:#42337E;
+}
+hr {
+	border: 0;
+	clear:both;
+	display:block;
+	width: 100%;
+	background-color:#ccc;
+	height: 1px;
+}
+.formatContainer {
+	background-color:#f2f2f2;
+	border-radius:5px;
+}
+.col-centered {
+	float: none;
+	margin-right: auto;
+	margin-left: auto;
+}
