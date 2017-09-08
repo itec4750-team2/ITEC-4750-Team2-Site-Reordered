@@ -22,7 +22,8 @@ class Class_DO{
 				//return $this->commit($stmt);
 				$stmt->execute();
 				$stmt->close();
-				header("Location: ../_facultyPages/facultyDashboard.php");
+
+				header("Location: ../_facultyPages/facultyDashboard.php"); 
 				}else{ echo "Only faculty can add classes. /n Please Login."; }}}}
 				 else{ echo "Only faculty can add classes. \n Please Login."; }}
 
