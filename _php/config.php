@@ -7,6 +7,7 @@
 		 $dbname = 'mga_db'; 
          $dbuser = 'user1';
          $dbpass = 'thisuser';
+		 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 		
 /*	 
 		 //-------------SERVER CONNECTION-------------
