@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['Login'])) 
 { 	
-	include('config.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 	$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 	//echo ($_POST['Email']);
 	//echo ($_POST['Pword']);
@@ -15,7 +15,6 @@ if(isset($_POST['Login']))
 function SignIn($email, $password, $con) 
 { 
 
-	include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 	include($_SERVER['DOCUMENT_ROOT'].'/_php/session.php');
 
 	$echomsg = "";
@@ -39,7 +38,8 @@ function SignIn($email, $password, $con)
 			$echomsg = "Check Email and Password.";	
 			$echomsg .= "$login failed ===========================================> login_functions"; //testing
 			$_SESSION['ErrorBlock'] = $echomsg;
-			header('Location: login.php');  
+// commenting out for now; this causes $_POST array to be empty		- mm	
+//			header('Location: login.php');  
 			}
 		//good connection
 			else{ 
@@ -52,7 +52,8 @@ function SignIn($email, $password, $con)
 					$echomsg = "Check Email and password";
 					$echomsg .= "array1 failed ==================================> login_functions"; //for testing	
 					$_SESSION['ErrorBlock'] = $echomsg;
-					header('Location: login.php');  
+// commenting out for now; this causes $_POST array to be empty		- mm					
+//					header('Location: login.php');  
 				}	
 				else{
 					//session_regenerate_id();
@@ -74,6 +75,7 @@ function SignIn($email, $password, $con)
 										
 					//Directs user to a dashboard based on role 
 					if( $_SESSION["Role"] == "Faculty"){
+// not sure if these 2 header calls will affect $_POST array or not - mm						
 						header('Location: _facultyPages/facultyDashboard.php');
 					  }		
 					else {
@@ -96,7 +98,8 @@ function SignIn($email, $password, $con)
 					$echomsg = "Check Email and Password";
 					echo "$getByEmail failed";
 					$_SESSION['ErrorBlock'] = $echomsg;
-					header('Location: login.php');  
+// commenting out for now; this causes $_POST array to be empty	- mm
+//					header('Location: login.php');  
 				}
 				
 				//good connection
@@ -105,10 +108,13 @@ function SignIn($email, $password, $con)
 					$array2 = mysqli_fetch_array($getByEmail);
 					
 					if(!$array2){
-						$echomsg = "Check Email.";
-						echo "array2 failed";
+// I believe this is tripped when an email address is entered which does not exist. - mm	
+//						$echomsg = "Check Email.";
+//						echo "array2 failed";
+						$echomsg = "Invalid Email address entered";
 						$_SESSION['ErrorBlock'] = $echomsg;
-						header('Location: login.php');  //Not working - KM 8/30
+// commenting out for now; this causes $_POST array to be empty	- mm
+//						header('Location: login.php');  //Not working - KM 8/30
 					}
 					else{
 					
