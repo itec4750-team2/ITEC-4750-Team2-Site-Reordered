@@ -64,8 +64,16 @@ require('../_php/_models/class_assign_model.php');
 						echo '<td>';
 							$instr = new CA_DO();
 							$facs=$instr->listClassInstrs($value['ClassID']);
+							$i = 0;
 							foreach ($facs as $val){
-								echo $val['FName']. ' ' .$val['LName'];
+								// ++++ Change: Added | for multiple instructors 9/9 KM ++++
+								if($i == 0){
+									echo $val['FName']. ' ' .$val['LName'];
+								}
+								else{
+									echo ' | '. $val['FName']. ' ' . $val['LName'];
+								}
+								$i++;	
 							}
 						echo'</td>';
 						echo '<td>'.$value['SemesterName'].' '.$value['Year'].'</td>';
