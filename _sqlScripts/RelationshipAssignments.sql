@@ -62,7 +62,7 @@ CREATE TABLE `group_assign` (
   `GroupID` varchar(255),
   `LoginID` int,
   PRIMARY KEY (`GroupAssignID`),
-  FOREIGN KEY (`GroupID`) REFERENCES `group`(`GroupID`) ON DELETE CASCADE,
+  FOREIGN KEY (`GroupID`) REFERENCES `cgroup`(`GroupID`) ON DELETE CASCADE,
   FOREIGN KEY (`LoginID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
