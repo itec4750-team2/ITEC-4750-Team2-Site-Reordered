@@ -159,7 +159,7 @@ require('../_php/_models/class_assign_model.php');
 				}
 			?>
 			<!-- ++++ Change: Added instructor assignment removal from class_assign_do 9/8 KM ++++ -->
-			<!--------------- Add Instructor Assignment ------------------>
+			<!--------------- Remove Instructor Assignment ------------------>
 			<?php 
 				if(isset($_POST['DelInst']) && $_POST['OFID']!='none'){
 					$delInst  = new Class_Assign(array(

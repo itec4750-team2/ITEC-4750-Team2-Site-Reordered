@@ -7,7 +7,7 @@ require('../_php/_objects/class_do.php');
 <!-- Main Content Section-->
 <div class="wrapper">
 
-	<!-- Builds table for classes. If classes have Expired the are not pulled. KM 9/2/17 -->
+	<!-- Builds table for classes. If classes have Expired they are not pulled. KM 9/2/17 -->
 	<main>
 		<h2 class="center">Your Classes</h2>
 		<table>
