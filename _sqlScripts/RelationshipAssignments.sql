@@ -56,7 +56,8 @@ INSERT INTO `class_assign` (`ClassAssignID`, `ClassID`, `LoginID`) VALUES
 -- Group assignments table
 --
 
-
+-- ++++changed group to cgroup because group is a protected word in MySqli 
+--     statements++++
 CREATE TABLE `group_assign` (
   `GroupAssignID` int(10) NOT NULL AUTO_INCREMENT,
   `GroupID` varchar(255),
