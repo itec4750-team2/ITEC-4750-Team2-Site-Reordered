@@ -1,14 +1,14 @@
 <?php 
 // ++++ Change: Adjusted indentation 9/7 KM ++++
-include('../_templates/facultyHeader.php');
-include('../_templates/facultyNav.php');
-require('../_php/_objects/class_do.php');	
-require('../_php/_objects/stu_do.php');
-require('../_php/_objects/group_assign_do.php');
-require('../_php/_models/group_assign_model.php');
-require('../_php/_objects/drop_do.php');
-require('../_php/_objects/class_assign_do.php');
-require('../_php/_models/class_assign_model.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');	
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/stu_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/group_assign_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/group_assign_model.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_assign_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 ?>
 <div class="wrapper">
 	<main>
@@ -174,6 +174,6 @@ require('../_php/_models/class_assign_model.php');
 	</main>
 </div><!--End wrapper-->
 	
-<?php include('../_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
 </body>
 </html>

@@ -4,12 +4,12 @@
 --- -- --- WORK FLAG
 --- This page still needs work. -- 9/8 KM
 --- Currently displays the students assigned to a group.
---- Mostly to check link from class_page.php (Further Development Soon)include('../_templates/facultyHeader.php') 
+--- Mostly to check link from class_page.php (Further Development Soon)include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php') 
 -- */
-include('../_templates/facultyHeader.php'); 
-include('../_templates/facultyNav.php');
-include('../_php/config.php');
-require("../_php/_objects/group_assign_do.php");	
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php'); 
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/group_assign_do.php');	
 ?>	
 <!-- Main Content Section-->
 <div class="wrapper">
@@ -38,6 +38,6 @@ require("../_php/_objects/group_assign_do.php");
 		?>
 	</main>
 </div><!-- End Wrapper -->	
-<?php include('../_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
 </body>
 </html>

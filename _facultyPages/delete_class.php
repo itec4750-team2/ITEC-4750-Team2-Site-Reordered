@@ -4,10 +4,10 @@
 --- -- --- WORK FLAG
 ---This page still needs work. I would like to have it prevent resubmitting the form. -- 9/7 KM
 --- -- */
-	include('../_templates/facultyHeader.php');
-	include('../_templates/facultyNav.php');
-	require('../_php/_objects/class_do.php');	
-	require('../_php/_models/class_model.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
+	include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+	require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');	
+	require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');
 ?>
 <!-- Main Content Section-->
 <div class="wrapper">
@@ -67,6 +67,6 @@
 		</form>
 	</main>
 </div> <!-- End Wrapper -->
-<?php include('../_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
 </body>
 </html>

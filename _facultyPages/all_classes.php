@@ -1,8 +1,8 @@
 <?php 
 // ++++ Change: Adjusted indentation 9/8 KM ++++
-include('../_templates/facultyHeader.php');
-include('../_templates/facultyNav.php');
-require('../_php/_objects/class_do.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
 ?>
 <!-- Main Content Section-->
 <div class="wrapper">
@@ -38,6 +38,6 @@ require('../_php/_objects/class_do.php');
 		?>			   
 	</main>
 </div> <!-- End Wrapper -->
-<?php include('../_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
 </body>
 </html>

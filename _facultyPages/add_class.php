@@ -4,12 +4,12 @@
 --- -- --- WORK FLAG
 ---This page still needs work. Maybe use a <datalist> populated with classes offered. -- 9/8 KM
 --- -- */
-include('../_templates/facultyHeader.php');
-include('../_templates/facultyNav.php');
-include('../_php/config.php');
-require('../_php/_models/class_model.php');	
-require('../_php/_objects/class_do.php');
-require('../_php/_objects/drop_do.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');	
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 ?>
 	
 <!-- Main Content Section-->
@@ -74,6 +74,6 @@ require('../_php/_objects/drop_do.php');
 		</form>
 	</main>
 </div>
-<?php include('../_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
 </body>
 </html>

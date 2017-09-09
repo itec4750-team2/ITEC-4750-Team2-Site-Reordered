@@ -4,14 +4,14 @@
 --- -- --- WORK FLAG
 ---This page still needs work. Maybe use a <datalist> populated with classes offered. -- 9/8 KM
 --- -- */
-include('../_php/config.php');
-include('../_templates/facultyHeader.php');
-include('../_templates/facultyNav.php');
-require('../_php/_objects/class_do.php');	
-require('../_php/_objects/drop_do.php');
-require('../_php/_objects/class_assign_do.php');
-require('../_php/_models/class_model.php');
-require('../_php/_models/class_assign_model.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');	
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_assign_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 ?>
 <!-- Main Content Section-->
 <div class="wrapper">
@@ -204,6 +204,6 @@ require('../_php/_models/class_assign_model.php');
 	</main>
 </div>
 
-<?php include('../_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
 </body>
 </html>

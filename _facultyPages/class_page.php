@@ -1,11 +1,11 @@
 <?php 
 // ++++ Change: Adjusted indentation 9/7 KM ++++
-include('../_templates/facultyHeader.php');
-include('../_templates/facultyNav.php');
-require('../_php/_objects/class_do.php');	
-require('../_php/_models/class_model.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');	
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');
 // ++++ Change: Moved to this procedure to class_assign_do (previously part of stu_do) 9/5 KM ++++
-require('../_php/_objects/class_assign_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_assign_do.php');
 ?>
 <!-- Main Content Section-->
 <div class="wrapper">
@@ -107,6 +107,6 @@ require('../_php/_objects/class_assign_do.php');
 		<?php }?>	
 	</main>
 </div><!--End Wrapper -->
-<?php include('../_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
 </body>
 </html>
