@@ -1,4 +1,5 @@
 <?php 
+// ++++ Change: Adjusted indentation 9/8 KM ++++
 include('../_php/session.php');
 
 //redirect to student dashboard
@@ -8,7 +9,7 @@ if(isset($_SESSION['Role'])){
 		else{
 			$_SESSION['ErrorBlock'] = "Please Login.";
 			header('Location: ../login.php');
-			}
+		}
 	}
 }
 /*--
@@ -21,7 +22,7 @@ else{ echo "Role not defined.";}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>			<!-- Builds basis of site. Sets style1 as the CSS for this page. -->
+<head><!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Faculty Dashboard</title>
 	<link href="../_css/style1.css" rel="stylesheet" />
@@ -29,9 +30,9 @@ else{ echo "Role not defined.";}
 </head>
 <body>
 	<header>
-	<a href="facultyDashboard.php">
-		<img class="logo" src="../_images/knight.jpg" alt="Knight" />
-	</a>	
+		<a href="facultyDashboard.php">
+			<img class="logo" src="../_images/knight.jpg" alt="Knight" />
+		</a>	
 	</header>
 		
 	<div id="purpleBar">
