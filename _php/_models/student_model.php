@@ -5,7 +5,7 @@ include("../_php/config.php");
 // include("$root/_php/config.php");
 
 class Students{
-private $LoginID;  
+private $StID;  
 private $Email;
 private $Pword;
 private $Role;
@@ -21,8 +21,8 @@ public function __get($property){
 }}
 
 public function __construct($arr){
-if(isset($arr["LoginID"])){
-	$this->LoginID = $arr["LoginID"];	  
+if(isset($arr["StID"])){
+	$this->StID = $arr["StID"];	  
 	$this->Email = $arr["Email"];
 	$this->Pword = $arr["Pword"];
 	$this->Role = $arr["Role"];
@@ -35,7 +35,7 @@ if(isset($arr["LoginID"])){
 
 private function all_params(){
 	$params = array(
-	"LoginID" => $this->LoginID,
+	"StID" => $this->StID,
 	"Email" => $this->Email,
 	"Pword" => $this->Pword,
 	"Role" => $this->Role,
@@ -46,7 +46,7 @@ return $params;
 }
 private function idOnly(){
 	$params = array(
-	"LoginID" => $this->LoginID,
+	"StID" => $this->StID,
 );
 return $params;
 }
@@ -56,7 +56,7 @@ public function createClass(){
 }
 
 public function updateClass(){
-	$r = $this->do->updateClass($this->LoginID, $this->all_params());
+	$r = $this->do->updateClass($this->StID, $this->all_params());
 	return $r;
 }
 
