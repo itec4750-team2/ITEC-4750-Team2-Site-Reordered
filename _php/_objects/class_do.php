@@ -184,7 +184,7 @@ class Class_DO{
 				}
 			}
 			else{ 
-				echo "Only faculty can add classes. <br/> Please Login."; 
+				echo "Only faculty can delete classes. <br/> Please Login."; 
 			}
 		}
 }
