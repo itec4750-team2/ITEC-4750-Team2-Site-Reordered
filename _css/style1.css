@@ -74,7 +74,7 @@ tr:nth-child(even) { background-color: #dddddd;}
 /* Feedback Forms */
 .feedbackBtn {background-color:#42337E; border-color:#42337E; margin-left:.5em;}
 .feedbackBtn:hover {
-	background-color: #473c75; border-color:#42337E;
+	background-color: #473c75; border-color:#473c75;
 }
 hr {
 	border: 0;
