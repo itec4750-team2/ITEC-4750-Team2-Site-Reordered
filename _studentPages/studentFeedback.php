@@ -24,7 +24,6 @@
 
 		<?php include('../_templates/studentNav.php');?>
 
-		<br>
 		<div class="container-fluid" id="main">
 			<div class="row">
 				<div class="col-md-7 col-centered formatContainer">
