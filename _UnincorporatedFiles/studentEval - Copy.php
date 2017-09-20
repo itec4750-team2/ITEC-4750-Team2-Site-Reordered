@@ -6,6 +6,7 @@ include("config.php");
 <head>
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Student Evaluation</title>
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="style1.css" rel="stylesheet" />
 	<script src="dashboard.js" type="text/javascript"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
@@ -16,11 +17,11 @@ include("config.php");
 	<header>
 	<a href="studentDashboard.php">
 		<img class="logo" src="images/knight.jpg" alt="MGA Knight Logo" />
-	</a>	
+	</a>
 	</header>
-		
+
 	<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - Student Evaluation</span>
+		<span class="lead">Knightly Knowledge - Student Evaluation</span>
 	</div>
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -81,92 +82,92 @@ include("config.php");
 					<label for="quality">Rate this group member on his/her QUALITY of contribution
 						</label><br>
 						<select name="quality" id="quality" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
 						</select><br><hr><br>
 					<label for="quantity">Rate this group member on his/her QUANTITY of contribution
 						</label><br>
 						<select name="quantity" id="quantity" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value "5">5</option> 
-						</select><br><hr><br> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value "5">5</option>
+						</select><br><hr><br>
 					<label for="creativity">Rate this group member on his/her CREATIVITY
 						</label><br>
 						<select name="creativity" id="creativity" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
-						</select><br><hr><br> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select><br><hr><br>
 					<label for="turnTaking">Rate this group member on his/her TURN TAKING or allowing others to participant
 						</label><br>
 						<select name="turnTaking" id="turnTaking" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
-						</select><br><hr><br> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select><br><hr><br>
 					<label for="effort">Rate this group member on his/her EFFORT or time spent on project
 						</label><br>
 						<select name="effort" id="effort" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
-						</select><br><hr><br> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select><br><hr><br>
 					<label for="attitude">Rate this group member on his/her ATTITUDE toward the group
 						</label><br>
 						<select name="attitude" id="attitude" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
-						</select><br><hr><br> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select><br><hr><br>
 					<label for="attendance">Rate this group member on his/her ATTENDANCE to group meetings
 						</label><br>
 						<select name="attendance" id="attendance" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
-						</select><br><hr><br> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select><br><hr><br>
 					<label for="preparation">Rate this group member on his/her PREPARATION for group meetings
 						</label><br>
 						<select name="preparation" id="preparation" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
-						</select><br><hr><br> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select><br><hr><br>
 					<label for="willingness">Rate this group member on his/her WILLINGNESS to accept and complete tasks
 						</label><br>
 						<select name="willingness" id="willingness" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
-						</select><br><hr><br> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select><br><hr><br>
 					<label for="completion">Rate this group member on his/her COMPLETION of tasks ON TIME
 						</label><br>
 						<select name="completion" id="completion" required >
-							<option value="1">1</option> 
-							<option value="2">2</option> 
-							<option value="3">3</option>    
-							<option value="4">4</option> 
-							<option value="5">5</option> 
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
 						</select><br>
 					<br>
 					<div class="one"><input type="submit" value="Submit Evaluation" name="submitEval" id="submitEval"></div><br>
@@ -174,10 +175,10 @@ include("config.php");
 			</form>
 		</div>
 	</div>
-	
+
 	<footer>
-			
+
 	</footer>
-	
+
 </body>
 </html>

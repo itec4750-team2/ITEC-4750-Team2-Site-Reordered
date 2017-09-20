@@ -1,4 +1,4 @@
-<?php 
+<?php
 include ("config.php");
 ?>
 <!DOCTYPE html>
@@ -6,6 +6,7 @@ include ("config.php");
 <head> <!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Reporting</title>
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="style1.css" rel="stylesheet" />
 	<script src="dashboard.js" type="text/javascript"></script>
 </head>
@@ -14,16 +15,16 @@ include ("config.php");
 	<header>
 	<a href="facultyDashboard.php">
 		<img class="logo" src="images/knight.jpg" alt="MGA Knight Logo" />
-	</a>	
+	</a>
 	</header>
-	
-	<!-- Navigation Bar (purple) -->	
+
+	<!-- Navigation Bar (purple) -->
 	<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
-		- <a href="classes.php" style="color: #FFFFFF">Classes</a> 
+		<span class="lead">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
+		- <a href="classes.php" style="color: #FFFFFF">Classes</a>
 		- <a href="reporting.php" style="color: #FFFFFF">Reporting</a></span>
 	</div>
-	
+
 	<!-- Sets up data for the side navigation bar. -->
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -34,10 +35,10 @@ include ("config.php");
 		<a href="facultyfeedback.php">Feedback</a>
 		<a href="logout.php">Logout</a>
 	</div>
-	
+
 	<!-- Open side navigation bar -->
 	<span class="pointer" onclick="openNav()">&#9776; Menu</span>
-	
+
 	<!-- Main Content Section-->
 	<div class="wrapper">
 
@@ -48,7 +49,7 @@ include ("config.php");
 		$result = mysql_query("SELECT * FROM {$table}");
 		if (!$result) {
 			die("Query to show fields from table failed");
-		} 
+		}
 
 		$fields_num = mysql_num_fields($result);
 
@@ -76,16 +77,16 @@ include ("config.php");
 
 		?>
 		<br>
-		
+
 		<form action="export.php" method="get">
 		  <input type="submit" value="Export to CSV">
 		</form>
 		</div>
 	</div>
-	
+
 	<footer>
-			
+
 	</footer>
-	
+
 </body>
 </html>

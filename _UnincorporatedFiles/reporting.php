@@ -1,4 +1,4 @@
-<?php 
+<?php
 include ("config.php");
 ?>
 <!DOCTYPE html>
@@ -6,6 +6,7 @@ include ("config.php");
     <head> <!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Reporting</title>
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="style1.css" rel="stylesheet" />
 	<script src="dashboard.js" type="text/javascript"></script>
 </head>
@@ -13,11 +14,11 @@ include ("config.php");
 	<header>
 	<a href="facultyDashboard.php">
 		<img class="logo" src="images/knight.jpg" alt="MGA Knight Logo" />
-	</a>	
+	</a>
 	</header>
-		
+
 	<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
+		<span class="lead">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
 		- <a href="classes.php" style="color: #FFFFFF">Classes</a> - <a href="reporting.php" style="color: #FFFFFF">Reporting</a></span>
 	</div>
 	<!-- Sets up data for the side navigation bar. -->
@@ -32,7 +33,7 @@ include ("config.php");
 		<a href="logout.php">Logout</a>
 	</div>
 	<span class="pointer" onclick="openNav()">&#9776; Menu</span>
-	
+
 	<div class="wrapper">
 
 		<div id="main">
@@ -43,13 +44,13 @@ include ("config.php");
 		<div class="center"><h2>Class Evaluations</h2></div>
 		<?php
 		include ("classReporting.php");
-		?>	
+		?>
 		</div>
 	</div>
-	
+
 	<footer>
-			
+
 	</footer>
-	
+
 </body>
 </html>

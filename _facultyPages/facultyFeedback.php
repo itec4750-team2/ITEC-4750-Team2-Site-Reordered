@@ -18,7 +18,7 @@
 		</header>
 
 		<div id="purpleBar">
-			<span class="indent">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
+			<span class="lead">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
 			- <a href="classes.php" style="color: #FFFFFF">Classes</a></span>
 		</div>
 

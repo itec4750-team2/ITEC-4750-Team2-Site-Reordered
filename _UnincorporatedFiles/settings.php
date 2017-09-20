@@ -3,18 +3,19 @@
 <head> <!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Settings</title>
-	<link href="style1.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
+	<link href="../_css/style1.css" rel="stylesheet" />
 	<script src="dashboard.js" type="text/javascript"></script>
 </head>
 <body>
 	<header>
 	<a href="facultyDashboard.php">
 		<img class="logo" src="images/knight.jpg" alt="MGA Knight Logo" />
-	</a>	
+	</a>
 	</header>
-		
+
 	<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
+		<span class="lead">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
 		- <a href="settings.php" style="color: #FFFFFF">Settings</a></span>
 	</div>
 	<!-- Sets up data for the side navigation bar. -->
@@ -29,9 +30,9 @@
 		<a href="logout.php">Logout</a>
 	</div>
 	<span class="pointer" onclick="openNav()">&#9776; Menu</span>
-	
+
 	<div class="wrapper">
-	
+
 		<div id="settings">
 			<h2 class="center">Settings</h2>
 			<div class=one>
@@ -40,7 +41,7 @@
 			<fieldset>
 			<br>
 			<form Name=Password>
-			 Current password: <input Name=OldPassword type=password> 
+			 Current password: <input Name=OldPassword type=password>
 			 <br>
 			 <br>
 			 New password: <input Name=NewPassword type=password>
@@ -53,9 +54,9 @@
 	</div>
 			</fieldset>
 	<footer>
-			
+
 	</footer>
-	
+
 </body>
 </html>
 
