@@ -1,22 +1,19 @@
 <?php
-include('../_templates/facultyHeader.php');
-include('../_templates/facultyNav.php');
+// ++++ Change: Adjusted indentation 9/8 KM ++++
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
 ?>
 
 <h2 class="center">ITEC Classes</h2>
 <!-- Builds table for classes. If classes have Expired the are not pulled. KM 9/2/17 -->
 <div class="container-fluid" style="padding: 20px 0px 15px 0px;">
 	<?php
-
-		if(isset($_SESSION['LoginID'])){
-
-		require("../_php/_objects/class_do.php");
-		//$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-		//require("$root/_php/_objects/class_do.php");
-
-		$classdo = new Class_DO($_SESSION['LoginID']);
-		}
+			if(isset($_SESSION['LoginID'])){
+				$classdo = new Class_DO($_SESSION['LoginID']);
+				$rows=$classdo->loadAll($_SESSION['LoginID']);
 	?>
+
 	<div class="row">
 		<div class="col-md-7 col-centered">
 			<table class="table table-striped">
@@ -31,26 +28,24 @@ include('../_templates/facultyNav.php');
 				</thead>
 				<tbody>
 					<?php
-					//calls class data object and loads table data
-					//checks that Role='faculty'--KM 9/3/17
-					$rows=$classdo->loadAll($_SESSION['LoginID']);
-
-					//builds table with class data
-					//links ID to information page where faculty can update or delete class --KM 9/3/17
-
-					foreach ($rows as $value){
-						echo '<td><a href="class_page.php?id='.$value['ClassID'].'">'.$value['ClassID'].'</a></td>';
-						echo "<td>".$value['ClassNO']."</td><td>".$value['ClassName']."</td>";
-						echo "<td>".$value['SemesterName']. " ".$value['Year']."</td>";
-						echo "<td>". $value['ExpDate']."</td></tr>";
+						foreach ($rows as $value){
+							echo '<td><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a></td>'; // link to class_page
+							echo '<td>'.$value['ClassNO'].'</td><td>'.$value['ClassName'].'</td>';
+							echo '<td>'.$value['SemesterName']. ' '.$value['Year'].'</td>';
+							echo '<td>'. $value['ExpDate'].'</td></tr>';
+						}
+				echo '</tbody></table>';
+					} // End if faculty logged in.
+					// ++++ Change: Added error msg for no $_SESSION['LoginID'] 9/8 KM ++++
+					else{
+						echo '<div class = "error"> Only faculty can view this page. <br/> Please log in... </div>';
 					}
 					?>
-				</tbody>
-			</table>
 		</div>
 	</div>
 </div>
 
-<?php include("../_templates/footer.php");?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
+
 </body>
 </html>

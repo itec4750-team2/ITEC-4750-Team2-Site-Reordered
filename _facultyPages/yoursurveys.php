@@ -1,6 +1,6 @@
 <?php
-include('../_templates/facultyHeader.php');
-include('../_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
 ?>
 
 <h2 class="center">Your Created Surveys</h2>
