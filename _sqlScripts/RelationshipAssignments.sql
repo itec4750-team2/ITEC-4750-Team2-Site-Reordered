@@ -56,13 +56,14 @@ INSERT INTO `class_assign` (`ClassAssignID`, `ClassID`, `LoginID`) VALUES
 -- Group assignments table
 --
 
-
+-- ++++changed group to cgroup because group is a protected word in MySqli 
+--     statements++++
 CREATE TABLE `group_assign` (
   `GroupAssignID` int(10) NOT NULL AUTO_INCREMENT,
   `GroupID` varchar(255),
   `LoginID` int,
   PRIMARY KEY (`GroupAssignID`),
-  FOREIGN KEY (`GroupID`) REFERENCES `group`(`GroupID`) ON DELETE CASCADE,
+  FOREIGN KEY (`GroupID`) REFERENCES `cgroup`(`GroupID`) ON DELETE CASCADE,
   FOREIGN KEY (`LoginID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
