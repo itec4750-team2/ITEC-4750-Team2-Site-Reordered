@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('../_php/session.php');
 
 //redirect to student dashboard
@@ -18,7 +18,7 @@ if(isset($_SESSION['Role'])){
 --*/
 else{ echo "Role not defined.";}
 ?>
-	
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +31,7 @@ else{ echo "Role not defined.";}
 <head> <!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Student Evaluation</title>
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="../_css/style1.css" rel="stylesheet" />
 	<script src="../_js/dashboard.js" type="text/javascript"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
@@ -42,11 +43,11 @@ else{ echo "Role not defined.";}
 	<header>
 	<a href="studentDashboard.php">
 		<img class="logo" src="../_images/knight.jpg" alt="MGA Knight Logo" />
-	</a>	
+	</a>
 	</header>
 	<!--Navigation Bar (purple) -->
-	
+
 	<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - <a href="studentDashboard.php" style="color: #FFFFFF">Student Dashboard</a>
-	
+		<span class="lead">Knightly Knowledge - <a href="studentDashboard.php" style="color: #FFFFFF">Student Dashboard</a>
+
 <?php ?>

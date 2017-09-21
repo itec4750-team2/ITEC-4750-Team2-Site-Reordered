@@ -3,6 +3,7 @@
 <head> <!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Create New Survey</title>
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="style1.css" rel="stylesheet" />
 	<script src="dashboard.js" type="text/javascript"></script>
 </head>
@@ -10,11 +11,11 @@
 	<header>
 	<a href="facultyDashboard.php">
 		<img class="logo" src="images/knight.jpg" alt="MGA Knight Logo" />
-	</a>	
+	</a>
 	</header>
-		
+
 	<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
+		<span class="lead">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
 		- <a href="createnew.php" style="color: #FFFFFF">Create New Survey</a></span>
 	</div>
 	<!-- Sets up data for the side navigation bar. -->
@@ -29,12 +30,12 @@
 		<a href="logout.php">Logout</a>
 	</div>
 	<span class="pointer" onclick="openNav()">&#9776; Menu</span>
-	
+
 	<div class="wrapper">
 
 		<div id="main">
 			<h2 class="center">Create New Survey Here!</h2>
-			<br>	
+			<br>
 			<br>
 			<div class="dashboardIcon">
 				<a href="######">
@@ -48,13 +49,13 @@
 					<figcaption>Use A Template</figcaption>
 				</a>
 			</div>
-								
+
 		</div>
 	</div>
-	
+
 	<footer>
-			
+
 	</footer>
-	
+
 </body>
 </html>

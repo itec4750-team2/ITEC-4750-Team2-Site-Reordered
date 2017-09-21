@@ -1,4 +1,4 @@
-<?php 
+<?php
 // ++++ Change: Adjusted indentation 9/8 KM ++++
 include('../_php/session.php');
 
@@ -25,6 +25,7 @@ else{ echo "Role not defined.";}
 <head><!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Faculty Dashboard</title>
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="../_css/style1.css" rel="stylesheet" />
 	<script src="../_js/dashboard.js" type="text/javascript"></script>
 </head>
@@ -32,10 +33,10 @@ else{ echo "Role not defined.";}
 	<header>
 		<a href="facultyDashboard.php">
 			<img class="logo" src="../_images/knight.jpg" alt="Knight" />
-		</a>	
+		</a>
 	</header>
-		
+
 	<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - Faculty Dashboard</span>
+		<span class="lead">Knightly Knowledge - Faculty Dashboard</span>
 	</div>
-<?php ?>	
+<?php ?>

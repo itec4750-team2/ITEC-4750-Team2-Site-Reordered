@@ -6,6 +6,7 @@ include("input-eval.php");
 <head> <!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Student Evaluation Results</title>
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="style1.css" rel="stylesheet" />
 	<script src="dashboard.js" type="text/javascript"></script>
 </head>
@@ -13,9 +14,9 @@ include("input-eval.php");
 	<a href="studentDashboard.php">
 		<img class="logo" src="images/knight.jpg" alt="MGA Knight Logo" />
 	</a>
-		
+
 	<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - <a href="studentDashboard.php" style="color: #FFFFFF">Student Dashboard</a>
+		<span class="lead">Knightly Knowledge - <a href="studentDashboard.php" style="color: #FFFFFF">Student Dashboard</a>
 		- <a href="classes_student.php" style="color: #FFFFFF">Classes</a>
 		- <a href="studentEval.php" style="color: #FFFFFF">Student Evaluation</a></span>
 	</div>
@@ -29,11 +30,11 @@ include("input-eval.php");
 		<a href="logout.php">Logout</a>
 	</div>
 	<span class="pointer" onclick="openNav()">&#9776; Menu</span>
-	
+
 	<div class="wrapper">
 
 		<div id="main">
-				
+
 			<h2 class="center">You have successfully submitted your evaluation!</h2>
 			<p class="center">Student: <?php echo ($StudentID); ?> </p>
 			<p class="center">Quality: <?php echo ($quality); ?> </p>
@@ -47,16 +48,16 @@ include("input-eval.php");
 			<p class="center">Willingness: <?php echo ($willingness); ?> </p>
 			<p class="center">Completion: <?php echo ($completion); ?> </p>
 			<p class="center"><a href="studentEval.php">Back to Evaluations</a></p>
-			
-			
-			
-		
+
+
+
+
 		</div>
 	</div>
-	
+
 	<footer>
-			
+
 	</footer>
-	
+
 </body>
 </html>

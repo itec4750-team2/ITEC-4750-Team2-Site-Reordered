@@ -3,6 +3,7 @@
 <head>				<!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Feedback</title>
+	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="style1.css" rel="stylesheet" />
 	<script src="dashboard.js" type="text/javascript"></script>
 <script>
@@ -32,14 +33,14 @@
 		<header>
 		<a href="facultyDashboard.php">
 		<img class="logo" src="images/knight.jpg" alt="MGA Knight Logo" />
-		</a>	
+		</a>
 		</header>
-		
+
 		<div id="purpleBar">
-		<span class="indent">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
+		<span class="lead">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
 		- <a href="classes.php" style="color: #FFFFFF">Classes</a></span>
 		</div>
-	
+
 	<!-- Sets up data for the side navigation bar. -->
 		<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -54,7 +55,7 @@
 		<div>
 		<span class="pointer" onclick="openNav()">&#9776; Menu</span>
 		</div>
-		
+
 	<!-- Sets up the feedback form. -->
 		<div class="form">
 		<fieldset class="fieldset">
@@ -116,6 +117,6 @@
 		</form>
 </fieldset>
 </div>
-	
+
 	</body>
 </html>

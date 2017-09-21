@@ -18,13 +18,12 @@
 		</header>
 
 		<div id="purpleBar">
-			<span class="indent">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
+			<span class="lead">Knightly Knowledge - <a href="facultyDashboard.php" style="color: #FFFFFF">Faculty Dashboard</a>
 			- <a href="classes.php" style="color: #FFFFFF">Classes</a></span>
 		</div>
 
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');?>
 
-		<br>
 		<div class="container-fluid" id="main">
 			<div class="row">
 				<div class="col-md-7 col-centered formatContainer">

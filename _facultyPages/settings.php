@@ -1,4 +1,4 @@
-<?php 
+<?php
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
 ?>
@@ -9,32 +9,42 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
 --- KM -- 8/27 AM
 ---
 -->
-	<div class="wrapper">
-	
-		<div id="settings">
-			<h2 class="center">Settings</h2>
-			<div class=one>
-			<p>You may change your settings on this page.</p><br>
-			</div class=one>
-			<fieldset>
-			<br>
-			<form Name=Password>
-			 Current password: <input Name=OldPassword type=password> 
-			 <br>
-			 <br>
-			 New password: <input Name=NewPassword type=password>
-			 <br>
-			 <br>
-			 <div class="one"><input type=button onclick="ChangePassword()" Value="Change Password" id="changepassword">
-			</form>
+<h2 class="center">Settings</h2>
+	<div class="container-fluid" style="padding: 20px 0px 15px 0px;">
+		<div class="row">
+			<div class="col-md-6 col-centered">
+				<form action="#" method="post" class="form-horizontal" name="Password">
+					</fieldset>
+						<!-- Current password -->
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="OldPassword">Current password:</label>
+							<div class="col-sm-7">
+								<input type="password" name="OldPassword" class="form-control inputColor">
+							</div>
+						</div>
+						<!-- New Password -->
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="NewPassword">New password:</label>
+							<div class="col-sm-7">
+								<input type="password" name="NewPassword" class="form-control inputColor">
+							</div>
+						</div>
+						<!-- Submit form  -->
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-9">
+								<input type="button" onclick="ChangePassword()" value="Change Password" class="btn btn-primary btn-lg submit">
+							</div>
+						</div>
+					</fieldset>
+				</form>
 			</div>
 		</div>
 	</div>
-			</fieldset>
+
 	<footer>
-			
+
 	</footer>
-	
+
 </body>
 </html>
 
