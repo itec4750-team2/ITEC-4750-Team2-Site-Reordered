@@ -101,13 +101,15 @@ INSERT INTO `group_assign` (`GroupAssignID`, `GroupID`, `LoginID`) VALUES
 -- When Instructor creates a class group survey
 -- 
 
+-- ++++changed group to cgroup because group is a protected word in MySqli 
+--     statements++++
 CREATE TABLE `group_survey_q` (
   `GroupQID` int(6) NOT NULL AUTO_INCREMENT,
   `GSurveyName` varchar(255),
   `GroupID` varchar(255) NOT NULL,
   `QuestionID` int,
    PRIMARY KEY (GroupQID),
-   FOREIGN KEY (`GroupID`) REFERENCES `group`(`GroupID`) ON DELETE CASCADE,
+   FOREIGN KEY (`GroupID`) REFERENCES `cgroup`(`GroupID`) ON DELETE CASCADE,
    FOREIGN KEY (`QuestionID`) REFERENCES `gen_survey_q`(`QuestionID`) ON DELETE CASCADE
    
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
