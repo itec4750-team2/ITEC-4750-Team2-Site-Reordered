@@ -7,8 +7,11 @@
 		 $dbname = 'mga_db'; 
          $dbuser = 'user1';
          $dbpass = 'thisuser';
+		 
+		 // $con and $server to be used throughout site
+		 // ++++ Change: Added $server variable to make it easy to change reference paths.
 		 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-		
+		 $server ="//{$_SERVER['SERVER_NAME']}";	
 /*	 
 		 //-------------SERVER CONNECTION-------------
 		 

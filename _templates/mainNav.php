@@ -1,7 +1,9 @@
-<?php ?>
+<?php 
+// ++++ Change: Updated for consistant paths.
+?>
 	<!-- Sets up data for the side navigation bar. -->
 	<div >
-		<a href="login.php">Login</a>
-		<a href="_php/logout.php">Logout</a>
+		<?php echo '<a href="'.$server.'/login.php">Login</a>';?>
+		<?php echo '<a href="'.$server.'/_php/logout.php">Logout</a>';?>
 	</div>
 <?php ?>

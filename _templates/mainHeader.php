@@ -1,6 +1,7 @@
 <?php
-include('_php/session.php');
-//include('_php/connection_check.php');
+//Change: Updated for consistant paths.
+include($_SERVER['DOCUMENT_ROOT'].'/_php/session.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,15 +9,15 @@ include('_php/session.php');
 <head>
 	<meta charset="utf-8">
 	<title>Knightly Knowledge</title>
-	<link rel="stylesheet" href="_css/bootstrap.min.css" />
-	<link href="_css/style.css" rel="stylesheet" />
+	<?php echo '<link rel="stylesheet" href="'.$server.'/_css/bootstrap.min.css" />';?>
+	<?php echo '<link href="'.$server.'/_css/style.css" rel="stylesheet" />';?>
 </head>
 <body>
 
     <!--Header (school logo) -->
 	<div>
 	<header>
-		<img src="_images/MiddleGeorgia_Inst_EXHoriz_DkBgrnd.jpg" alt="MGA Banner" class="img-fluid" />
+		<?php echo '<img src="'.$server.'/_images/MiddleGeorgia_Inst_EXHoriz_DkBgrnd.jpg" alt="MGA Banner" />';?>
 	</header>
 	<div>
 
@@ -27,5 +28,5 @@ include('_php/session.php');
 
 		<!--Header (School logo - left-hand side) -->
 			<div id="loginLogo" class="col-sm-6">
-				<img src="_images/knightly knowledge logo.jpg" alt="MGA Knightly Knowledge Logo"/>
+				<?php echo'<img src="'.$server.'/_images/knightly knowledge logo.jpg" alt="MGA Knightly Knowledge Logo" width="25%" />'; ?>
 			</div>

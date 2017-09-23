@@ -1,4 +1,5 @@
 <?php
+// ++++ Change: Renamed from email to pr_email distinguish from other emails that might be added later ++++
 function emailToken($emailLink, $email){
 $emailLink = "http:" . $emailLink;	
 $emailLinkStr = '<a href"' . $emailLink . '">'. $emailLink . '</a>';
