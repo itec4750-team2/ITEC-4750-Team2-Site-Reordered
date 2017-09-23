@@ -149,8 +149,9 @@ INSERT INTO `class` (`ClassID`, `ClassNO`, `ClassName`, `ExpDate`, `SemesterID`)
 --
 -- Table structure for table `group`
 --
-
-CREATE TABLE `group`(
+-- ++++changed group to cgroup because group is a protected word in MySqli 
+--     statements++++
+CREATE TABLE `cgroup`(
   `GroupID` varchar(110) NOT NULL,
   `GroupName` varchar(25),
   `ClassID` int,
@@ -162,8 +163,9 @@ CREATE TABLE `group`(
 --
 -- Dumping data for table `group`
 --
-
-INSERT INTO `group` (`GroupID`, `ClassID`, `GroupName`) VALUES
+-- ++++changed group to cgroup because group is a protected word in MySqli 
+--     statements++++
+INSERT INTO `cgroup` (`GroupID`, `ClassID`, `GroupName`) VALUES
 ('1-1', 1, 'GROUP 1'),
 ('1-2', 1, 'GROUP 2'),
 ('86756-1', 86756, 'GROUP 1'),
