@@ -35,6 +35,11 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 							<tr><th>Student Name</th><td><?php echo  $FName. ' ' . $LName;?></td></tr>
 							<tr><th>Student ID </th><td><?php echo $StID;?></td></tr>
 							<tr><th>Email</th><td><?php echo '<a href="mailto:' . $Email.'">' . $Email . '</a>';?></td></tr>
+							<!-- ++++ Change: Link added to update student profile info. 9/9 KM ++++ -->
+							<!-------------------- Update Student Profile Link ------------------->
+							<!---- Should be enhanced visually maybe an image button like dashboard ? --> 
+							<tr><th><?php echo '<a href="../_facultyPages/update_student.php?&stid='.$StID.'">Update Profile</a>';?></th><td></td></tr>
+							<!-------------------------------------------------------------------->
 				  <?php } ?><!-- Ends student foreach -->  
 			</table> 
 				<!-- ------------- Student Classes Info ----------->
@@ -103,7 +108,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 			</table>
 			<br/>
 			<div>
-				<!-- ------------- Group Assignment ----------->				
+				<!-- ------------- Group Assignment Selection ----------->				
 				<?php 
 					$gadd = new Drop_DO();
 					$rows=$gadd->allGroups();
@@ -117,7 +122,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 				<input type="submit" value="Assign Group" name="ANewGroup" id="ANewGroup">
 			</div>
 			<br/>	
-				<!-- ------------- Class Assignment ----------->
+				<!-- ------------- Class Assignment Selection ----------->
 			<div>
 				<?php 
 				$cadd = new Drop_DO();
@@ -132,8 +137,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 				<input type="submit" value="Assign Class" name="ANewClass" id="ANewClass">
 			</div>
 			</form>
-				<!-- ------------- Add Class Assignments ----------->
-			
+				<!-- ------------- Add Class Assignments ----------->	
 				<?php
 				$errorMsg ='';
 				$newClassA = new CA_DO();
@@ -147,14 +151,13 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 				}
 				else if(isset($_POST['ANewClass']) && $_POST['NewClassID']=='none'){
 					$errorMsg = 'Please select a class.'; 
-					echo $errorMsg;
+					echo '<div class = "error">'.$errorMsg.'</div>';
 				}
 				?>
 				<!-- ------------- Add Group Assignments ----------->
 				<?php
 				$newGroupA = new GA_DO();
 				$errorMsg2 ='';
-
 				if(isset($_POST['ANewGroup']) && $_POST['NewGroupID']!='none'){	
 					$newGroupA = new Group_Assign(array( 
 					'StID' => $StID, // Student
@@ -165,7 +168,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 				}
 				else if(isset($_POST['ANewGroup']) && $_POST['NewGroupID']=='none'){
 					$errorMsg2 = 'Please select a group.'; 
-					echo $errorMsg2;
+					echo '<div class = "error">'.$errorMsg2.'</div>';
 				}
 			} // End if StID not empty
 			else{
