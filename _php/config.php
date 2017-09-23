@@ -1,7 +1,7 @@
       <?php
 	
 		 //-----------LOCAL CONNECTION-------------
-		
+/*
 		 //connection info
          $dbhost = 'localhost:3306';
 		 $dbname = 'mga_db'; 
@@ -10,9 +10,8 @@
 		 
 		 // $con and $server to be used throughout site
 		 // ++++ Change: Added $server variable to make it easy to change reference paths.
-		 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-		 $server ="//{$_SERVER['SERVER_NAME']}";	
-/*	 
+		 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname); 
+     $server ="//{$_SERVER['SERVER_NAME']}";	
 		 //-------------SERVER CONNECTION-------------
 		 
 		 //connection info
@@ -28,7 +27,7 @@
             die('Could not connect: ' . mysqli_error());
          }
 		 
-*/
+
       ?>
    </body>
 </html>
