@@ -1,7 +1,7 @@
       <?php
 	
 		 //-----------LOCAL CONNECTION-------------
-		
+/*
 		 //connection info
          $dbhost = 'localhost:3306';
 		 $dbname = 'mga_db'; 
@@ -9,7 +9,7 @@
          $dbpass = 'thisuser';
 		 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 		
-/*	 
+*/
 		 //-------------SERVER CONNECTION-------------
 		 
 		 //connection info
@@ -25,7 +25,7 @@
             die('Could not connect: ' . mysqli_error());
          }
 		 
-*/
+
       ?>
    </body>
 </html>
