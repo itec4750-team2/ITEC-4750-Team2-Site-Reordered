@@ -1,0 +1,17 @@
+{
+  "name": "ITEC-4750-Team2-Site-Reordered",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
