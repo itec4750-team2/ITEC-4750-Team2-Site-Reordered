@@ -35,13 +35,20 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 							<tr><th>Student Name</th><td><?php echo  $FName. ' ' . $LName;?></td></tr>
 							<tr><th>Student ID </th><td><?php echo $StID;?></td></tr>
 							<tr><th>Email</th><td><?php echo '<a href="mailto:' . $Email.'">' . $Email . '</a>';?></td></tr>
+							</table>
+							<br/>
+							<br/>	
+				  <?php } ?><!-- Ends student foreach -->  
 							<!-- ++++ Change: Link added to update student profile info. 9/9 KM ++++ -->
 							<!-------------------- Update Student Profile Link ------------------->
 							<!---- Should be enhanced visually maybe an image button like dashboard ? --> 
-							<tr><th><?php echo '<a href="../_facultyPages/update_student.php?&stid='.$StID.'">Update Profile</a>';?></th><td></td></tr>
+							<span>
+								<?php echo '<a href="../_facultyPages/update_student.php?&stid='.$StID.'"><img class ="med_icon" src="../_images/person_edit.png" alt="Edit Profile"></a>';?>
+								<br/>
+								<?php echo '<a href="../_facultyPages/update_student.php?&stid='.$StID.'">Update Student Profile</a>';?> 
+							</span>
+							<div class="clear"></div>
 							<!-------------------------------------------------------------------->
-				  <?php } ?><!-- Ends student foreach -->  
-			</table> 
 				<!-- ------------- Student Classes Info ----------->
 			<h2>Assigned Classes & Groups</h2>
 
@@ -83,7 +90,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 						echo'</td>';
 						echo '<td>'.$value['SemesterName'].' '.$value['Year'].'</td>';
 						echo '<td>'.$value['ExpDate'].'</td>';
-						echo '<td><a href="../_php/del_class_assignment.php?cid='.$value['ClassID'].'&stid='.$StID.'">Delete</a></td>'; // delete class assignment
+						echo '<td><a href="../_php/del_class_assignment.php?cid='.$value['ClassID'].'&stid='.$StID.'"><img class ="small_icon" src="../_images/delete.png" alt="Delete"></a></td>'; // delete class assignment
 					echo '</tr>';
 				}
 				?>					
@@ -101,7 +108,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 						echo '<tr>';
 							echo '<td>'.'<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">'.$value['GroupID'].'</a></td>'; // links back to group page
 							echo '<td>'.$value['GroupName'].'</td>';
-							echo '<td><a href="../_php/del_group_assignment.php?gid='.$value['GroupID'].'&stid='.$StID.'">Delete</a></td>'; // delete group assignment
+							echo '<td><a href="../_php/del_group_assignment.php?gid='.$value['GroupID'].'&stid='.$StID.'"><img class ="small_icon" src="../_images/delete.png" alt="Delete"></a></td>'; // delete group assignment
 						echo '</tr>';
 					}
 				?>		

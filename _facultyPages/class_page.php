@@ -71,16 +71,18 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_assign_do.php');
 					</table>
 					<br/>
 					<br/>
-					<table>
-						<tr>
+					
 							<?php 
 								//Update and Delete class links.
-								echo '<a href="delete_class.php?cid='.$value['ClassID'].'">'.'Delete Class </a>'; // delete class
-								echo '<br/><br/>';
-								echo '<a href="update_class.php?cid='.$value['ClassID'].'">'.'Update Class</a>'; // update class
+								echo '<span class="two"><a href="delete_class.php?cid='.$value['ClassID'].'"'.'><img class ="med_icon" src="../_images/delete.png" alt="Delete"></a>'; // delete class
+								echo '<br/><a href="delete_class.php?cid='.$value['ClassID'].'"'.'>Delete Class</a></span>';
+							?>	
+							<!-------------------------------------------------------------------->
+							<?php
+								echo '<span class="two"><a href="update_class.php?cid='.$value['ClassID'].'">'.'<img class ="med_icon" src="../_images/update.png" alt="Update"></a>'; // update class
+								echo '<br/><a href="update_class.php?cid='.$value['ClassID'].'"'.'>Update Class</a></span>';
 							?>
-						</tr>
-					</table>
+				<div class="clear"></div>
 				</div>
 				<br/>
 				<br/>
