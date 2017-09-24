@@ -14,7 +14,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
 		<div class="row">
 			<div class="col-md-6 col-centered">
 				<form action="#" method="post" class="form-horizontal" name="Password">
-					</fieldset>
+					<fieldset>
 						<!-- Current password -->
 						<div class="form-group">
 							<label class="control-label col-sm-4" for="OldPassword">Current password:</label>
