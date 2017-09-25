@@ -24,8 +24,11 @@ fieldset { background-color: #C9CED1;}
 
 legend { border: solid 1px #633393; background-color: #633393; color: #FFFFFF;  padding: 12px; }
 
-.submit{background:#633393; color: #FFFFFF; border-color:#633393;}
-.submit:hover {background-color: #42337E; border-color:#42337E;}
+.submit{background:#42337E; color: #FFFFFF; border-color:#42337E;}
+.submit:hover {background-color: #633393; border-color:#633393;}
+
+.submitMain{background:#633393; color: #FFFFFF; border-color:#633393;}
+.submitMain:hover {background-color: #42337E; border-color:#42337E;}
 
 /* NAVIGATION */
 

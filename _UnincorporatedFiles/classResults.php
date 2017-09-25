@@ -32,7 +32,7 @@ include ("config.php");
 		<a href="yoursurveys.php">Your Surveys</a>
 		<a href="createnew.php">Create New Survey</a>
 		<a href="settings.php">Settings</a>
-		<a href="facultyfeedback.php">Feedback</a>
+		<a href="facultyFeedback.php">Feedback</a>
 		<a href="logout.php">Logout</a>
 	</div>
 

@@ -71,13 +71,13 @@ td, th {border: 1px solid #dddddd;}
 .inputColor {background-color:#F5F5F5;}
 
 /* Settings */
-.submit{background:#633393; color: #FFFFFF; border-color:#633393;}
-.submit:hover {background-color: #42337E; border-color:#42337E;}
+.submit{background:#42337E; color: #FFFFFF; border-color:#42337E;}
+.submit:hover {background-color: #633393; border-color:#633393;}
 
 /* Feedback Forms */
 .feedbackBtn {background-color:#42337E; border-color:#42337E; margin-left:.5em;}
 .feedbackBtn:hover {
-	background-color: #473c75; border-color:#473c75;
+	background-color: #633393; border-color:#633393;
 }
 hr {
 	border: 0;
