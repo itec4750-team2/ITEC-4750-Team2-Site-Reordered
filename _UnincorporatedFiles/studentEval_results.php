@@ -26,7 +26,7 @@ include("input-eval.php");
 		<a href="studentDashboard.php">Home</a>
 		<a href="classes_student.php">Classes</a>
 		<a href="yoursurveys_student.php">Your Surveys</a>
-		<a href="studentfeedback.php">Feedback</a>
+		<a href="studentFeedback.php">Feedback</a>
 		<a href="logout.php">Logout</a>
 	</div>
 	<span class="pointer" onclick="openNav()">&#9776; Menu</span>

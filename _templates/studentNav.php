@@ -8,7 +8,7 @@
 		<a href="yoursurveys_student.php">Your Surveys</a>
 		<!-- <a href="createnew.php">Create New Survey</a> -->
 		<!--<a href="settings.php">Settings</a>-->
-		<a href="studentfeedback.php">Feedback</a>
+		<a href="studentFeedback.php">Feedback</a>
 		<a href="../_php/logout.php">Logout</a>
 		</div>
 		<div class="container-fluid">
