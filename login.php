@@ -1,7 +1,9 @@
 <?php
-include('_php/login_functions.php');
-include('_templates/mainHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/mainHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/login_do.php');
 ?>
+<main>
 		<div class="row">
 			<div class="col-md-5">
 				<form action="#" method="post" id="loginForm" class="form-horizontal">
@@ -24,7 +26,7 @@ include('_templates/mainHeader.php');
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-9">
 							<a href=##>Register</a> &#8226;
-							<a href="forgotpassword.php?password=forgotten">Forgot Password<a>
+							<a href="forgot_password.php?password=forgotten">Forgot Password<a>
 						</div>
 					</div>
 					<!-- Submit form  -->
@@ -33,19 +35,33 @@ include('_templates/mainHeader.php');
 							<input type="submit" value="Login" name="Login" class="btn btn-primary btn-lg submit">
 						</div>
 					</div>
-					<!-- Error Msg -->
-					<div class "errors">
-					<?php
-					include('_templates/errorBlock.php');
-					?>
-					</div>
+					<!-- ++++ Change: Removed errorBlock handled in Login_DO rather than SESSION ++++ -->
 					</fieldset>
 				</form>
+				
+					<!-- ++++ Change: Refactoring login functions ++++ -->
+					<?php 
+					// --- Calls Login_DO to handle login
+					if(isset($_POST['Login']) && (!empty($_POST['Email'])) && (!empty($_POST['Pword']))){
+						$email = $con->real_escape_string($_POST['Email']);
+						$password = $con->real_escape_string( $_POST['Pword']);
+						
+						$userdo = new Login_DO();		
+						$user=$userdo->getUser($email);  // check for user		
+						$Subj = $user['LoginID']; 
+
+						if(!empty($Subj)){
+							$signin = new Login_DO();
+							$accts=$signin->signIn($Subj, $password);
+						}				
+					}	
+					// --- Msg for Empty Email or Password --->
+					if(isset($POST['Login']) && ((empty($_POST['Email'])) || (empty($_POST['Pword'])))){
+						echo '<div class="error">Please Enter Email & Password.</div>';
+					}
+					?>				
 			</div>
-		</div>
-	<!-- End container div that started in mainHeader.php -->
+		</div> <!-- End container div that started in mainHeader.php -->
 	</div>
-		<div class = 'clear'><?php include('_templates/mainNav.php');?></div>
-	<!-- End main that started in mainHeader.php -->
-	</main>
+</main>	<!-- End main -->
 <?php include('_templates/footer.php');?>
