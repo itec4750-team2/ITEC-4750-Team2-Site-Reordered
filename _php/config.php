@@ -3,7 +3,7 @@
 	 // ++++ Change: Added $server variable to make it easy to change reference paths.
 	$server ="//{$_SERVER['SERVER_NAME']}";	
 		 //-----------LOCAL CONNECTION-------------
-	
+	/*
 		 //connection info
          	 $dbhost = 'localhost:3306';
 		 $dbname = 'mga_db'; 
@@ -11,15 +11,15 @@
           	 $dbpass = 'thisuser';
 
 		 //-------------------------------------------
-
+	 */
 	 //-------------SERVER CONNECTION-------------
-		/* //connection info
+		 //connection info
 	 $dbhost = '45.55.170.45';
 	 $dbname = 'mga_db'; 
 	 $dbuser = 'katie';
 	 $dbpass = 'katiepass';
-		 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-		 */
+	
+		
 	 //connect to db
 	 $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname); 
 	 //-------------------------------------------
