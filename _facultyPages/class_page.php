@@ -82,6 +82,10 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_assign_do.php');
 								echo '<span class="two"><a href="update_class.php?cid='.$value['ClassID'].'">'.'<img class ="med_icon" src="../_images/update.png" alt="Update"></a>'; // update class
 								echo '<br/><a href="update_class.php?cid='.$value['ClassID'].'"'.'>Update Class</a></span>';
 							?>
+							<?php // ++++ Change: Add 'Add Students' Button 9/29 KM ++++
+								echo '<span class="two"><a href="add_students.php?cid='.$value['ClassID'].'">'.'<img class ="med_icon" src="../_images/person_add.png" alt="Update"></a>'; // update class
+								echo '<br/><a href="add_students.php?cid='.$value['ClassID'].'"'.'>Add Students</a></span>';
+							?>
 				<div class="clear"></div>
 				</div>
 				<br/>

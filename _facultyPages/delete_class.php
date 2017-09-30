@@ -46,18 +46,19 @@
 			<?php 
 				// -----------------Delete Class --------------------
 				if(isset($_POST['DeleteClass'])){
-					$newClass = new Classes(array(
+					$delClass = new Classes(array(
 						'LoginID' => $_SESSION['LoginID'],
 						'ClassID' => $ClassID,
 						'ClassNO' => $ClassNO,
 						'ClassName' => $ClassName,
 						'SemesterID' => $SemesterID,
 						'ExpDate' => $ExpDate));
-					$newClass->deleteClass();
-					if($newClass){
+					$delClass->deleteClass();
+					if($delClass){
 						echo '<br/>Success! <br/>You have deleted '.$value['ClassID']. ' ' .$value['ClassName'];
 						echo '<br/>Do not resubmit the form.</br>';
-					}
+						echo "<script>window.open('../_facultyPages/classes.php','_self') </script>";
+						}
 				}
 		}//End If !empty LoginID & ClassID
 		else{
