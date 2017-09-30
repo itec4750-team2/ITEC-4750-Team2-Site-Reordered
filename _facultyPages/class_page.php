@@ -71,40 +71,48 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_assign_do.php');
 					</table>
 					<br/>
 					<br/>
-					<table>
-						<tr>
+					
 							<?php 
 								//Update and Delete class links.
-								echo '<a href="delete_class.php?cid='.$value['ClassID'].'">'.'Delete Class </a>'; // delete class
-								echo '<br/><br/>';
-								echo '<a href="update_class.php?cid='.$value['ClassID'].'">'.'Update Class</a>'; // update class
+								echo '<span class="two"><a href="delete_class.php?cid='.$value['ClassID'].'"'.'><img class ="med_icon" src="../_images/delete.png" alt="Delete"></a>'; // delete class
+								echo '<br/><a href="delete_class.php?cid='.$value['ClassID'].'"'.'>Delete Class</a></span>';
+							?>	
+							<!-------------------------------------------------------------------->
+							<?php
+								echo '<span class="two"><a href="update_class.php?cid='.$value['ClassID'].'">'.'<img class ="med_icon" src="../_images/update.png" alt="Update"></a>'; // update class
+								echo '<br/><a href="update_class.php?cid='.$value['ClassID'].'"'.'>Update Class</a></span>';
 							?>
-						</tr>
-					</table>
+				<div class="clear"></div>
 				</div>
 				<br/>
 				<br/>
-				<table>
-					<!-- ++++ Change: Took out student's id and added group 9/5 KM ++++ -->
-					<th>Student Name</th><th>Email</th><th>Group</th></tr>
-					<?php 
-						// Lists student's assigned to a class.
-						// ++++ Change: Moved to class_assign_do from stu_do 9/5 KM ++++
-						$cado = new CA_DO();
-						$rows=$cado->listClassStuds($ClassID);
-						foreach ($rows as $value){
-							echo '<tr>';
-								// ++++ Change: Took out id & linked student_mgt_pg to Name 9/5 KM ++++ 
-								echo '<td>' . '<a href="stud_mgmt_pg.php?stid=' . $value['LoginID'] . '">' . $value['FName'] . ' ' . $value['LName'] . '</a></td>'; // links to student_mgt_pg for this student
-								// ++++ Change: Added mail to email link 9/5 KM ++++ 
-								echo '<td>' . '<a href="mailto:' . $value['Email'].'">' . $value['Email'] . '</a></td>';
-								// ++++ Change: Added group linked to class_group stub (to be developed soon) 9/5 KM ++++ 
-								echo '<td>' . '<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">' . $value['GroupName'] . '</a></td>'; // links to group page for this group
-							echo '</tr>';
-						}	
-					?>
-				</table>
-		<?php }?>	
+				<?php 			
+					// Lists student's assigned to a class.
+					// ++++ Change: Moved to class_assign_do from stu_do 9/5 KM ++++
+					// ++++ Change: Added if statement to hide table if empty 9/24 KM ++++
+					$cado = new CA_DO();
+					$rows=$cado->listClassStuds($ClassID);
+					if(!empty($rows)){
+				?>
+					<table>
+						<!-- ++++ Change: Took out student's id and added group 9/5 KM ++++ -->
+						<th>Student Name</th><th>Email</th><th>Group</th></tr>
+						<?php 
+				
+							foreach ($rows as $value){
+								echo '<tr>';
+									// ++++ Change: Took out id & linked student_mgt_pg to Name 9/5 KM ++++ 
+									echo '<td>' . '<a href="stud_mgmt_pg.php?stid=' . $value['LoginID'] . '">' . $value['FName'] . ' ' . $value['LName'] . '</a></td>'; // links to student_mgt_pg for this student
+									// ++++ Change: Added mail to email link 9/5 KM ++++ 
+									echo '<td>' . '<a href="mailto:' . $value['Email'].'">' . $value['Email'] . '</a></td>';
+									// ++++ Change: Added group linked to class_group stub (to be developed soon) 9/5 KM ++++ 
+									echo '<td>' . '<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">' . $value['GroupName'] . '</a></td>'; // links to group page for this group
+								echo '</tr>';
+							}	
+						?>
+					</table>
+			<?php } // End IF cado ?>
+			<?php }	//End If LoginID && ClassID ?> 
 	</main>
 </div><!--End Wrapper -->
 <?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
