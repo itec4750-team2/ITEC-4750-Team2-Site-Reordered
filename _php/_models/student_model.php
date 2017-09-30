@@ -11,8 +11,6 @@ private $Pword;
 private $Role;
 private $FName;
 private $LName; 
-//private $SemesterName;
-//private $Year;
 private $do;
 
 public function __get($property){
@@ -28,8 +26,6 @@ if(isset($arr["StID"])){
 	$this->Role = $arr["Role"];
 	$this->FName = $arr["FName"];
 	$this->LName= $arr['LName'];
-//	$this->SemesterName = $arr['SemesterName'];
-//	$this->Year = $arr['Year'];
 	$this->do = new Class_DO();
 }}
 
