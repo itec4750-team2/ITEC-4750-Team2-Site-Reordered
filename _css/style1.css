@@ -27,8 +27,6 @@ header { background-color: #FFFFFF; width: 100%; margin:0px auto;}
 /* POINTER */
 .pointer { font-size:40px; cursor: pointer; float: left; margin-left: 15px; margin-top: 10px; }
 
-
-
 /* SIDE NAV */
 .sidenav { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #42337E;
 	overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
@@ -39,7 +37,6 @@ header { background-color: #FFFFFF; width: 100%; margin:0px auto;}
 .sidenav a:hover, .offcanvas a:focus{ color: #f1f1f1; }
 
 .sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 36px; margin-left: 50px; }
-
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -52,23 +49,27 @@ div.two label { font-weight:bold; float: left; width: 100px; text-align: right; 
 	position: relative;}
 div.two input, div.two select{ float: left; width: 150px; text-align: left; }
 div.two select { width: 157px; }
+span.two {width: 15%; float: left;}
 #submit{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
 	font-size:12px; font-weight:bold;color: #FFFFFF; }
 #continue{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
 	font-size:12px; font-weight:bold;color: #FFFFFF; }
 #submitEval{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
 	font-size:12px; font-weight:bold;color: #FFFFFF; }
+.med_icon{ width:65px; height:65px; }	
+.small_icon{ width:25px; height:25px; }
 .indent { margin-left: 30px; transition: margin-left .5s;}
 .center { text-align: center; }
-.clear {clear: both; }
+.clear { clear: both; }
 .underline {text-decoration: underline; }
 . {text-decoration: bold; }
 div.dashboardIcon {text-align:center; }
 #settings {  display:table; text-align:right; padding-left:26%;  }
 /*table {font-family: arial, sans-serif; border-collapse: collapse; width: 100%; }
 td, th {border: 1px solid #dddddd; text-align: left; padding: 2px; }*/
-td, th {border: 1px solid #dddddd;}
+td, th {border: 1px solid #dddddd; padding:4px;}
 .inputColor {background-color:#F5F5F5;}
+
 
 /* Settings */
 .submit{background:#42337E; color: #FFFFFF; border-color:#42337E;}

@@ -35,54 +35,72 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 							<tr><th>Student Name</th><td><?php echo  $FName. ' ' . $LName;?></td></tr>
 							<tr><th>Student ID </th><td><?php echo $StID;?></td></tr>
 							<tr><th>Email</th><td><?php echo '<a href="mailto:' . $Email.'">' . $Email . '</a>';?></td></tr>
+							</table>
+							<br/>
+							<br/>	
 				  <?php } ?><!-- Ends student foreach -->  
-			</table> 
+							<!-- ++++ Change: Link added to update student profile info. 9/9 KM ++++ -->
+							<!-------------------- Update Student Profile Link ------------------->
+							<!---- Should be enhanced visually maybe an image button like dashboard ? --> 
+							<span>
+								<?php echo '<a href="../_facultyPages/update_student.php?&stid='.$StID.'"><img class ="med_icon" src="../_images/person_edit.png" alt="Edit Profile"></a>';?>
+								<br/>
+								<?php echo '<a href="../_facultyPages/update_student.php?&stid='.$StID.'">Update Student Profile</a>';?> 
+							</span>
+							<div class="clear"></div>
+							<!-------------------------------------------------------------------->
 				<!-- ------------- Student Classes Info ----------->
 			<h2>Assigned Classes & Groups</h2>
-
-			<table>
-				<tr>
-					<th>Class ID</th>
-					<th>Class Number</th>
-					<th>Class Name</th>
-					<th>Instructor</th>
-					<th>Semester</th>
-					<th>Class Expire Date</th>
-					<th></th>
-				</tr>
-
-				<?php
+			<?php	
 				//calls class data object and loads table data by LoginID
 				$classdo = new Class_DO();
 				$rows=$classdo->loadByLoginID($StID);
-				//builds table with class data	
-				foreach ($rows as $value){
-					echo '<tr>';
-						echo '<td><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a></td>'; // links back to class_page.php
-						echo '<td>'.$value['ClassNO'].'</td>';
-						echo '<td>'.$value['ClassName'].'</td>';
-						echo '<td>';
-							$instr = new CA_DO();
-							$facs=$instr->listClassInstrs($value['ClassID']);
-							$i = 0;
-							foreach ($facs as $val){
-								// ++++ Change: Added | for multiple instructors 9/9 KM ++++
-								if($i == 0){
-									echo $val['FName']. ' ' .$val['LName'];
-								}
-								else{
-									echo ' | '. $val['FName']. ' ' . $val['LName'];
-								}
-								$i++;	
-							}
-						echo'</td>';
-						echo '<td>'.$value['SemesterName'].' '.$value['Year'].'</td>';
-						echo '<td>'.$value['ExpDate'].'</td>';
-						echo '<td><a href="../_php/del_class_assignment.php?cid='.$value['ClassID'].'&stid='.$StID.'">Delete</a></td>'; // delete class assignment
-					echo '</tr>';
+				// ++++ Change: Added if statement to hide table if empty 9/24 KM ++++
+				if(!empty($rows)){
+					?>		
+					<table>
+						<tr>
+							<th>Class ID</th>
+							<th>Class Number</th>
+							<th>Class Name</th>
+							<th>Instructor</th>
+							<th>Semester</th>
+							<th>Class Expire Date</th>
+							<th></th>
+						</tr>
+
+						<?php
+
+						//builds table with class data	
+						foreach ($rows as $value){
+							echo '<tr>';
+								echo '<td><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a></td>'; // links back to class_page.php
+								echo '<td>'.$value['ClassNO'].'</td>';
+								echo '<td>'.$value['ClassName'].'</td>';
+								echo '<td>';
+									$instr = new CA_DO();
+									$facs=$instr->listClassInstrs($value['ClassID']);
+									$i = 0;
+									foreach ($facs as $val){
+										// ++++ Change: Added | for multiple instructors 9/9 KM ++++
+										if($i == 0){
+											echo $val['FName']. ' ' .$val['LName'];
+										}
+										else{
+											echo ' | '. $val['FName']. ' ' . $val['LName'];
+										}
+										$i++;	
+									}
+								echo'</td>';
+								echo '<td>'.$value['SemesterName'].' '.$value['Year'].'</td>';
+								echo '<td>'.$value['ExpDate'].'</td>';
+								echo '<td><a href="../_php/del_class_assignment.php?cid='.$value['ClassID'].'&stid='.$StID.'"><img class ="small_icon" src="../_images/delete.png" alt="Delete"></a></td>'; // delete class assignment
+							echo '</tr>';	
+							echo '</table>';
+						}
 				}
 				?>					
-			</table>
+		
 			<br/>
 				<!-- ------------- Student Group Info ----------->
 			<table>
@@ -96,14 +114,14 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 						echo '<tr>';
 							echo '<td>'.'<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">'.$value['GroupID'].'</a></td>'; // links back to group page
 							echo '<td>'.$value['GroupName'].'</td>';
-							echo '<td><a href="../_php/del_group_assignment.php?gid='.$value['GroupID'].'&stid='.$StID.'">Delete</a></td>'; // delete group assignment
+							echo '<td><a href="../_php/del_group_assignment.php?gid='.$value['GroupID'].'&stid='.$StID.'"><img class ="small_icon" src="../_images/delete.png" alt="Delete"></a></td>'; // delete group assignment
 						echo '</tr>';
 					}
 				?>		
 			</table>
 			<br/>
 			<div>
-				<!-- ------------- Group Assignment ----------->				
+				<!-- ------------- Group Assignment Selection ----------->				
 				<?php 
 					$gadd = new Drop_DO();
 					$rows=$gadd->allGroups();
@@ -117,7 +135,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 				<input type="submit" value="Assign Group" name="ANewGroup" id="ANewGroup">
 			</div>
 			<br/>	
-				<!-- ------------- Class Assignment ----------->
+				<!-- ------------- Class Assignment Selection ----------->
 			<div>
 				<?php 
 				$cadd = new Drop_DO();
@@ -132,8 +150,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 				<input type="submit" value="Assign Class" name="ANewClass" id="ANewClass">
 			</div>
 			</form>
-				<!-- ------------- Add Class Assignments ----------->
-			
+				<!-- ------------- Add Class Assignments ----------->	
 				<?php
 				$errorMsg ='';
 				$newClassA = new CA_DO();
@@ -147,14 +164,13 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 				}
 				else if(isset($_POST['ANewClass']) && $_POST['NewClassID']=='none'){
 					$errorMsg = 'Please select a class.'; 
-					echo $errorMsg;
+					echo '<div class = "error">'.$errorMsg.'</div>';
 				}
 				?>
 				<!-- ------------- Add Group Assignments ----------->
 				<?php
 				$newGroupA = new GA_DO();
 				$errorMsg2 ='';
-
 				if(isset($_POST['ANewGroup']) && $_POST['NewGroupID']!='none'){	
 					$newGroupA = new Group_Assign(array( 
 					'StID' => $StID, // Student
@@ -165,7 +181,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 				}
 				else if(isset($_POST['ANewGroup']) && $_POST['NewGroupID']=='none'){
 					$errorMsg2 = 'Please select a group.'; 
-					echo $errorMsg2;
+					echo '<div class = "error">'.$errorMsg2.'</div>';
 				}
 			} // End if StID not empty
 			else{
