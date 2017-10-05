@@ -1,7 +1,10 @@
 <?php
-include('../_templates/studentHeader.php');
-include('../_templates/studentNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');
 ?>
+
+<html>
+<body>
 
 	<div class="wrapper">
 	<!-- Main Content Section-->
@@ -25,6 +28,12 @@ include('../_templates/studentNav.php');
 				</a>
 			</div>
 			<div class="dashboardIcon">
+				<a href="studentSettings.php">
+					<img src="../_images/settings.png" alt="Settings" />
+					<figcaption>Settings</figcaption>
+				</a>
+			</div>
+			<div class="dashboardIcon">
 				<a href="studentFeedback.php">
 					<img src="../_images/notebook-1.png" alt="Feedback" />
 					<figcaption>Feedback</figcaption>
@@ -34,4 +43,8 @@ include('../_templates/studentNav.php');
 
 		</div>
 	</div>
-<?php include('_templates/footer.php');?>
+	<footer>
+			
+	</footer>
+</body>
+</html>

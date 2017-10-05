@@ -1,5 +1,8 @@
 <?php
-include('../_php/session.php');
+
+//Change: Updated for consistant paths.
+include($_SERVER['DOCUMENT_ROOT'].'/_php/session.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 
 //redirect to student dashboard
 if(isset($_SESSION['Role'])){
@@ -21,19 +24,22 @@ else{ echo "Role not defined.";}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>			<!-- Builds basis of site. Sets style1 as the CSS for this page. -->
+<head><!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
 	<title>Knightly Knowledge - Student Dashboard</title>
-	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
-	<link href="../_css/style1.css" rel="stylesheet" />
-	<script src="../_js/dashboard.js" type="text/javascript"></script>
+	<?php echo '<link rel="stylesheet" href="'.$server.'/_css/bootstrap.min.css" />';?>
+	<?php echo '<link rel="stylesheet" href="'.$server.'/_css/style1.css" />';?>
+	<?php echo '<script src="'.$server.'/_js/dashboard.js" type ="text/javascript"></script>';?>
 </head>
 <body>
-	<a href="studentDashboard.php">
-		<img class="logo" src="../_images/knight.jpg" alt="MGA Knight Logo" />
-	</a>
-
+	<header>
+		<a href="studentDashboard.php">
+			<?php echo '<img class="logo" src="'.$server.'/_images/knight.jpg" alt="Knight" />'; ?>
+		</a>
+	</header>
+	
 	<div id="purpleBar">
-<span class="lead">Knightly Knowledge - <a href="studentDashboard.php" style="color: #FFFFFF">Student Dashboard</a>
-</div>
+		<span class="lead">Knightly Knowledge - Student Dashboard</a>
+	</div>
+</body>
 <?php ?>

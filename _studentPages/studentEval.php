@@ -1,7 +1,7 @@
 <?php 
-include('../_templates/studentHeader2.php');
-include('../_templates/studentNav.php');
-include('../_php/config.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentHeader2.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 ?>
 <!--
 --- -- --- WORK FLAG

@@ -24,6 +24,9 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
 						<th>Class Name</th>
 						<th>Semester</th>
 						<th>Class Expire Date</th>
+						<!-- ++++ Change: Added Leave Class 9/29 KM ++++-->
+						<th>Delete <br/> Class</th>
+						<th>Update <br/> Class</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -32,7 +35,13 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
 							echo '<td><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a></td>'; // link to class_page
 							echo '<td>'.$value['ClassNO'].'</td><td>'.$value['ClassName'].'</td>';
 							echo '<td>'.$value['SemesterName']. ' '.$value['Year'].'</td>';
-							echo '<td>'. $value['ExpDate'].'</td></tr>';
+							echo '<td>'. $value['ExpDate'].'</td>';
+							// -- ++++ Change: Added Delete Class & Update Class Buttons 9/29 KM ++++
+							echo '<td><a href="../_facultyPages/delete_class.php?cid='.$value['ClassID'];
+							echo 	'"><img class ="small_icon" src="../_images/delete.png" alt="Delete Class"></a></td>'; // delete class
+							echo '<td><a href="../_facultyPages/update_class.php?cid='.$value['ClassID'];
+							echo 	'"><img class ="small_icon" src="../_images/update.png" alt="Update Class"></a></td>'; // update class
+							echo '</tr>';
 						}
 				echo '</tbody></table>';
 					} // End if faculty logged in.
