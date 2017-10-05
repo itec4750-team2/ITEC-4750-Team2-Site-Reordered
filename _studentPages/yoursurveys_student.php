@@ -1,6 +1,6 @@
 <?php
-include('../_templates/studentHeader.php');
-include('../_templates/studentNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');
 ?>
 
 <h2 class="center">Your Surveys</h2>
@@ -19,7 +19,7 @@ include('../_templates/studentNav.php');
 				<tbody>
 					<tr>
 						<!-- Row 2 -->
-						<td><a href="#">Group Member Evaluation</a></td>
+						<td><a href="studentEval.php">1Group Member Evaluation</a></td>
 						<td>ONLINE Senior Capstone</td>
 						<td>Spring 2017</td>
 					</tr>

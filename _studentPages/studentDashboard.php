@@ -1,7 +1,10 @@
 <?php
-include('../_templates/studentHeader.php');
-include('../_templates/studentNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');
 ?>
+
+<html>
+<body>
 
 	<div class="wrapper">
 	<!-- Main Content Section-->
@@ -34,4 +37,8 @@ include('../_templates/studentNav.php');
 
 		</div>
 	</div>
-<?php include('_templates/footer.php');?>
+	<footer>
+			
+	</footer>
+</body>
+</html>
