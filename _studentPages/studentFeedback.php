@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 		<link href="../_css/style1.css" rel="stylesheet" />
 		<script src="../_js/dashboard.js" type="text/javascript"></script>
-		<script src="../_js/sitescripts.js" type="text/javascript"></script>
+		<script src="../_js/validateFeedbackForm.js" type="text/javascript"></script>
 	</head>
 
 	<body>
@@ -22,7 +22,7 @@
 			- <a href="classes.php" style="color: #FFFFFF">Classes</a></span>
 		</div>
 
-		<?php include('../_templates/studentNav.php');?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');?>
 
 		<div class="container-fluid" id="main">
 			<div class="row">
@@ -31,7 +31,7 @@
 					<h4 class="center"><b>Please leave your feedback on this tool, as this allows us to assess its usefulness.</b></h4>
 					<hr>
 					<br>
-					<form action="mailto:john.doe@imagination.biz" method="post" onsubmit="return validateForm();">
+					<form name="feedbackForm" action="mailto:john.doe@imagination.biz" method="post" onsubmit="return validateForm();">
 
 						<fieldset class="form-group">
 							<label for="feedbackRadio">Were you able to access the information you required?</label>
@@ -52,17 +52,22 @@
 						<hr>
 						<br>
 
+						<!-- these should eventually be populated via a table from the database imo.  
+						  -- Updating hard coded entries for now -- MM 10/04 -->
+
 						<label for="feedbackSelection">To whom should your feedback be sent?</label>
 						<select class="form-control">
 							<option value="Dr. Scott Spangler">Dr. Scott Spangler (Project Stakeholder)</option>
-							<option value="Deodrick Baugh">Deodrick Baugh (Project Captain)</option>
-							<option value="Alex Bos">Alex Bos (HTML Team)</option>
-							<option value="Ronak Brahmbhatt">Ronak Brahmbhatt (Database Team)</option>
-							<option value="Theresa Brown">Theresa Brown (HTML Team)</option>
-							<option value="Jack Campbell">Jack Campbell (HTML Team)</option>
-							<option value="Colby Carr">Colby Carr (HTML Coordinator)</option>
-							<option value="Jared Dorminey">Jared Dorminey (HTML Team)</option>
-							<option value="Jamie Hampton">Jamie Hampton (Database Team)</option>
+							<option value="Angela Ivey">Angela Ivey (Project Captain)</option>
+							<option value="Adam Hudnall">Adam Hudnall (Project Manager)</option>
+							<option value="Sarah Goodman">Sarah Goodman (Development; HTML/CSS)</option>
+							<option value="Katie Markham">Katie Markham (Development; Database/PHP)</option>
+							<option value="Joseph Dent">Joseph Dent (Development; Database/PHP)</option>
+							<option value="Joel Gregory">Joel Gregory (Development; Database/PHP)</option>
+							<option value="Michael Matthews">Michael Matthews (Development; HTML/CSS)</option>
+							<option value="Thomas Haastrup">Thomas Haastrup (Research, Administrative)</option>
+							<option value="Molly Hester">Molly Hester (Research, Administrative)</option>
+							<option value="Andrew Dixon">Andrew Dixon (Research, Administrative)</option>
 							<option value="All">All team members.</option>
 						</select>
 						<br>
@@ -106,7 +111,7 @@
 						</div>
 						<div class="form-group">
 							<label for="myEmail">*E-mail: </label>
-							<input type="text" name="myLname" id="myLname" class="form-control">
+							<input type="text" name="myEmail" id="myEmail" class="form-control">
 						</div>
 						<div class="form-group">
 							<label for="myPhone">Phone: </label>
@@ -122,7 +127,7 @@
 							<input type="submit" id="mySubmit" class="btn btn-primary btn-lg feedbackBtn">
 							<input type="reset" id="reset" class="btn btn-primary btn-lg feedbackBtn">
 						</div>
-						</br>
+						<br>
 					</form>
 				</div>
 			</div>
