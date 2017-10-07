@@ -21,7 +21,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/student_model.php');
 			<br/>
 			<?php 
 				//--------------------------------- Include update-profile ---------------------------->	
-				include($_SERVER['DOCUMENT_ROOT'].'/_templates/updateProfile.php');
+				include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updateProfile.php');
 						
 				if(isset($_POST['DeleteProfile'])){				
 				$dProfile = new Profile(array(	
