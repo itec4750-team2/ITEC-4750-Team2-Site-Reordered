@@ -6,8 +6,8 @@
 --- Currently displays the students assigned to a group.
 --- Mostly to check link from class_page.php (Further Development Soon)include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php') 
 -- */
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php'); 
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php'); 
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/group_assign_do.php');	
 ?>	
@@ -38,6 +38,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/group_assign_do.php');
 		?>
 	</main>
 </div><!-- End Wrapper -->	
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
 </html>

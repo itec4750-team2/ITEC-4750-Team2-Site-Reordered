@@ -1,7 +1,7 @@
 <?php
 // ++++ Change: Added All Students Page 9/24 KM ++++
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/stu_do.php');
 ?>
 <h2 class="center">All Students</h2>
@@ -15,6 +15,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/stu_do.php');
 	<!-- ++++ Change: Created module for reuse 10/1 KM ++++ -->
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/all_student_list.php');?>
 </div>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
 </html>

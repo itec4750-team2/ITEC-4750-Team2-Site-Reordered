@@ -1,7 +1,7 @@
 <?php
 // ++++ Change: Added My Students Page 9/24 KM ++++
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/stu_do.php');
 ?>
 
@@ -46,7 +46,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/stu_do.php');
 	</div>
 </div>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 
 </body>
 </html>

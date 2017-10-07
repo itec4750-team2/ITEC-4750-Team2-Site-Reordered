@@ -1,7 +1,7 @@
 <?php 
 // ++++ Change: Adjusted indentation 9/8 KM ++++
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
 $P='classes';	
 ?>
@@ -50,6 +50,6 @@ $P='classes';
 		</table>	
 	</main>
 </div> <!--End Wrapper-->
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
 </html>
