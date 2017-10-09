@@ -1,9 +1,9 @@
 <?php
 // ++++ Change: Adjusted indentation 9/8 KM ++++
-include("../_php/config.php");
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 
 class Group_Assign{
-	private $StID; //Student
+	private $Subj; //Student or Faculty
 	private $LoginID; // User
 	private $GroupID;
 	private $do;
@@ -15,8 +15,8 @@ class Group_Assign{
 	}
 
 	public function __construct($arr){
-		if(isset($arr["StID"])){
-			$this->StID = $arr["StID"];	// Student
+		if(isset($arr["Subj"])){
+			$this->Subj = $arr["Subj"];	// Student or Faculty
 			$this->LoginID = $arr["LoginID"]; // User
 			$this->GroupID = $arr["GroupID"];
 			$this->do = new GA_DO();
@@ -25,7 +25,7 @@ class Group_Assign{
 
 	private function all_params(){
 		$params = array(
-		"StID" => $this->StID, // Student
+		"Subj" => $this->Subj, // Student or Faculty
 		"LoginID" => $this->LoginID, // User
 		"GroupID" => $this->GroupID);
 		return $params;

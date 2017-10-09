@@ -1,7 +1,7 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/stu_do.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/student_model.php');
 ?>
@@ -21,7 +21,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/student_model.php');
 			<br/>
 			<?php 
 				//--------------------------------- Include update-profile ---------------------------->	
-				include($_SERVER['DOCUMENT_ROOT'].'/_templates/updateProfile.php');
+				include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updateProfile.php');
 						
 				if(isset($_POST['DeleteProfile'])){				
 				$dProfile = new Profile(array(	
@@ -52,6 +52,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/student_model.php');
 	</main>
 </div><!--End wrapper-->
 	
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
 </html>

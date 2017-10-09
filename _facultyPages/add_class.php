@@ -1,11 +1,10 @@
 <?php 
-// ++++ Change: Adjusted indentation 9/8 KM ++++
 /* --
 --- -- --- WORK FLAG
 ---This page still needs work. Maybe use a <datalist> populated with classes offered. -- 9/8 KM
 --- -- */
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');	
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
@@ -74,6 +73,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 		</form>
 	</main>
 </div>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 ?>
 <!--
 --- -- --- WORK FLAG
@@ -40,11 +40,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
 			</div>
 		</div>
 	</div>
-
-	<footer>
-
-	</footer>
-
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
 </html>
 

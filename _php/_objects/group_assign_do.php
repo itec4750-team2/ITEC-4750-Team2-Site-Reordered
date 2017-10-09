@@ -6,7 +6,7 @@
 		public function assignGroup($values){
 			$LoginID=$values['LoginID'];	
 			if(!empty($values)){
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				//  -- Check that user is faculty
 				$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 				$getRole = mysqli_query($con, $checkrole);
@@ -17,7 +17,7 @@
 							// -- Create New Class Assignment
 							$sql = "INSERT INTO group_assign(GroupID, LoginID) VALUES (?,?);";
 								$stmt = $con->prepare($sql);
-								$stmt->bind_param("si", $values['GroupID'], $values['StID']);
+								$stmt->bind_param("si", $values['GroupID'], $values['Subj']);
 								$stmt->execute();
 								$stmt->close();
 						}
@@ -35,14 +35,14 @@
 	//Lists All Students Assigned to a Group
 		public function listGroupStuds($GroupID){
 			if(!empty($GroupID)){
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				// ++++ change added group info to class_page. Updated query for group assigned 9/5 KM++++
 				$sql = "SELECT login.LoginID, class.ClassID, class.ClassNO, class.ClassName, login.LName, login.FName, login.Email, cgroup.GroupName, cgroup.GroupID
 					FROM(((class
 					INNER JOIN cgroup ON class.ClassID=cgroup.ClassID)
 					INNER JOIN group_assign ON cgroup.GroupID=group_assign.GroupID)
 					INNER JOIN login ON group_assign.LoginID=login.LoginID)
-					WHERE login.Role = 'Student' && group_assign.GroupID='$GroupID'
+					WHERE login.Role = 'Student' && group_assign.GroupID='$GroupID' 
 					ORDER BY login.LName";
 				// ++++ Change: Added table order to query 9/6 KM ++++
 				$getGroups = mysqli_query($con, $sql);
@@ -54,17 +54,27 @@
 				return $all_rows;
 			}
 		}
-	//Lists all groups for a student	
-	public function groupsByLogin($LoginID){
+	//Lists all groups or groups by selected class for a student	
+	public function groupsByLogin($LoginID, $ClassID){
 		if(!empty($LoginID)){
-			include("../_php/config.php");
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+			if($ClassID == 'all'){
+				$sql = "SELECT cgroup.GroupName, cgroup.GroupID
+					FROM ((cgroup
+					INNER JOIN group_assign ON cgroup.GroupID=group_assign.GroupID)
+					INNER JOIN login ON group_assign.LoginID = login.LoginID)
+					WHERE login.Role = 'Student' && login.LoginID='$LoginID'
+					ORDER BY cgroup.GroupID";
+			}
+			if($ClassID != 'all'){
 			//Load by LoginID
 			$sql = "SELECT cgroup.GroupName, cgroup.GroupID
 				FROM ((cgroup
 				INNER JOIN group_assign ON cgroup.GroupID=group_assign.GroupID)
 				INNER JOIN login ON group_assign.LoginID = login.LoginID)
-				WHERE login.Role = 'Student' && login.LoginID='$LoginID'
-				ORDER BY cgroup.GroupID";
+				WHERE login.Role = 'Student' && login.LoginID='$LoginID'&& cgroup.ClassID='$ClassID'
+				ORDER BY cgroup.GroupName";
+			}
 			// ++++ Change: Added table order to query 9/6 KM ++++			
 			$getGroups = mysqli_query($con, $sql); 
 			// output data of each row
@@ -80,7 +90,7 @@
 	public function delGroupA($values){
 		if(!empty($values)){
 			$LoginID = $values['LoginID'];
-			include("../_php/config.php");
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 			// -- Check that user is faculty
 			$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 			$getRole = mysqli_query($con, $checkrole);
@@ -91,7 +101,7 @@
 						// -- Delete Class
 						$sql = "DELETE FROM group_assign WHERE GroupID = ? && LoginID = ?;";
 							$stmt = $con->prepare($sql);
-							$stmt->bind_param("ii", $values['GroupID'], $values['StID']);
+							$stmt->bind_param("ii", $values['GroupID'], $values['Subj']);
 							$stmt->execute();
 							$stmt->close();
 					}
