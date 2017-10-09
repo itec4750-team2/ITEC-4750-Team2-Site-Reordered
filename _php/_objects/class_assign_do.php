@@ -8,7 +8,7 @@ class CA_DO{
 		public function assignClass($values){
 			$LoginID=$values['LoginID'];	
 			if(!empty($values)){
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				//  -- Check that user is faculty
 				$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 				$getRole = mysqli_query($con, $checkrole);
@@ -37,17 +37,16 @@ class CA_DO{
 // -- Read
 	// ++++ Change: Moved to class_assign_do from stu_do 9/5 KM ++++
 	//Lists All Students assigned to a class
-		public function listClassStuds($ClassID){
+		public function listClassStuds($ClassID){			
 			if(!empty($ClassID)){
-				include("../_php/config.php");
-				// ++++ Change: Added group info to class_page. Updated query for group assigned 9/5 KM ++++
-				$sql = "SELECT login.LoginID, class.ClassID, class.ClassNO, class.ClassName, login.LName, login.FName, login.Email, cgroup.GroupName, cgroup.GroupID
-					FROM(((class
-					INNER JOIN cgroup ON class.ClassID=cgroup.ClassID)
-					INNER JOIN group_assign ON cgroup.GroupID=group_assign.GroupID)
-					INNER JOIN login ON group_assign.LoginID=login.LoginID)
+
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+				$sql = "SELECT login.LoginID, class.ClassID, class.ClassNO, class.ClassName, login.LName, login.FName, login.Email
+					FROM((class
+					INNER JOIN class_assign ON class_assign.ClassID=class.ClassID)
+					INNER JOIN login ON class_assign.LoginID=login.LoginID)
 					WHERE login.Role = 'Student' && class.ClassID='$ClassID'	
-					ORDER BY login.LName ASC, cgroup.GroupID";			
+					ORDER BY login.LName ASC";			
 				// ++++ Change: Added table order to query 9/7 KM ++++				
 				$getClasses = mysqli_query($con, $sql);
 				//output data of each row
@@ -58,11 +57,12 @@ class CA_DO{
 				return $all_rows;
 			}
 		}
+		
 	// ++++ Change: Added Instructor list 9/8 KM ++++			
 	//Lists Instructors assigned to a class
 		public function listClassInstrs($ClassID){
 			if(!empty($ClassID)){
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				$sql = "SELECT login.LoginID, class.ClassID, class.ClassNO, class.ClassName, login.LName, login.FName, login.Email
 					FROM((class
 					INNER JOIN class_assign ON class.ClassID=class_assign.ClassID)
@@ -87,7 +87,7 @@ class CA_DO{
 		public function delClassA($values){
 			if(!empty($values)){
 				$LoginID = $values['LoginID'];
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				// -- Check that user is faculty
 				$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 				$getRole = mysqli_query($con, $checkrole);
