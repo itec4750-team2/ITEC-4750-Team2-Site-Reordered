@@ -1,7 +1,6 @@
 <?php
 // ++++ Change: Adjusted indentation 9/8 KM ++++
-	include("../_php/config.php");
-
+include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 	class Class_Assign{
 		private $LoginID; // User	
 		private $Subj; // Student or Faculty Assign

@@ -1,15 +1,21 @@
 <?php 
-// ++++ Change: Adjusted indentation 9/8 KM ++++
 /* --
 --- -- --- WORK FLAG
----This page still needs work. Maybe use a <datalist> populated with classes offered. -- 9/8 KM
+--- This page still needs work. Maybe use a <datalist> populated with classes offered. -- 9/8 KM
+--- Needs Msg that tells user that class is already listed. 
 --- -- */
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');	
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
+// ++++ Change: Added page identifier 10/10 KM ++++
+$P='add_class';
+// ++++ Change: Added Check for IDs module 10/12KM ++++
+
+// Gets IDs
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 ?>
 	
 <!-- Main Content Section-->
@@ -40,7 +46,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 				<label for="SemesterID">Semester</label>
 				<?php
 					// -- Calls semSelect dropdown box from drop_do.php
-					$dropdo = new Drop_DO($_SESSION['LoginID']);
+					$dropdo = new Drop_DO($LoginID);
 					$rows=$dropdo->semSelect();
 					echo '<select name="SemesterID" required>'; // Open
 						foreach ($rows as $ddo) {
@@ -57,7 +63,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 				<?php 
 					if(isset($_POST['AddClass'])){
 						$newClass = new Classes(array(
-							'LoginID' => $_SESSION['LoginID'],
+							'LoginID' => $LoginID,
 							'ClassID' => $_POST['ClassID'],
 							'ClassNO' => $_POST['ClassNO'],
 							'ClassName' => $_POST['ClassName'],
@@ -66,7 +72,10 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 						$newClass->createClass();
 						if($newClass){ 
 							echo '<div class="success">Success!</div>';
-							echo "<script>window.open('add_class.php','_self') </script>"; // reloads page
+							// ++++ Change: Added Check for sending page module 10/12 KM ++++
+							// Gets sending page and redirects
+							include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getP-Fac.php');
+							
 						}
 					}
 				?>
@@ -74,6 +83,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 		</form>
 	</main>
 </div>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
 </html>
