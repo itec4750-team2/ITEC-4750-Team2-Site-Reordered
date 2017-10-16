@@ -22,7 +22,7 @@
 			- <a href="classes.php" style="color: #FFFFFF">Classes</a></span>
 		</div>
 
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/facultyNav.php');?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');?>
 
 		<div class="container-fluid" id="main">
 			<div class="row">

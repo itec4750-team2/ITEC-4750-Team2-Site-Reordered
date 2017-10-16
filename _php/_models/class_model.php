@@ -1,6 +1,6 @@
 <?php
 //	++++ Added Indentation 9/8 KM ++++
-	include("../_php/config.php");
+	include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 	class Classes{
 		private $LoginID;  
 		private $ClassID;

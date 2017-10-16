@@ -1,16 +1,17 @@
 <?php
 	class Stud_DO{
-	// -- Create
-		
+	
 	// -- Read 	
 
+		// ++++ Change: Order by last name 10/10 KM ++++
 		// -- Student Info Page -- Update and Delete Accessible
 		public function listStud($StID){
 			if(!empty($StID)){
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				$sql = "SELECT login.LoginID, login.LName, login.FName, login.Email
 					FROM login
-					WHERE login.LoginID = '$StID' && Role='Student'";	
+					WHERE login.LoginID = '$StID' && Role='Student'
+					ORDER BY login.LName";	
 				$getStud = mysqli_query($con, $sql);		
 				//output data of each row
 				$all_rows = array();
@@ -21,10 +22,11 @@
 			}
 		}
 		// ++++ Change: List all students 9/24 KM ++++
+		// ++++ Change: Order by last name 10/10 KM ++++
 		// -- All Student Page --
 		public function listAll($FID){
 			if(!empty($FID)){
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				//  -- Check that user is faculty
 				$checkrole = "SELECT Role From login WHERE LoginID = '$FID'";			
 				$getRole = mysqli_query($con, $checkrole);
@@ -34,7 +36,8 @@
 						if ($myRole == 'Faculty'){
 							$sql = "SELECT login.LoginID, login.LName, login.FName, login.Email
 								FROM login
-								WHERE Role='Student'";	
+								WHERE Role='Student'
+								ORDER BY login.LName";	
 							$getStud = mysqli_query($con, $sql);		
 							//output data of each row
 							$all_rows = array();
@@ -48,10 +51,11 @@
 			}
 		}
 		// ++++ Change: List all students in instructor's class 9/24 KM ++++
+		// ++++ Change: Order by last name 10/10 KM ++++
 		// -- My Student Page --
 		public function listmyStuds($FID){
 			if(!empty($FID)){
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				//  -- Check that user is faculty
 				$checkrole = "SELECT Role From login WHERE LoginID = '$FID'";			
 				$getRole = mysqli_query($con, $checkrole);
@@ -65,7 +69,7 @@
 								INNER JOIN class_assign d ON b.ClassID = d.ClassID)
 								INNER JOIN login c ON c.LoginID = d.LoginID)
 								WHERE  c.Role='Student' && a.LoginID = '$FID'
-								ORDER BY c.LName";
+								ORDER BY c.LName ASC";
 							$getStud = mysqli_query($con, $sql);		
 							//output data of each row
 							$all_rows = array();
@@ -78,8 +82,6 @@
 				}
 			}
 		}
-	// -- Update Student Info				
-			
-	// -- Delete Student
+
 	}
 ?>

@@ -6,7 +6,7 @@ class Class_DO{
 	public function createClass($values){
 		if(!empty($values)){
 			$LoginID = $values['LoginID'];
-			include("../_php/config.php");
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 			//  -- Check that user is faculty
 			$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 			$getRole = mysqli_query($con, $checkrole);
@@ -43,7 +43,7 @@ class Class_DO{
 	// Load All Classes, verify user is faculty
 	public function loadAll($LoginID){
 		if(!empty($LoginID)){
-			include("../_php/config.php");
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 			//  -- Check that user is faculty
 			$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 			$getRole = mysqli_query($con, $checkrole);
@@ -77,7 +77,7 @@ class Class_DO{
 	// Load Classes by User LoginID, for faculty or students
 	public function loadByLoginID($LoginID){
 		if(!empty($LoginID)){
-			include("../_php/config.php");
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 			//Load by LoginID
 			$sql = "SELECT class.ClassID, ClassNO, ClassName, ExpDate, class.SemesterID, SemesterName, Year
 				FROM((class
@@ -99,7 +99,7 @@ class Class_DO{
 	// Class Info Page -- Update and Delete Accessible, verify user is faculty
 	public function classPage($ClassID, $LoginID){
 	if(!empty($ClassID)&& !empty($LoginID)){
-			include("../_php/config.php");
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 			// -- Check that user is faculty
 			$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 			$getRole = mysqli_query($con, $checkrole);
@@ -131,7 +131,7 @@ class Class_DO{
 	public function updateClass($ClassID, $values){
 		if(!empty($values)){
 			$LoginID = $values['LoginID'];
-			include("../_php/config.php");
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 			// -- Check that user is faculty
 			$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 			$getRole = mysqli_query($con, $checkrole);
@@ -163,7 +163,7 @@ class Class_DO{
 	public function deleteClass($values){
 			if(!empty($values)){
 				$LoginID = $values['LoginID'];
-				include("../_php/config.php");
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 				// -- Check that user is faculty
 				$checkrole = "SELECT Role From login WHERE LoginID = '$LoginID'";			
 				$getRole = mysqli_query($con, $checkrole);
