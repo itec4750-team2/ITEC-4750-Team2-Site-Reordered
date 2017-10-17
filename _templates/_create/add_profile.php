@@ -31,7 +31,7 @@ if($LoginID != 0){ // Must be logged in. Role is checked in DO
 			</tr>
 			<?php 
 				if($Password != 'GetRandom'){
-				?>	
+			?>	
 					<tr>
 						<th><label for="Password"> Password: </label></th>
 						<td>
@@ -62,7 +62,7 @@ if($LoginID != 0){ // Must be logged in. Role is checked in DO
 		$LName = $_POST['LName'];
 
 		$aProfile = new Profile(array(	
-		'LoginID' => $LoginID,	
+		'LoginID' => $_SESSION['LoginID'],	
 		'Role' => $Role,
 		'Password'=> $Password,
 		'Subj' => $Subj, //Passes 0 because not used but model requires

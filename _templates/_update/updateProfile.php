@@ -9,6 +9,11 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/profile_model.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 ?>
 <?php
+if(isset($P)){
+	if($P=='studentSettings'){
+		$Subj = $LoginID;
+	}
+}
 if(!empty($_SESSION['LoginID'])){
 	if(!isset($Subj) || empty($Subj)){echo '<div class="error">Uhoh problem getting Profile ID</div>';}
 	if(!empty($Subj)){
@@ -20,42 +25,58 @@ if(!empty($_SESSION['LoginID'])){
 				$LName = $value['LName'];
 				$Email = $value['Email'];		
 				?>
-				<br/>
-				<br/>
-				<div>		
-				<form name ="update-profile" method = "POST" action="#">
-					<fieldset><legend>Update Student Info</legend>
-						<table>
-							<tr>
-								<th><label>First Name: </label></th>
-								<td><input type="text" name="FName" id="FName" value= <?php echo "'". $FName ."'";?>></td> 
-							</tr>
-							<tr>	
-								<th><label>Last Name: </label></th>
-								<td><input type="text" name="LName" id="LName" value= <?php echo "'". $LName ."'";?>></td>
-							</tr>
-							<tr>
-								<th><label> Student ID: </label></th><td><label><?php echo '<a href="stud_mgmt_pg.php?stid=' . $Subj . '">'.$Subj.'</a>'; ?></label></td>
-							</tr>	
-							<tr>
-								<th><label for="Email">Email: </label></th>
-								<td><input type="text" name="Email" id="Email" value= <?php echo "'". $Email ."'";?>></td>
-							</tr>
-						</table>
+				<div class="container-fluid" style="padding: 20px 0px 15px 0px;">
+				<div class="row">
+				<div class="col-md-6 col-centered">
+				<form action="#" method = "POST" class="form-horizontal" name ="update-profile" >
+					<fieldset><legend>Update Settings for: 
+					<?php 
+						if($P!='studentSettings'){echo '<a href="stud_mgmt_pg.php?stid=' . $Subj . '">'.$Subj.' '.$FName.' '.$LName.'</a>';} 
+						if($P=='studentSettings'){echo '<a href="studentDashboard.php">'.$FName.' '.$LName.'</a>';}
+					?></legend>
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="FName">First Name: </label>
+								<div class="col-sm-7">
+									<input type="text" name="FName" id="FName" value= <?php echo "'". $FName ."'";?> class="form-control inputColor">
+								</div>
+							</div>
+							<div class="form-group">	
+								<label class="control-label col-sm-4" for="LName">Last Name: </label>
+								<div class="col-sm-7">
+									<input type="text" name="LName" id="LName" value= <?php echo "'". $LName ."'";?> class="form-control inputColor">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="Email">Email: </label>
+								<div class="col-sm-7">
+									<input type="text" name="Email" id="Email" value= <?php echo "'". $Email ."'";?> class="form-control inputColor">
+								</div>
+							</div>
 						<br/>
-						<input type="submit" value="Update Profile" name="UpdateProfile" id="UpdateProfile">
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-9">
+								<input type="submit" value="Update Profile" name="UpdateProfile" id="UpdateProfile" class="btn btn-primary btn-lg submit">
+							</div>
+						</div>
 						<?php 
-							if($Subj!=$LoginID){
+							if(($_SESSION['Role'] == 'Faculty')){
 						?> 
-							<input type="submit" value="Delete Profile" name="DeleteProfile" id="DeleteProfile">
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-9">
+								<input type="submit" value="Delete Profile" name="DeleteProfile" id="DeleteProfile"class="btn btn-primary btn-lg submit">
+							</div>
+						</div>
 						<?php
 							}
 						?>
 					</fieldset>
 				</form>
+				</div>
 			<?php	
 				if(isset($_POST['UpdateProfile'])){	
 					$uProfile = new Profile(array(	
+					'Password' => 'UNK',
 					'LoginID' => $_SESSION['LoginID'],
 					'Role' => $Role,
 					'Subj' => $Subj,
@@ -69,11 +90,13 @@ if(!empty($_SESSION['LoginID'])){
 					if($uProfile){
 					// ++++ Change: Added Check for sending page module 10/8KM ++++
 					// Gets sending page and redirects
-					include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getP-Fac.php');
+					if($P=='studentSettings'){include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getP-Stud.php');}
+					if($P!='studentSettings'){include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getP-Fac.php');}
 					}
 				}		
 			}
 		}//End If !empty  Subj
 	}//End If !empty LoginID 
 	?>
+	</div>
 </div>
