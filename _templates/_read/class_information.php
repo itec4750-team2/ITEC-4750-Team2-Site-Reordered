@@ -1,9 +1,9 @@
-<?php 
+<?php
 // ++++ Change: Added Reusable Module to list class information. 9/30 KM ++++
-require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');	
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');
 // CA_DO is called from originating page.
-?>	
+?>
 <?php
 // ++++ Change: Added Check for IDs module 10/10 KM ++++
 // Gets IDs
@@ -14,7 +14,7 @@ if($LoginID != 0){ //logged in
 		// --------------- Class Information -------------
 		// ++++ Change: Passed currently selected ClassID & $_SESSION['LoginID'] ++++
 		$classdo = new Class_DO();
-		$classpage=$classdo->classPage($ClassID, $_SESSION['LoginID']);			
+		$classpage=$classdo->classPage($ClassID, $_SESSION['LoginID']);
 		foreach ($classpage as $value){
 			$ClassNO = $value['ClassNO'];
 			$ClassName=$value['ClassName'];
@@ -23,10 +23,10 @@ if($LoginID != 0){ //logged in
 			$ExpDate = $value['ExpDate'];
 			$SemesterID = $value['SemesterID'];
 		}//End foreach
-		?>	
+		?>
 		<!-- ++++ change: added the word Semester to heading ++++ 9/5 KM-->
-		<h2> <?php echo $ClassName . ' - '. $SemesterName . ' Semester' ?></h2>
-		<table>
+		<h3><b> <?php echo $ClassName . ' - '. $SemesterName . ' Semester' ?> </b></h3>
+		<table class="table table-hover">
 			<!-- Gives Class Information Recap -->
 			<tr><th>Class Item Number</th><td><?php echo '<a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a>';?></td></tr>
 			<tr><th>Class Number</th><td><?php echo $ClassNO;?></td></tr>
@@ -43,7 +43,7 @@ if($LoginID != 0){ //logged in
 					if($facs){
 						$i=0;
 						foreach ($facs as $val){
-							$FID = $val['LoginID']; 
+							$FID = $val['LoginID'];
 							$FName = $val['FName'];
 							$LName = $val['LName'];
 							if($i==0){ // First instructor
@@ -64,5 +64,5 @@ if($LoginID != 0){ //logged in
 				?>
 		</tr>
 		</table>
- <?php }}// End IF Login && ClassID 
+ <?php }}// End IF Login && ClassID
  ?>
