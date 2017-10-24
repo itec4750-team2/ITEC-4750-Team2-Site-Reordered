@@ -1,4 +1,4 @@
-<table>
+<table class="table table-hover">
 
 <!-- ------------- Student Account Info ----------->
 <?php
@@ -8,36 +8,36 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 if($LoginID != 0){//Logged in
 	if(empty($StID)){echo '<div class="error">No Student ID</div>';}
 	if(!empty($StID)){
-		$students = new Stud_DO();	
+		$students = new Stud_DO();
 		$rows=$students->listStud($StID);
 		foreach ($rows as $value){
 			$FName = $value['FName'];
 			$LName = $value['LName'];
-			$Email = $value['Email'];		
+			$Email = $value['Email'];
 			?>
 			<tr><th>Student Name</th><td><?php echo  $FName. ' ' . $LName;?></td></tr>
 			<tr><th>Student ID </th><td><?php echo $StID;?></td></tr>
 			<tr><th>Email</th><td><?php echo '<a href="mailto:' . $Email.'">' . $Email . '</a>';?></td></tr>
 			</table>
 			<br/>
-			<br/>	
+			<br/>
 	<?php } ?>
 
-		<!-- Ends student foreach -->  
+		<!-- Ends student foreach -->
 		<!-- ++++ Change: Link added to update student profile info. 9/9 KM ++++ -->
 		<!-------------------- Update Student Profile Link ------------------->
-		<!---- Should be enhanced visually maybe an image button like dashboard ? --> 
-		<?php 
+		<!---- Should be enhanced visually maybe an image button like dashboard ? -->
+		<?php
 		if(!empty($P)){
 		if($P == 'student_mgmt_pg' || $P == 'add_student'){
 		?>	<span>
-			<?php 
+			<?php
 			echo '<a href="../../_facultyPages/update_student.php?&stid='.$StID.'">';
 			echo '<img class ="med_icon" src="../../_images/person_edit.png" alt="Edit Profile"></a>';?>
 			<br/>
-			<?php echo '<a href="../../_facultyPages/update_student.php?&stid='.$StID.'">Update Student Profile</a>';?> 
+			<?php echo '<a href="../../_facultyPages/update_student.php?&stid='.$StID.'">Update Student Profile</a>';?>
 			</span>
-			<?php 
+			<?php
 		}}
 	} //End !empty $StID
 }//logged in
