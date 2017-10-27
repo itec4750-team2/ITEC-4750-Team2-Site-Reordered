@@ -1,4 +1,5 @@
 <?php
+
 $title = 'Student Settings';
  include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/studentHeader.php');
 	//-- Sets up data for the side navigation bar. --
@@ -24,5 +25,3 @@ $title = 'Student Settings';
 
 </body>
 </html>
-
-
