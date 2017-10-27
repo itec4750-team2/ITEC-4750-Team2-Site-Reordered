@@ -63,7 +63,7 @@ INSERT INTO `semester` (`SemesterID`, `SemesterName`, `Year`) VALUES
 
 CREATE TABLE `login` (
   `LoginID` int(6)  NOT NULL AUTO_INCREMENT,
-  `Email` varchar(60) NOT NULL,
+  `Email` varchar(60) NOT NULL UNIQUE,
   `Pword` varchar(40) NOT NULL,
   `Role` varchar(8) NOT NULL,
   `FName` varchar(15) NOT NULL,
