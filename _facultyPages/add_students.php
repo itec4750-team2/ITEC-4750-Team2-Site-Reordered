@@ -1,6 +1,8 @@
 <?php
-// ++++ Change: Created add_students 10/15 KM ++++
 // ++++ Change: Added as a stub page 9/24 KM ++++
+// ++++ Change: Created add_students 10/15 KM ++++
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'Upload Students';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 

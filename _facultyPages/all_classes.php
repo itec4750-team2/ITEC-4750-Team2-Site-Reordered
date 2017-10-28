@@ -1,5 +1,7 @@
 <?php
 // ++++ Change: Adjusted indentation 9/8 KM ++++
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'All Classes';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_do.php');

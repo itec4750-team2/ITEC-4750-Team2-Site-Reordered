@@ -4,6 +4,8 @@
 --- -- --- WORK FLAG
 ---This page still needs work. Maybe use a <datalist> populated with classes offered. -- 9/8 KM
 --- -- */
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'Update Class';
 include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');

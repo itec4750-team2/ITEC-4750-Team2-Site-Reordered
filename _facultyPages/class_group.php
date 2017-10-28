@@ -6,6 +6,8 @@
 --- Currently displays the students assigned to a group.
 --- Mostly to check link from class_page.php (Further Development Soon)
 -- */
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'Groups';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');

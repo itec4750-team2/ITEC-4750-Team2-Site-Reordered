@@ -1,5 +1,7 @@
 <?php 
 // ++++ Change: Created Add Student 10/10 KM ++++
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'Add Student';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_assign_do.php');
