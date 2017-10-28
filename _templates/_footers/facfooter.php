@@ -1,3 +1,5 @@
+<!-- I believe this file can be depreciated as we can use the same footer for all pages
+	MM - 10/28/2017 -->
 <?php ?>
 <!-- Change: Added Quicklinks to footer -->
 <div>

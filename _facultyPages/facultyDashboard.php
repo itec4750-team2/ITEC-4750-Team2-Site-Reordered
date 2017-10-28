@@ -51,7 +51,7 @@ $P='facultyDashboard';
 		</div>
 	</div>
 	
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/footer.php');?>
 	
 </body>
 </html>
