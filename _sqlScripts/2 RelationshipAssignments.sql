@@ -105,6 +105,7 @@ INSERT INTO `group_assign` (`GroupAssignID`, `GroupID`, `LoginID`) VALUES
 --     statements++++
 CREATE TABLE `group_survey_q` (
   `GroupQID` int(6) NOT NULL AUTO_INCREMENT,
+  `QuestionNum` int(6) NOT NULL,
   `GSurveyName` varchar(255),
   `GroupID` varchar(255) NOT NULL,
   `QuestionID` int,
@@ -120,32 +121,32 @@ CREATE TABLE `group_survey_q` (
 -- Dumping data for table `survey`
 --
 
-INSERT INTO `group_survey_q` (`GroupQID`,`GroupID`, `GSurveyName`, `QuestionID`) VALUES
-(1,'1-2', 'Group 2, Week 1 Team Survey', 1),
-(2,'1-2', 'Group 2, Week 1 Team Survey', 2),
-(3,'1-2', 'Group 2, Week 1 Team Survey', 3),
-(4,'1-2', 'Group 2, Week 1 Team Survey', 4),
-(5,'1-2', 'Group 2, Week 1 Team Survey', 5),
-(6,'1-2', 'Group 2, Week 1 Team Survey', 6),
-(7,'1-2', 'Group 2, Week 1 Team Survey', 7),
-(8,'1-2', 'Group 2, Week 1 Team Survey', 8),
-(9,'1-2', 'Group 2, Week 1 Team Survey', 9),
-(10,'1-2', 'Group 2, Week 1 Team Survey', 10),
-(11,'86756-2', 'Group 2, Week 1 Team Survey', 1),
-(12,'86756-2', 'Group 2, Week 1 Team Survey', 2),
-(13,'86756-2', 'Group 2, Week 1 Team Survey', 3),
-(14,'86756-2', 'Group 2, Week 1 Team Survey', 4),
-(15,'86756-2', 'Group 2, Week 1 Team Survey', 5),
-(16,'86756-2', 'Group 2, Week 1 Team Survey', 6),
-(17,'86756-2', 'Group 2, Week 1 Team Survey', 7),
-(18,'86756-2', 'Group 2, Week 1 Team Survey', 8),
-(19,'86756-2', 'Group 2, Week 1 Team Survey', 9),
-(20,'86756-2', 'Group 2, Week 1 Team Survey', 10),
-(21,'87123-2', 'Group 2, Week 1 Team Survey', 1),
-(22,'87123-2', 'Group 2, Week 1 Team Survey', 3),
-(23,'87123-2', 'Group 2, Week 1 Team Survey', 5),
-(24,'87123-2', 'Group 2, Week 1 Team Survey', 6),
-(25,'87123-2', 'Group 2, Week 1 Team Survey', 10);
+INSERT INTO `group_survey_q` (`GroupQID`,`GroupID`, `QuestionNum`, `GSurveyName`, `QuestionID`) VALUES
+(1,'1-2', 1, 'Week 1 Team Survey', 1),
+(2,'1-2', 2, 'Week 1 Team Survey', 2),
+(3,'1-2', 3, 'Week 1 Team Survey', 3),
+(4,'1-2', 4, 'Week 1 Team Survey', 4),
+(5,'1-2', 5, 'Week 1 Team Survey', 5),
+(6,'1-2', 6, 'Week 1 Team Survey', 6),
+(7,'1-2', 7, 'Week 1 Team Survey', 7),
+(8,'1-2', 8, 'Week 1 Team Survey', 8),
+(9,'1-2', 9, 'Week 1 Team Survey', 9),
+(10,'1-2', 10, 'Week 1 Team Survey', 10),
+(11,'86756-2', 1, 'Week 1 Team Survey', 1),
+(12,'86756-2', 2, 'Week 1 Team Survey', 2),
+(13,'86756-2', 3, 'Week 1 Team Survey', 3),
+(14,'86756-2', 4, 'Week 1 Team Survey', 4),
+(15,'86756-2', 5, 'Week 1 Team Survey', 5),
+(16,'86756-2', 6, 'Week 1 Team Survey', 6),
+(17,'86756-2', 7, 'Week 1 Team Survey', 7),
+(18,'86756-2', 8, 'Week 1 Team Survey', 8),
+(19,'86756-2', 9, 'Week 1 Team Survey', 9),
+(20,'86756-2', 10, 'Week 1 Team Survey', 10),
+(21,'87123-2', 1, 'Week 1 Team Survey', 1),
+(22,'87123-2', 2, 'Week 1 Team Survey', 3),
+(23,'87123-2', 3, 'Week 1 Team Survey', 5),
+(24,'87123-2', 4, 'Week 1 Team Survey', 6),
+(25,'87123-2', 5, 'Week 1 Team Survey', 10);
 
 -- --------------------------------------------------------
 
