@@ -90,5 +90,30 @@ class Drop_DO{
 		}
 		return $all_rows;	
 	}
+	//++++ Change: Added surveysRemain for new_survey page 10/29 KM ++++
+	//Survey Dropbox
+	function surveyDrop($LoginID, $GSurveyID, $GroupID){
+		//echo $LoginID.','. $GSurveyID.','. $GroupID;
+		include("../_php/config.php");
+		$sql = "SELECT
+			l.FName, l.LName, l.LoginID
+			FROM (login l
+			LEFT JOIN group_assign a
+			ON l.LoginID=a.LoginID)
+			LEFT JOIN surveys_taken t
+			ON t.TeamMemberID=a.LoginID
+			LEFT JOIN surveys s
+			ON t.GSurveyID=s.GSurveyID
+			WHERE (s.GSurveyID = '$GSurveyID' || s.GSurveyID IS NULL) 
+			&& a.LoginID != '$LoginID' && a.GroupID = '$GroupID' 
+			&& (t.LoginID != '$LoginID' || t.LoginID IS NULL)
+			ORDER BY l.LoginID";
+		$survey = mysqli_query($con, $sql);
+		$all_rows = array();
+		while($row = mysqli_fetch_array($survey)){
+			$all_rows[]=$row;
+		}
+		return $all_rows;	
+	}
 }
 ?>

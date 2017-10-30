@@ -3,21 +3,19 @@
 $title = 'Your Surveys';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
-// ++++ Change: Added survey_do object 10/28 KM ++++
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/survey_do.php');
-
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 // ++++ Change: Added Page Identifier 10/10 KM ++++
 $P='yoursurveys';
 ?>
-
-<h2 class="center">Surveys You've Created</h2>
 <div class="container-fluid" style="padding: 20px 0px 15px 0px;">
 	<div class="row">
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/survey_list.php');?>
+		<div class="col-md-7 col-centered">
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_create/new_survey.php');?>
+		</div>
 	</div>
 </div>
-	<!-- ++++ Change: Added Survey List by LoginID 10/28/17 KM ++++ -->
-	<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
+
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 
 </body>
-</html>
