@@ -3,7 +3,6 @@ include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/mainHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/login_do.php');
 ?>
-<main>
 		<div class="row">
 			<div class="col-md-5">
 				<form action="#" method="post" id="loginForm" class="form-horizontal">
@@ -64,4 +63,4 @@ include($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/login_do.php');
 		</div> <!-- End container div that started in mainHeader.php -->
 	</div>
 </main>	<!-- End main -->
-<?php include('_templates/footer.php');?>
+<?php include('_templates/_footers/footer.php');?>
