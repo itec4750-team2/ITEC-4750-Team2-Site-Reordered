@@ -1,47 +1,18 @@
 <?php
+$title = 'Faculty Settings';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 // ++++ Change: Added Page Identifier 10/10 KM ++++
-$P='settings';
-?>
-<!--
---- -- --- WORK FLAG
---- This page still needs work. Currently stub for Changing Password
---- What settings should go here?
---- KM -- 8/27 AM
----
--->
-<h2 class="center">Settings</h2>
-	<div class="container-fluid" style="padding: 20px 0px 15px 0px;">
-		<div class="row">
-			<div class="col-md-6 col-centered">
-				<form action="#" method="post" class="form-horizontal" name="Password">
-					<fieldset>
-						<!-- Current password -->
-						<div class="form-group">
-							<label class="control-label col-sm-4" for="OldPassword">Current password:</label>
-							<div class="col-sm-7">
-								<input type="password" name="OldPassword" class="form-control inputColor">
-							</div>
-						</div>
-						<!-- New Password -->
-						<div class="form-group">
-							<label class="control-label col-sm-4" for="NewPassword">New password:</label>
-							<div class="col-sm-7">
-								<input type="password" name="NewPassword" class="form-control inputColor">
-							</div>
-						</div>
-						<!-- Submit form  -->
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-9">
-								<input type="button" onclick="ChangePassword()" value="Change Password" class="btn btn-primary btn-lg submit">
-							</div>
-						</div>
-					</fieldset>
-				</form>
-			</div>
-		</div>
-	</div>
+ $P='settings';
+ $Subj = $LoginID;
+ ?>
+ 
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updateProfile.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updatePassword.php'); ?>
+<?php // ---------------- Password Reset via Emai ------------->
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/forgotpassword.php');
+?>	
+
 <?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
 </html>
