@@ -1,5 +1,7 @@
 <?php 
 // ++++ Change: Adjusted indentation 9/7 KM ++++
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'Class Page';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 // ++++ Change: Moved to this procedure to class_assign_do (previously part of stu_do) 9/5 KM ++++

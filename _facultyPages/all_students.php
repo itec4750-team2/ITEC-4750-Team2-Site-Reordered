@@ -1,5 +1,7 @@
 <?php
 // ++++ Change: Added All Students Page 9/24 KM ++++
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'All Students';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/stu_do.php');
