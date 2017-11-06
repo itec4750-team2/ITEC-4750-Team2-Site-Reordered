@@ -20,6 +20,7 @@
 				}
 				return $all_rows;
 			}
+			mysqli_close($con);	
 		}
 		// ++++ Change: List all students 9/24 KM ++++
 		// ++++ Change: Order by last name 10/10 KM ++++
@@ -49,6 +50,7 @@
 					}
 				}
 			}
+			mysqli_close($con);	
 		}
 		// ++++ Change: List all students in instructor's class 9/24 KM ++++
 		// ++++ Change: Order by last name 10/10 KM ++++
@@ -80,8 +82,9 @@
 						}
 					}
 				}
-			}
+			}	
+			mysqli_close($con);
 		}
-
+	
 	}
 ?>

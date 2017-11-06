@@ -194,45 +194,17 @@ INSERT INTO `group_survey_q` (`GroupQID`,`GroupID`, `QuestionNum`, `GSurveyID`, 
 -- 
 CREATE TABLE `survey_responses`(
  `ResponseID` int(10) NOT NULL AUTO_INCREMENT,
+ `LoginID` int,
  `GSurveyID` int,
- `GroupQID` int,
+ `QuestionID` int,
  `TeamMemberID` int,
  `ResponseValue` int(2),
   PRIMARY KEY (`ResponseID`),
+  FOREIGN KEY (`LoginID`)  REFERENCES `login`(`LoginID`) ON DELETE CASCADE,
   FOREIGN KEY (`GSurveyID`)  REFERENCES `surveys`(`GSurveyID`) ON DELETE CASCADE,
-  FOREIGN KEY (`GroupQID`) REFERENCES `group_survey_q`(`GroupQID`) ON DELETE CASCADE,
+  FOREIGN KEY (`QuestionID`) REFERENCES `gen_survey_q`(`QuestionID`) ON DELETE CASCADE,
   FOREIGN KEY (`TeamMemberID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
---
--- Dumping data for table `responses`
---
-
-INSERT INTO `survey_responses` (`ResponseID`, `GSurveyID`, `GroupQID`, `TeamMemberID`,`ResponseValue`) VALUES
-(1, 1, 1, 100, 1), (2, 1, 2, 100, 1), (3, 1, 3, 100, 1), (4, 1, 4, 100, 1), (5, 1, 5, 100, 1), (6, 1, 6, 100, 1), (7, 1, 7, 100, 1), (8, 1, 8, 100, 1), (9, 1, 9, 100, 1), (10, 1, 10, 100, 1),
-(11, 1, 1, 101, 1), (12, 1, 2, 101, 1), (13, 1, 3, 101, 1), (14, 1, 4, 101, 1), (15, 1, 5, 101, 1), (16, 1, 6, 101, 1), (17, 1, 7, 101, 1), (18, 1, 8, 101, 1), (19, 1, 9, 101, 1), (20, 1, 10, 101, 1),
-(21, 1, 1, 102, 1), (22, 1, 2, 102, 1), (23, 1, 3, 102, 1), (24, 1, 4, 102, 1), (25, 1, 5, 102, 1), (26, 1, 6, 102, 1), (27, 1, 7, 102, 1), (28, 1, 8, 102, 1), (29, 1, 9, 102, 1), (30, 1, 10, 102, 1),
-(31, 1, 1, 103, 1), (32, 1, 2, 103, 1), (33, 1, 3, 103, 1), (34, 1, 4, 103, 1), (35, 1, 5, 103, 1), (36, 1, 6, 103, 1), (37, 1, 7, 103, 1), (38, 1, 8, 103, 1), (39, 1, 9, 103, 1), (40, 1, 10, 103, 1),
-(41, 1, 1, 104, 1), (42, 1, 2, 104, 1), (43, 1, 3, 104, 1), (44, 1, 4, 104, 1), (45, 1, 5, 104, 1), (46, 1, 6, 104, 1), (47, 1, 7, 104, 1), (48, 1, 8, 104, 1), (49, 1, 9, 104, 1), (50, 1, 10, 104, 1),
-(51, 1, 1, 105, 1), (52, 1, 2, 105, 1), (53, 1, 3, 105, 1), (54, 1, 4, 105, 3), (55, 1, 5, 105, 1), (56, 1, 6, 105, 1), (57, 1, 7, 105, 1), (58, 1, 8, 105, 1), (59, 1, 9, 105, 1), (60, 1, 10, 105, 1),
-(61, 1, 1, 106, 1), (62, 1, 2, 106, 1), (63, 1, 3, 106, 1), (64, 1, 4, 106, 1), (65, 1, 5, 106, 1), (66, 1, 6, 106, 1), (67, 1, 7, 106, 1), (68, 1, 8, 106, 1), (69, 1, 9, 106, 1), (70, 2, 10, 106, 1);
-
-
-CREATE TABLE `surveys_taken`(
- `STakenID` int(10) NOT NULL AUTO_INCREMENT,
- `LoginID` int NOT NULL,
- `GSurveyID`int(10) NOT NULL,
- `GroupID` varchar(110) NOT NULL,
- `TeamMemberID` int NOT NULL,
- `Taken` int NOT NULL DEFAULT 0,
-  PRIMARY KEY (`STakenID`),
-  FOREIGN KEY (`GSurveyID`) REFERENCES `surveys`(`GSurveyID`) ON DELETE CASCADE,
-  FOREIGN KEY (`GroupID`) REFERENCES `cgroup`(`GroupID`) ON DELETE CASCADE,
-  FOREIGN KEY (`TeamMemberID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE,
-  FOREIGN KEY (`LoginID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO `surveys_taken` (`GroupID`, `LoginID`, `GSurveyID`, `TeamMemberID`,`Taken`) VALUES
-('1-2', 100, 1, 101, 1),('1-2', 100, 1, 102, 1), ('1-2', 100, 2, 102, 1), ('1-2', 100, 1, 104, 1), ('1-2', 103, 1, 102, 1);

@@ -5,11 +5,9 @@ class Survey{
 	private $LoginID;//User
 	private $Subj;//TeamMember
 	private $GSurveyID;	
-	private $GroupQID;  
+	private $QuestionID;  
 	private $ResponseValue;
 	private $GroupID;
-	private $Taken; 
-	private $iRound;
 	private $do;
 
 	public function __get($property){
@@ -22,11 +20,9 @@ class Survey{
 		$this->LoginID = $arr['LoginID'];
 		$this->Subj = $arr['Subj'];
 		$this->GSurveyID = $arr['GSurveyID'];
-		$this->GroupQID = $arr['GroupQID'];	  
+		$this->QuestionID = $arr['QuestionID'];	  
 		$this->ResponseValue = $arr['ResponseValue'];
 		$this->GroupID = $arr['GroupID'];
-		$this->Taken = $arr['Taken'];
-		$this->iRound = $arr['Round'];
 		$this->do = new Survey_DO();
 	}}
 
@@ -35,16 +31,12 @@ class Survey{
 		'LoginID' => $this->LoginID,
 		'Subj' => $this->Subj,
 		'GSurveyID' => $this->GSurveyID,
-		'GroupQID' => $this->GroupQID,
+		'QuestionID' => $this->QuestionID,
 		'ResponseValue' => $this->ResponseValue,
-		'GroupID' => $this->GroupID,
-		'Taken' => $this->Taken,
-		'iRound' => $this->iRound
+		'GroupID' => $this->GroupID
 	);
 	return $params;
 	}
-
-
 	public function addSurvey(){
 		return $this->do->addSurvey($this->all_params());
 	}

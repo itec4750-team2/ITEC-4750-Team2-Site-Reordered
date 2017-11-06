@@ -13,6 +13,7 @@ class Drop_DO{
 			$all_rows[]=$row;
 		}
 		return $all_rows;
+		mysqli_close($con);
 	}
 	//++++ Change: added all students drop box 9/8 KM ++++
 	//All Students Dropbox
@@ -26,6 +27,7 @@ class Drop_DO{
 			$all_rows[]=$row;
 		}
 		return $all_rows;
+		mysqli_close($con);
 	}
 	// Semester Dropbox
 	function semSelect(){
@@ -39,6 +41,7 @@ class Drop_DO{
 			$all_rows[]=$row;
 		}
 		return $all_rows;
+		mysqli_close($con);
 	}
 	//++++ Change: added class group drop box for class_page  9/5 KM ++++
 	//Class Groups Dropbox
@@ -57,6 +60,7 @@ class Drop_DO{
 				$all_rows[]=$row;
 			}
 			return $all_rows;
+			mysqli_close($con);
 		}
 	}	
 	//++++ Change: Added group drop box for group assign on student_mgt_pg 9/6 KM ++++
@@ -73,6 +77,7 @@ class Drop_DO{
 			$all_rows[]=$row;
 		}
 		return $all_rows;
+		mysqli_close($con);
 	}
 	//++++ Change: Added all classes drop box for group assign on student_mgt_pg 9/6 KM ++++
 	//Classes Dropbox
@@ -88,32 +93,65 @@ class Drop_DO{
 		while($row = mysqli_fetch_array($allClassSel)){
 			$all_rows[]=$row;
 		}
-		return $all_rows;	
+		return $all_rows;
+		mysqli_close($con);		
 	}
-	//++++ Change: Added surveysRemain for new_survey page 10/29 KM ++++
+	//++++ Change: Added completedSurveys for  new_survey page 10/29 KM ++++
 	//Survey Dropbox
-	function surveyDrop($LoginID, $GSurveyID, $GroupID){
+	function completedSurveys($LoginID, $GroupID, $GSurveyID){
 		//echo $LoginID.','. $GSurveyID.','. $GroupID;
 		include("../_php/config.php");
-		$sql = "SELECT
-			l.FName, l.LName, l.LoginID
-			FROM (login l
-			LEFT JOIN group_assign a
-			ON l.LoginID=a.LoginID)
-			LEFT JOIN surveys_taken t
-			ON t.TeamMemberID=a.LoginID
-			LEFT JOIN surveys s
-			ON t.GSurveyID=s.GSurveyID
-			WHERE (s.GSurveyID = '$GSurveyID' || s.GSurveyID IS NULL) 
-			&& a.LoginID != '$LoginID' && a.GroupID = '$GroupID' 
-			&& (t.LoginID != '$LoginID' || t.LoginID IS NULL)
-			ORDER BY l.LoginID";
+		$sql = "SELECT DISTINCT r.TeamMemberID
+				FROM login l
+				JOIN group_assign a
+				ON l.LoginID=a.LoginID
+
+				JOIN survey_responses r
+				ON l.LoginID=r.LoginID
+			  
+				JOIN gen_survey_q gen
+				ON r.QuestionID=gen.QuestionID
+
+				JOIN surveys s
+				ON r.GSurveyID=s.GSurveyID
+				
+				WHERE r.LoginID = '$LoginID'
+				&& r.GSurveyID = '$GSurveyID'
+				&& a.GroupID = '$GroupID'
+				ORDER BY r.TeamMemberID
+			";
 		$survey = mysqli_query($con, $sql);
 		$all_rows = array();
 		while($row = mysqli_fetch_array($survey)){
 			$all_rows[]=$row;
 		}
 		return $all_rows;	
+		mysqli_close($con);
 	}
+
+	//Lists All Students Assigned to a Group
+	function studentGroups($GroupID){
+			if(!empty($GroupID)){
+				include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+				// ++++ change added group info to class_page. Updated query for group assigned 9/5 KM++++
+				$sql = "SELECT DISTINCT login.LoginID
+					FROM(((class
+					INNER JOIN cgroup ON class.ClassID=cgroup.ClassID)
+					INNER JOIN group_assign ON cgroup.GroupID=group_assign.GroupID)
+					INNER JOIN login ON group_assign.LoginID=login.LoginID)
+					WHERE login.Role = 'Student' && group_assign.GroupID='$GroupID' 
+					ORDER BY login.LoginID";
+				// ++++ Change: Added table order to query 9/6 KM ++++
+				$getGroups = mysqli_query($con, $sql);
+				//output data of each row
+				$all_rows = array();
+				while($row = mysqli_fetch_array($getGroups)){
+					$all_rows[]=$row;
+				}
+				return $all_rows;
+			}
+			mysqli_close($con);
+		}
+
 }
 ?>

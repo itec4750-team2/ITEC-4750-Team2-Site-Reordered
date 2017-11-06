@@ -2,13 +2,13 @@
 // Change Added new_survey template 10/29/17 KM
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/survey_model.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/profile_do.php');
 ?>
 <?php
 if($LoginID !=0){	
 	if(!empty($GroupID)){
-		if(isset($_GET['gsid'])){$GSurveyID = $_GET['gsid'];}
 		$surveydo = new Survey_DO();
-		$rows=$surveydo->loadByGroupID($LoginID, $GroupID);
+		$rows=$surveydo->loadByGroupID($LoginID, $GroupID, $GSurveyID);
 		$i = 0;
 		foreach($rows as $val){
 			if($i==0){
@@ -34,7 +34,7 @@ if($LoginID !=0){
 			<tbody>
 				<?php
 				$surveydo2 = new Survey_DO();
-				$rows=$surveydo2->loadByGroupID($LoginID, $GroupID);
+				$rows=$surveydo2->loadByGroupID($LoginID, $GroupID, $GSurveyID);
 				
 				foreach ($rows as $value){?>
 					<tr>
@@ -42,7 +42,7 @@ if($LoginID !=0){
 							<?php echo $value['QuestionNum']; ?>
 						</td>
 						<td>
-						  <input type="hidden" name="Q[]" value=<?php echo $value['GroupQID'];?>>
+						  <input type="hidden" name="Q[]" value=<?php echo $value['QuestionID'];?>>
 							
 							<?php echo $value['QuestionTxt'].'?';?>
 						</td>
@@ -72,7 +72,7 @@ if($LoginID !=0){
 			$ResponseVal=$_POST['ResponseVal'];
 			$Q=$_POST['Q'];
 			$size=sizeof($ResponseVal);
-			for($i=1;$i<$size;$i++)
+			for($i=0;$i<$size;$i++)
 			{
 				//echo $ResponseVal[$i];
 				//echo $Q[$i];
@@ -81,15 +81,16 @@ if($LoginID !=0){
 				'LoginID' => $LoginID,
 				'Subj' => $_POST['SurveyID'],
 				'GSurveyID' => $GSurveyID,
-				'GroupQID' => $Q[$i],
+				'QuestionID' => $Q[$i],
 				'ResponseValue' => $ResponseVal[$i],
-				'GroupID' => $GroupID,
-				'Taken' => 1,
-				'Round' => $i));
+				'GroupID' => $GroupID));
 				$aSurvey->addSurvey();
 				
 			}
-				
+			if($Role=='Student'){
+				//echo "<script>window.open('../../../_studentPages/" . $returnME . ".php?stid=". $Subj. "', '_self') </script>";
+				echo "<script>window.open('../../../_studentPages/student_group_survey.php?gid=".$GroupID."&gsid=". $GSurveyID . "', '_self') </script>";
+			}
 			}?>
 	
 	</div>

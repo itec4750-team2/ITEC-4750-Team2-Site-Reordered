@@ -13,10 +13,11 @@ $P='yoursurveys';
 <h2 class="center">Surveys You've Created</h2>
 <div class="container-fluid" style="padding: 20px 0px 15px 0px;">
 	<div class="row">
+	<!-- ++++ Change: Added Survey List by LoginID 10/28/17 KM ++++ -->
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/survey_list.php');?>
 	</div>
 </div>
-	<!-- ++++ Change: Added Survey List by LoginID 10/28/17 KM ++++ -->
+	
 	<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 
 </body>

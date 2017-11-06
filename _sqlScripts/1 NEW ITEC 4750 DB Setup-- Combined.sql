@@ -192,16 +192,16 @@ CREATE TABLE `gen_survey_q` (
 --
 
 INSERT INTO `gen_survey_q` (`QuestionID`, `QuestionTxt`, `QKey`) VALUES
-(1, 'Rate this group member on his/her QUALITY of contribtuion','quality'),
-(2, 'Rate this group member on his/her QUANTITY of contribution', 'quantity'),
-(3, 'Rate this group member on his/her CREATIVITY','creativity'),
-(4, 'Rate this group member on his/her TURN TAKING or allowing others to participant', 'turnTaking'),
-(5, 'Rate this group member on his/her EFFORT or time spent on project', 'effort'),
-(6, 'Rate this group member on his/her ATTITUDE toward the group', 'attitude'),
-(7, 'Rate this group member on his/her ATTENDANCE to group meetings', 'attendance'),
-(8, 'Rate this group member on his/her PREPARATION for group meetings', 'preparation'),
-(9, 'Rate this group member on his/her WILLINGNESS to accept and complete tasks', 'willingness'),
-(10, 'Rate this group member on his/her COMPLETION of tasks ON TIME', 'completion');
+(1, 'Rate this group member on his/her QUALITY of contribtuion','Quality'),
+(2, 'Rate this group member on his/her QUANTITY of contribution', 'Quantity'),
+(3, 'Rate this group member on his/her CREATIVITY','Creativity'),
+(4, 'Rate this group member on his/her TURN TAKING or allowing others to participant', 'Turn Taking'),
+(5, 'Rate this group member on his/her EFFORT or time spent on project', 'Effort'),
+(6, 'Rate this group member on his/her ATTITUDE toward the group', 'Attitude'),
+(7, 'Rate this group member on his/her ATTENDANCE to group meetings', 'Attendance'),
+(8, 'Rate this group member on his/her PREPARATION for group meetings', 'Preparation'),
+(9, 'Rate this group member on his/her WILLINGNESS to accept and complete tasks', 'Willingness'),
+(10, 'Rate this group member on his/her COMPLETION of tasks ON TIME', 'Completion');
 
 
 
