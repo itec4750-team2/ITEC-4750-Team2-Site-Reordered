@@ -3,24 +3,30 @@
 include($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/login_do.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/password_do.php');
 ?>
-		<form action='#'  method='post' name ='reqPassForm' class="form-horizontal">
-			<fieldset>
-			<legend>Request New Password</legend>
-				<div class="form-group">
-					<label class="control-label col-sm-4" for="Email">Email:</label>
-					<div class="col-sm-7">
-						<input type="email" name="Email" id="Email" placeholder= "Enter Email." <?php if(!empty($_GET['stid'])){echo 'value="'.$Email .'"';} ?> required class="form-control inputColor">
+<div class="container-fluid" style="padding: 20px 0px 15px 0px;">
+	<div class="row">
+		<div class="col-md-5 col-centered">
+			<form action='#'  method='post' name ='reqPassForm' class="form-horizontal">
+				<fieldset>
+				<legend>Request New Password</legend>
+					<div class="form-group">
+						<label class="control-label col-sm-4" for="Email">Email:</label>
+						<div class="col-sm-7">
+							<input type="email" name="Email" id="Email" placeholder= "Enter Email." <?php if(!empty($_GET['stid'])){echo 'value="'.$Email .'"';} ?> required class="form-control inputColor">
+						</div>
 					</div>
-				</div>
-				<br/>
-				<br/>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-9">
-						<input type='submit' name='reqPass' value='Request Reset' class="btn btn-primary btn-lg submit">
+					<br/>
+					<br/>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-9">
+							<input type='submit' name='reqPass' value='Request Reset' class="btn btn-primary btn-lg submit">
+						</div>
 					</div>
-				</div>
-			</fieldset>
-		</form>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
 		<?php
 
 			$errorMsg ='';
