@@ -49,14 +49,14 @@ div.two label { font-weight:bold; float: left; width: 100px; text-align: right; 
 	position: relative;}
 div.two input, div.two select{ float: left; width: 150px; text-align: left; }
 div.two select { width: 157px; }
-span.two {width: 15%; float: left;}
+span.two {width: 33%; float: left; text-align: center;}
 #submit{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
 	font-size:12px; font-weight:bold;color: #FFFFFF; }
 #continue{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
 	font-size:12px; font-weight:bold;color: #FFFFFF; }
 #submitEval{ clear: both; width: 125px; height: 30px; background:#42337E; text-align:center; line-height:20px;
 	font-size:12px; font-weight:bold;color: #FFFFFF; }
-.med_icon{ width:65px; height:65px; }	
+.med_icon{ width:65px; height:65px; }
 .small_icon{ width:25px; height:25px; }
 .indent { margin-left: 30px; transition: margin-left .5s;}
 .center { text-align: center; }
