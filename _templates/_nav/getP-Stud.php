@@ -24,6 +24,7 @@ if(isset($returnME)){
 			}
 			else{echo "<script>window.open('../../../_studentPages/" . $returnME . ".php','_self') </script>";}
 		}
+		
 	}
 }
 

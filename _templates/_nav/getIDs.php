@@ -38,6 +38,18 @@ if(isset($_GET['gid'])){
 	}
 }
 
+if(isset($_GET['gsid'])){
+	if(!empty($_GET['gsid'])){
+		$GSurveyID = $_GET['gsid'];
+	}
+}
+
+if(isset($_SESSION['Role'])){
+	if(!empty($_SESSION['Role'])){ 
+		$Role = $_SESSION['Role']; // Current User
+	}
+}
+
 ?>
 	
 	
