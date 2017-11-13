@@ -93,7 +93,34 @@ INSERT INTO `group_assign` (`GroupAssignID`, `GroupID`, `LoginID`) VALUES
 (16, '86756-2', 123),
 (17, '86756-2', 124);
 
------------------------------------------------------------
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `survey_responses`
+-- Holds Responses to specific student's specific survey questions
+-- Survey shows by student name will be pulled by loginid 
+-- --------------------------------------------------------
+--
+-- Table structure for table `surveys`
+-- Holds Survey Names
+-- 
+
+-- 
+CREATE TABLE `surveys`(
+ `GSurveyID` int(10) NOT NULL AUTO_INCREMENT,
+ `GSurveyName` varchar(255),
+ PRIMARY KEY (`GSurveyID`)
+ )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `surveys`
+--
+
+INSERT INTO `surveys` (`GSurveyID`, `GSurveyName`) VALUES
+(1,'Week 1 Team Survey'), (2, 'Week 2 Team Survey'), 
+(3, 'Week 3 Team Survey'), (4, 'Week 4 Team Survey');
+
+-- ---------------------------------------------------------
 
 --
 -- Table structure for table `group_survey_questions`
@@ -105,10 +132,12 @@ INSERT INTO `group_assign` (`GroupAssignID`, `GroupID`, `LoginID`) VALUES
 --     statements++++
 CREATE TABLE `group_survey_q` (
   `GroupQID` int(6) NOT NULL AUTO_INCREMENT,
-  `GSurveyName` varchar(255),
+  `GSurveyID` int(6) NOT NULL, 
+  `QuestionNum` int(6) NOT NULL,
   `GroupID` varchar(255) NOT NULL,
   `QuestionID` int,
-   PRIMARY KEY (GroupQID),
+   PRIMARY KEY (`GroupQID`),
+   FOREIGN KEY (`GSurveyID`) REFERENCES `surveys`(`GSurveyID`) ON DELETE CASCADE,
    FOREIGN KEY (`GroupID`) REFERENCES `cgroup`(`GroupID`) ON DELETE CASCADE,
    FOREIGN KEY (`QuestionID`) REFERENCES `gen_survey_q`(`QuestionID`) ON DELETE CASCADE
    
@@ -117,42 +146,50 @@ CREATE TABLE `group_survey_q` (
   SET foreign_key_checks = 0;
 
 --
--- Dumping data for table `survey`
+-- Dumping data for table `group_survey_q`
 --
 
-INSERT INTO `group_survey_q` (`GroupQID`,`GroupID`, `GSurveyName`, `QuestionID`) VALUES
-(1,'1-2', 'Group 2, Week 1 Team Survey', 1),
-(2,'1-2', 'Group 2, Week 1 Team Survey', 2),
-(3,'1-2', 'Group 2, Week 1 Team Survey', 3),
-(4,'1-2', 'Group 2, Week 1 Team Survey', 4),
-(5,'1-2', 'Group 2, Week 1 Team Survey', 5),
-(6,'1-2', 'Group 2, Week 1 Team Survey', 6),
-(7,'1-2', 'Group 2, Week 1 Team Survey', 7),
-(8,'1-2', 'Group 2, Week 1 Team Survey', 8),
-(9,'1-2', 'Group 2, Week 1 Team Survey', 9),
-(10,'1-2', 'Group 2, Week 1 Team Survey', 10),
-(11,'86756-2', 'Group 2, Week 1 Team Survey', 1),
-(12,'86756-2', 'Group 2, Week 1 Team Survey', 2),
-(13,'86756-2', 'Group 2, Week 1 Team Survey', 3),
-(14,'86756-2', 'Group 2, Week 1 Team Survey', 4),
-(15,'86756-2', 'Group 2, Week 1 Team Survey', 5),
-(16,'86756-2', 'Group 2, Week 1 Team Survey', 6),
-(17,'86756-2', 'Group 2, Week 1 Team Survey', 7),
-(18,'86756-2', 'Group 2, Week 1 Team Survey', 8),
-(19,'86756-2', 'Group 2, Week 1 Team Survey', 9),
-(20,'86756-2', 'Group 2, Week 1 Team Survey', 10),
-(21,'87123-2', 'Group 2, Week 1 Team Survey', 1),
-(22,'87123-2', 'Group 2, Week 1 Team Survey', 3),
-(23,'87123-2', 'Group 2, Week 1 Team Survey', 5),
-(24,'87123-2', 'Group 2, Week 1 Team Survey', 6),
-(25,'87123-2', 'Group 2, Week 1 Team Survey', 10);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `survey_responses`
--- Holds Responses to specific student's specific survey questions
--- Survey shows by student name will be pulled by loginid 
+INSERT INTO `group_survey_q` (`GroupQID`,`GroupID`, `QuestionNum`, `GSurveyID`, `QuestionID`) VALUES
+(1,'1-2', 1, 1, 1),
+(2,'1-2', 2, 1, 2),
+(3,'1-2', 3, 1, 3),
+(4,'1-2', 4, 1, 4),
+(5,'1-2', 5, 1, 5),
+(6,'1-2', 6, 1, 6),
+(7,'1-2', 7, 1, 7),
+(8,'1-2', 8, 1, 8),
+(9,'1-2', 9, 1, 9),
+(10,'1-2', 10, 1, 10),
+(11,'86756-2', 1, 1, 1),
+(12,'86756-2', 2, 1, 2),
+(13,'86756-2', 3, 1, 3),
+(14,'86756-2', 4, 1, 4),
+(15,'86756-2', 5, 1, 5),
+(16,'86756-2', 6, 1, 6),
+(17,'86756-2', 7, 1, 7),
+(18,'86756-2', 8, 1, 8),
+(19,'86756-2', 9, 1, 9),
+(20,'86756-2', 10, 1, 10),
+(21,'87123-2', 1, 1, 1),
+(22,'87123-2', 2, 1, 3),
+(23,'87123-2', 3, 1, 5),
+(24,'87123-2', 4, 1, 6),
+(25,'87123-2', 5, 1, 10),
+(26,'1-2', 1, 2, 1),
+(27,'1-2', 2, 2, 2),
+(28,'1-2', 3, 2, 3),
+(29,'1-2', 4, 2, 4),
+(30,'1-2', 5, 2, 5),
+(31,'1-2', 6, 2, 6),
+(32,'1-2', 7, 2, 7),
+(33,'1-2', 8, 2, 8),
+(34,'1-2', 9, 2, 9),
+(35,'1-2', 10, 2, 10),
+(41,'86756-2', 1, 3, 1),
+(42,'86756-2', 2, 3, 9),
+(43,'86756-2', 3, 3, 2),
+(44,'86756-2', 4, 3, 12),
+(45,'86756-2', 5, 3, 10);
 
 -- --------------------------------------------------------
 
@@ -164,25 +201,17 @@ INSERT INTO `group_survey_q` (`GroupQID`,`GroupID`, `GSurveyName`, `QuestionID`)
 -- 
 CREATE TABLE `survey_responses`(
  `ResponseID` int(10) NOT NULL AUTO_INCREMENT,
- `GroupQID` int,
  `LoginID` int,
+ `GSurveyID` int,
+ `QuestionID` int,
+ `TeamMemberID` int,
  `ResponseValue` int(2),
   PRIMARY KEY (`ResponseID`),
-  FOREIGN KEY (`GroupQID`) REFERENCES `group_survey_q`(`GroupQID`) ON DELETE CASCADE,
-  FOREIGN KEY (`LoginID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE
+  FOREIGN KEY (`LoginID`)  REFERENCES `login`(`LoginID`) ON DELETE CASCADE,
+  FOREIGN KEY (`GSurveyID`)  REFERENCES `surveys`(`GSurveyID`) ON DELETE CASCADE,
+  FOREIGN KEY (`QuestionID`) REFERENCES `gen_survey_q`(`QuestionID`) ON DELETE CASCADE,
+  FOREIGN KEY (`TeamMemberID`) REFERENCES `login`(`LoginID`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
---
--- Dumping data for table `responses`
---
-
-INSERT INTO `survey_responses` (`ResponseID`, `GroupQID`, `LoginID`,`ResponseValue`) VALUES
-(1, 1, 100, 1), (2, 2, 100, 1), (3, 3, 100, 1), (4, 4, 100, 1), (5, 5, 100, 1), (6, 6, 100, 1), (7, 7, 100, 1), (8, 8, 100, 1), (9, 9, 100, 1), (10, 10, 100, 1),
-(11, 1, 101, 1), (12, 2, 101, 1), (13, 3, 101, 1), (14, 4, 101, 1), (15, 5, 101, 1), (16, 6, 101, 1), (17, 7, 101, 1), (18, 8, 101, 1), (19, 9, 101, 1), (20, 10, 101, 1),
-(21, 1, 102, 1), (22, 2, 102, 1), (23, 3, 102, 1), (24, 4, 102, 1), (25, 5, 102, 1), (26, 6, 102, 1), (27, 7, 102, 1), (28, 8, 102, 1), (29, 9, 102, 1), (30, 10, 102, 1),
-(31, 1, 103, 1), (32, 2, 103, 1), (33, 3, 103, 1), (34, 4, 103, 1), (35, 5, 103, 1), (36, 6, 103, 1), (37, 7, 103, 1), (38, 8, 103, 1), (39, 9, 103, 1), (40, 10, 103, 1),
-(41, 1, 104, 1), (42, 2, 104, 1), (43, 3, 104, 1), (44, 4, 104, 1), (45, 5, 104, 1), (46, 6, 104, 1), (47, 7, 104, 1), (48, 8, 104, 1), (49, 9, 104, 1), (50, 10, 104, 1),
-(51, 1, 105, 1), (52, 2, 105, 1), (53, 3, 105, 1), (54, 4, 105, 3), (55, 5, 105, 1), (56, 6, 105, 1), (57, 7, 105, 1), (58, 8, 105, 1), (59, 9, 105, 1), (60, 10, 105, 1),
-(61, 1, 106, 1), (62, 2, 106, 1), (63, 3, 106, 1), (64, 4, 106, 1), (65, 5, 106, 1), (66, 6, 106, 1), (67, 7, 106, 1), (68, 8, 106, 1), (69, 9, 106, 1), (70, 10, 103, 1);
