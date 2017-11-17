@@ -1,5 +1,5 @@
 <?php
-
+// ++++ Change: Added Title 10/25 KM ++++
 $title = 'Student Settings';
  include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/studentHeader.php');
 	//-- Sets up data for the side navigation bar. --
@@ -18,10 +18,8 @@ $title = 'Student Settings';
 		</div>
 	</div>
 </div>
-
-	<footer>
-
-	</footer>
+<?php// ++++ Change: Included Footer KM ++++
+ include("../_templates/_footers/footer.php");?>
 
 </body>
 </html>

@@ -1,4 +1,6 @@
 <?php 
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'Student Evaluation';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentHeader2.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');

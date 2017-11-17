@@ -30,7 +30,7 @@ else{ echo "Role not defined.";}
 
 <head> <!-- Builds basis of site. Sets style1 as the CSS for this page. -->
 	<meta charset="utf-8">
-	<title>Knightly Knowledge - Student Evaluation</title>
+	<title>Knightly Knowledge <?php if(isset($title)){echo" - ". $title;} ?></title>
 	<link rel="stylesheet" href="../_css/bootstrap.min.css" />
 	<link href="../_css/style1.css" rel="stylesheet" />
 	<script src="../_js/dashboard.js" type="text/javascript"></script>
@@ -48,6 +48,6 @@ else{ echo "Role not defined.";}
 	<!--Navigation Bar (purple) -->
 
 	<div id="purpleBar">
-		<span class="lead">Knightly Knowledge - <a href="studentDashboard.php" style="color: #FFFFFF">Student Dashboard</a>
+		<span class="lead">Knightly Knowledge - <?php if(isset($title)){echo " - ".$title;}?></a>
 
 <?php ?>
