@@ -3,11 +3,9 @@
 include($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/login_do.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/password_do.php');
 ?>
-<div class="container-fluid" style="padding: 20px 0px 15px 0px;">
-	<div class="row">
-		<div class="col-md-5 col-centered">
-			<form action='#'  method='post' name ='reqPassForm' class="form-horizontal">
-				<fieldset>
+		<form action='#'  method='post' name ='reqPassForm' class="form-horizontal">
+			<fieldset>
+			<div class="col-md-7 col-centered">
 				<legend>Request New Password</legend>
 					<div class="form-group">
 						<label class="control-label col-sm-4" for="Email">Email:</label>
@@ -22,11 +20,9 @@ include($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/password_do.php');
 							<input type='submit' name='reqPass' value='Request Reset' class="btn btn-primary btn-lg submit">
 						</div>
 					</div>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-</div>
+				</div>
+			</fieldset>
+		</form>
 		<?php
 
 			$errorMsg ='';
