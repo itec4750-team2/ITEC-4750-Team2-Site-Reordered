@@ -1,7 +1,8 @@
 <form action="#" method="post" class="form-horizontal" name="Password">
-	</fieldset>
+	<fieldset>
 		<!-- Current password -->
 		<div class="form-group">
+		<legend>Change Password</legend>
 			<label class="control-label col-sm-4" for="OldPassword">Current password:</label>
 			<div class="col-sm-7">
 				<input type="password" name="OldPassword" class="form-control inputColor">

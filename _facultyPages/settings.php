@@ -7,12 +7,15 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
  $P='settings';
  $Subj = $LoginID;
  ?>
- 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updateProfile.php'); ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updatePassword.php'); ?>
-<?php // ---------------- Password Reset via Emai ------------->
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/forgotpassword.php');
-?>	
+ <div class="container-fluid" style="padding: 20px 0px 15px 0px;">
+	<div class="row">
+		<div class="col-md-7 col-centered">
+			<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updateProfile.php'); ?>
+			<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updatePassword.php'); ?>
+		</div>
+			<?php // ---------------- Password Reset via Emai ------------->
+			include($_SERVER['DOCUMENT_ROOT'].'/_templates/forgotpassword.php');
+			?>	
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
 </body>
