@@ -7,12 +7,13 @@
 	<label for="SID">Assign: </label>	
 	<?php
 		//Selection Box - Select from all student list
+		// ++++ Change: Added ID label to dropdown (UTA indicated confusion) 11/16 KM ++++
 		$studo = new Drop_DO($_SESSION['LoginID']);
 		$rows=$studo->studSelect();
 		echo '<select name="SID" required>'; // Open
 		echo '<option value="none" selected>Assign Student</option>'; // Auto Select Current student
 			foreach ($rows as $sdo) {
-			  echo '<option value="'.$sdo['LoginID'].'">'.$sdo['LoginID'].' '.$sdo['FName'].' '.$sdo['LName'].'</option>';
+			  echo '<option value="'.$sdo['LoginID'].'">ID:'.$sdo['LoginID'].' - '.$sdo['FName'].' '.$sdo['LName'].'</option>';
 			}
 		echo '</select>';// Close
 	?>
