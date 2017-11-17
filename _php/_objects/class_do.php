@@ -22,7 +22,8 @@ class Class_DO{
 							$stmt->execute();
 							$stmt->close();
 						//Instructor Creating Class is assigned to it.
-						$sql2 = "INSERT INTO class_Assign (ClassID, LoginID) VALUES (?,?);";
+						// ++++ Change: Fixed table name KM 11/16 +++++
+						$sql2 = "INSERT INTO class_assign (ClassID, LoginID) VALUES (?,?);";
 							$stmt2 = $con->prepare($sql2);
 							$stmt2->bind_param("ii", $values["ClassID"], $values["LoginID"]);
 							$stmt2->execute();
@@ -55,7 +56,8 @@ class Class_DO{
 						$sql = "SELECT class.ClassID, ClassNO, ClassName, ExpDate, class.SemesterID, SemesterName, Year
 							FROM(class
 							INNER JOIN semester ON semester.SemesterID=class.SemesterID)
-							WHERE DATEDIFF(ExpDate, NOW())>0";
+							WHERE DATEDIFF(ExpDate, NOW())>0
+							ORDER BY class.ClassID";//++++ Change: Order by ClassID 11/14 KM++++							
 						$getClass = mysqli_query($con, $sql); 
 						// output data of each row
 						$all_rows = array();
@@ -83,7 +85,8 @@ class Class_DO{
 				FROM((class
 				INNER JOIN class_assign ON class.ClassID=class_assign.ClassID)
 				INNER JOIN semester ON semester.SemesterID=class.SemesterID)
-				WHERE class_assign.LoginID = '$LoginID'&& DATEDIFF(ExpDate, NOW())>0";
+				WHERE class_assign.LoginID = '$LoginID'&& DATEDIFF(ExpDate, NOW())>0
+				ORDER BY class.ClassID";//++++ Change: Order by ClassID 11/14 KM++++	
 			$getClass = mysqli_query($con, $sql); 
 			// output data of each row
 			$all_rows = array();

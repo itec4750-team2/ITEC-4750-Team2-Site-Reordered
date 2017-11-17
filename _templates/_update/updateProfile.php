@@ -21,8 +21,7 @@ if(!empty($_SESSION['LoginID'])){
 				$LName = $value['LName'];
 				$Email = $value['Email'];		
 				?>
-				<div class="col-md-6 col-centered">
-				<form action="#" method = "POST" class="form-horizontal" name ="update-profile" >
+					<form action="#" method = "POST" class="form-horizontal" name ="update-profile" >
 					<fieldset><legend>Update Settings for: 
 					<?php 
 						if($P!='studentSettings' && $P!='settings'){echo '<a href="stud_mgmt_pg.php?stid=' . $Subj . '">'.$Subj.' '.$FName.' '.$LName.'</a>';} 
@@ -52,13 +51,9 @@ if(!empty($_SESSION['LoginID'])){
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-9">
 								<input type="submit" value="Update Profile" name="UpdateProfile" id="UpdateProfile" class="btn btn-primary btn-lg submit">
-							</div>
-						</div>
 						<?php 
 							if(($_SESSION['Role'] == 'Faculty')){
 						?> 
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-9">
 								<input type="submit" value="Delete Profile" name="DeleteProfile" id="DeleteProfile"class="btn btn-primary btn-lg submit">
 							</div>
 						</div>
@@ -67,7 +62,7 @@ if(!empty($_SESSION['LoginID'])){
 						?>
 					</fieldset>
 				</form>
-				</div>
+				
 			<?php	
 				if(isset($_POST['UpdateProfile'])){	
 					$uProfile = new Profile(array(	
@@ -95,4 +90,3 @@ if(!empty($_SESSION['LoginID'])){
 	}//End If !empty LoginID 
 	?>
 	
-</div>

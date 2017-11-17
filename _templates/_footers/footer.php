@@ -1,18 +1,9 @@
-<?php ?>
+<!DOCTYPE html>
+
 <head>
 		<link href="../_css/footerstyle.css" rel="stylesheet" />
 </head>
-<!-- Change: Added Quicklinks to footer -->
-<div>
-	<br/>
-	Visit:
-	<br/>
-	<a href="classes.php">MY Classes</a><br/>
-	<a href="all_classes.php">All Classes</a><br/>
-	<a href="facultyDashboard.php">Home</a><br/><br/>
-</div>
-<div class = "clear"></div>
-	<footer>
+<footer>
 		<div id="purpleBar">
 			<div class="row">
 				<div class="col-sm-6 text-center">478.471.2700 | <a href="https://www.google.com/maps/dir/100 university parkway macon ga 31206" style="color: #FFFFFF">100 University Parkway | Macon, GA 31206</a></div>
@@ -24,6 +15,7 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+			
+</footer>
 </body>
 </html>

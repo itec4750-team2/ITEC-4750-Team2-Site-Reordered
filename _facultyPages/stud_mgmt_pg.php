@@ -10,6 +10,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/group_assign_do.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/group_assign_model.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/class_assign_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/report_do.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_assign_model.php');
 // ++++ Change: Added Page Identifier 10/10 KM ++++
 $P='stud_mgmt_pg';

@@ -5,6 +5,8 @@ $title = 'My Students';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/stu_do.php');
+require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/report_do.php');
+//include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/overall_rating.php');
 // ++++ Change: Added Page Identifier 10/10 KM ++++
 $P='mystudents';
 ?>
@@ -28,6 +30,7 @@ $P='mystudents';
 						<th>Student Name</th>
 						<th>Email</th>
 						<th>ClassID</th>
+						<th>Surveys</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -37,7 +40,9 @@ $P='mystudents';
 							echo '<td><a href="stud_mgmt_pg.php?stid=' . $value['LoginID'] . '">';
 								echo 	$value['FName'] . ' ' . $value['LName'] . '</a></td>';
 							echo '<td><a href="mailto:' . $value['Email'].'">' . $value['Email'] . '</a></td>';
-							echo '<td><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a></td></tr>';
+							echo '<td><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a></td>';
+							echo '<td><a href="indiv_survey_report.php?stid=' . $value['LoginID'].'">View Survey Report</a></td>';
+							echo '</tr>';
 						}
 		   echo '</tbody>';
 		   echo '</table>';

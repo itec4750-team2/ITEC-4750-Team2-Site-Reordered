@@ -1,4 +1,6 @@
 <?php
+// ++++ Change: Added Title 10/25 KM ++++
+$title = 'Student Dashboard';
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');
 ?>
