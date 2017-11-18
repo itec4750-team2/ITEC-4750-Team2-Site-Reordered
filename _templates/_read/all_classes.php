@@ -16,7 +16,7 @@ $rows=$classdo->loadAll($_SESSION['LoginID']);
 			<tr>
 				<th class="col-sm-1">ID</th>
 				<th class="col-sm-2">Number</th>
-				<th class="col-sm-4">Name</th>
+				<th class="col-sm-5">Name</th>
 				<th class="col-sm-1">Semester</th>
 				<th class="col-sm-2">Expire Date</th>
 				<th class="col-sm-1">Delete <br/> Class</th>
@@ -30,7 +30,7 @@ $rows=$classdo->loadAll($_SESSION['LoginID']);
 						echo '<tr>';
 						echo '<td class="col-sm-1"><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a></td>'; // link to class_page
 						echo '<td class="col-sm-2">'.$value['ClassNO'].'</td>';
-						echo '<td class="col-sm-4"><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassName'].'</a></td>'; // link to class_page
+						echo '<td class="col-sm-5"><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassName'].'</a></td>'; // link to class_page
 						echo '<td class="col-sm-1">'.$value['SemesterName']. ' '.$value['Year'].'</td>';
 						echo '<td class="col-sm-2">'. $value['ExpDate'].'</td>';
 						echo '<td class="col-sm-1"><a href="../_templates/_delete/delete_class.php?cid='.$value['ClassID'].'&p='.$P;
