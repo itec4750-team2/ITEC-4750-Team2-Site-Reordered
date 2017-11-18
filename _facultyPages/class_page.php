@@ -11,32 +11,35 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/group_assign_do.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/group_assign_model.php');
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/drop_do.php');
 // ++++ Change: Added Page Identifier 10/10 KM ++++
+// ++++ Change: Added Check for IDs module 10/12 KM ++++
+
+// Gets IDs
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 $P='class_page';
 ?>
 <!-- Main Content Section-->
 <main>
 	<div class="container-fluid" style="padding: 20px 0px 15px 0px;">
-			<div class="row">
-				<div class="col-md-5 col-centered">
-					<?php
-					// ++++ Change: Added Check for IDs module 10/12 KM ++++
-
-					// Gets IDs
-					include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
-
-					// Catch for not logged in and ClassID missing
-					if(empty($ClassID)){
-						echo '<div class="error">Uhoh problem getting user login or ClassID</div>'; // Missing ClassID Error msg.
-					}
-					else{
-						// --------------- Class Information -------------
-						// ++++ Change: Created Reusable Module to list class info 9/30 KM ++++
-						?>
-						<div class ="ctrPg">
-						<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/class_information.php');?>
+		<?php
+		// Catch for not logged in and ClassID missing
+		if($LoginID != 0){
+			if(empty($ClassID)){
+				echo '<div class="error">Uhoh problem getting user login or ClassID</div>'; // Missing ClassID Error msg.
+			}
+			else{
+				// --------------- Class Information -------------
+				// ++++ Change: Created Reusable Module to list class info 9/30 KM ++++
+			?>
+				<!-- Get Class Information -->
+				<div class ="ctrPg">
+					<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/class_information.php');?>
+				</div>
+				
+				<div class="clear"></div>
+				<br/>
+				<div class="row">
+					<div class="col-md-5 col-centered">	
 						<div>
-						<div class="clear"></div>
-							<br/>
 							<br/>
 							<?php
 								//Update class, Delete class & Add Student links.
@@ -61,27 +64,23 @@ $P='class_page';
 							</div>
 
 							<div class="clear"></div>
-							</div>
-							<br/>
-							<br/>
-							<div>
-							<h2>Enroll Existing Student</h2>
+						</div>
+					</div>
+						<br/>
+						<br/>
+						<div>
 							<?php  include($_SERVER['DOCUMENT_ROOT'].'/_templates/_create/studdb_assign.php'); ?>
-							</div>
-							<br/>
+						</div>
+						<br/>
+						<br/>
 							<?php
-
-								// ++ Work Flag
-								// ++ Add Buttons to this table in enrolled_students.php
-								// ++
-
 								// Lists student's assigned to a class. Hides table if empty.
 								// ++++ Change: Created Reusable Module to list students 9/30 KM ++++
 								include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/enrolled_students.php');
 							?>
 						<?php } // End else
-					?>
-			</div>
+				}?>
+			
 		</div>
 	</div>
 </main>

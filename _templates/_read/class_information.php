@@ -10,7 +10,10 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 if($LoginID != 0){ //logged in
 	if(!isset($ClassID) || empty($ClassID)){echo '<div class="error">No ClassID Found.</div>';}
-	if(!empty($ClassID)){ // class id
+	if(!empty($ClassID)){ // class id?>	
+	<div class="row">
+			<div class="col-md-5 col-centered">
+	<?php
 		// --------------- Class Information -------------
 		// ++++ Change: Passed currently selected ClassID & $_SESSION['LoginID'] ++++
 		$classdo = new Class_DO();
@@ -25,8 +28,9 @@ if($LoginID != 0){ //logged in
 		}//End foreach
 		?>
 		<!-- ++++ change: added the word Semester to heading ++++ 9/5 KM-->
-		<h3><b> <?php echo $ClassName . ' - '. $SemesterName . ' Semester' ?> </b></h3>
-		<table class="table table-hover">
+
+		<table class="table table-responsive">
+		<caption id="table-caption"><?php echo $ClassName . ' - '. $SemesterName . ' Semester' ?></caption>
 			<!-- Gives Class Information Recap -->
 			<tr><th>Class Item Number</th><td><?php echo '<a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a>';?></td></tr>
 			<tr><th>Class Number</th><td><?php echo $ClassNO;?></td></tr>

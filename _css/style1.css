@@ -70,20 +70,29 @@ td, th {border: 1px solid #dddddd; text-align: left; padding: 2px; }*/
 td, th {border: 1px solid #dddddd; padding:4px;}
 .inputColor {background-color:#F5F5F5;}
 
-/* ++++ Change: Added Styling to tables KM 11/18 ++++
+/* ++++ Change: Added Hover Styling to tables KM 11/18 ++++
 /* Table */
 
 .table-responsive tbody tr:first-child td{
 	padding-top: 20px;
 }
+.table-responsive tbody tr:first-child th{
+	padding-top: 20px;
+}
+#table-caption{
+	text-align:center;
+	color:#633393;
+	border-bottom: 3px solid #633393;
+	font-size: 1.5em;
+}
 .table-responsive thead tr th, .table-responsive thead {
-	border-left: 0 ;
-	border-right: 0 ;
 	border-top: 0;	
 	border-bottom: 3px solid #633393;
 	padding-bottom: 10px;
+	
 }
-.table-responsive>tbody>tr>td{
+
+.table-responsive thead tr th, .table-responsive tbody tr td, .table-responsive tr th, .table-responsive tr td, .table-responsive th, .table-responsive td {
 	border-left: 0 ;
 	border-right: 0 ;
 }
@@ -96,8 +105,25 @@ td, th {border: 1px solid #dddddd; padding:4px;}
 	background-color:#C2AED6;
 	color: white;
 	}
+/*For IE*/
+select#form-select:active{
+  outline-color: #C2AED6;
+  color: #white;
+}
+select#form-select:hover {
+  box-shadow: 0 0 10px 100px #C2AED6 inset;
+  color: 633393;
+}
 
-/* ++++ Change: Added Hover Styling to tables KM 11/18 ++++	
+select#form-select:focus option:active{ 
+    background: #C2AED6 !important;
+	outline-color: #C2AED6;
+	color: #white;
+}
+select:focus option:checked{ 
+    background: #C2AED6 !important;
+	color: #white;
+}
 
 /* Settings */
 .submit{background:#42337E; color: #FFFFFF; border-color:#42337E;}
