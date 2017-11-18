@@ -70,6 +70,34 @@ td, th {border: 1px solid #dddddd; text-align: left; padding: 2px; }*/
 td, th {border: 1px solid #dddddd; padding:4px;}
 .inputColor {background-color:#F5F5F5;}
 
+/* ++++ Change: Added Styling to tables KM 11/18 ++++
+/* Table */
+
+.table-responsive tbody tr:first-child td{
+	padding-top: 20px;
+}
+.table-responsive thead tr th, .table-responsive thead {
+	border-left: 0 ;
+	border-right: 0 ;
+	border-top: 0;	
+	border-bottom: 3px solid #633393;
+	padding-bottom: 10px;
+}
+.table-responsive>tbody>tr>td{
+	border-left: 0 ;
+	border-right: 0 ;
+}
+
+.table-responsive>tbody>tr:hover{
+	background-color:#C2AED6;
+	color: 633393;
+	}
+.table-responsive>tbody>tr:hover a{
+	background-color:#C2AED6;
+	color: white;
+	}
+
+/* ++++ Change: Added Hover Styling to tables KM 11/18 ++++	
 
 /* Settings */
 .submit{background:#42337E; color: #FFFFFF; border-color:#42337E;}
