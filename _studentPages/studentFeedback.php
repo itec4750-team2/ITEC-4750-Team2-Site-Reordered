@@ -1,8 +1,9 @@
 <?php
+// ++++ Change: Updated paths to correct server loading issue 11/18 KM ++++
 // ++++ Change: Added Title 10/25 KM ++++
 $title = 'Feedback';
-include($_SERVER['DOCUMENT_ROOT'].'_templates/_headers/studentHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'_templates/_nav/studentNav.php');
+include('../_templates/_headers/studentHeader.php');
+include('../_templates/_nav/studentNav.php');
 ?>
 <main>
 	<div class="wrapper">
