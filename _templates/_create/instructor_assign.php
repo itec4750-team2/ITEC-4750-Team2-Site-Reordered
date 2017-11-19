@@ -12,7 +12,7 @@
 			// ++++ Change: Removed LoginID from dropdown (UTA indicated confusion) 11/16 KM ++++
 			$facdo = new Drop_DO($_SESSION['LoginID']);
 			$rows=$facdo->facSelect();
-			echo '<select name="FID" class="form-control" required>'; // Open
+			echo '<select name="FID" class="form-control inputColor" required>'; // Open
 			echo '<option value="none"	 selected>Add Instructor</option>'; // Auto Select Current Instructor
 				foreach ($rows as $fdo) {
 				echo '<option value="'.$fdo['LoginID'].'">'.$fdo['FName'].' '.$fdo['LName'].'</option>';

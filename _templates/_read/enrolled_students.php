@@ -1,5 +1,4 @@
 <?php 
-// ++++ Change: Updated Table Styling. 11/18 KM ++++
 // ++++ Change: Added Reusable Module to list students. 9/30 KM ++++
 // CA_DO is called from originating page.
 ?>	

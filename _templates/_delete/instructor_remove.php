@@ -7,7 +7,7 @@
 		// ++++ Change: Removed LoginID from dropdown (UTA indicated confusion) 11/16 KM ++++
 			$instr = new CA_DO();
 			$facs=$instr->listClassInstrs($value['ClassID']);
-			echo '<select name="OFID" class="form-control" required>'; // Open
+			echo '<select name="OFID" class="form-control inputColor" required>'; // Open
 			echo '<option value="none" selected>Remove Instructor</option>'; // Auto Select Current Instructor
 				foreach ($facs as $val) {
 				echo '<option value="'.$val['LoginID'].'">'.$val['FName'].' '.$val['LName'].'</option>';
