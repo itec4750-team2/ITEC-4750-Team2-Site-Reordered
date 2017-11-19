@@ -26,7 +26,7 @@ if($LoginID != 0){ //Logged In
 								echo '<tr>';
 									echo '<td>'.'<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">';
 									echo 	$value['GroupID'].'</a></td>'; // links back to group page
-									echo '<td>'.$value['GroupName'].'</td>';
+									echo '<td>'.'<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">'.$value['GroupName'].'</td>';
 									echo '<td><div class="center"><a href="../_templates/_delete/del_group_assignment.php?gid='.$value['GroupID'].'&stid='.$Subj.'&p='.$P;
 									echo	'"><img class ="small_icon" src="../_images/person_delete.png" alt="Delete"></a></div></td>'; // delete group assignment
 								echo '</tr>';

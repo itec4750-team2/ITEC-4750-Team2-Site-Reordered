@@ -32,7 +32,7 @@ if(!empty($StID)){
 					echo '<td class="col-sm-2"><a href="class_page.php?cid='.$value['ClassID'].'">';
 					echo 	$value['ClassID'].'</a></td>'; // links back to class_page.php
 					echo '<td class="col-sm-2">'.$value['ClassNO'].'</td>';
-					echo '<td class="col-sm-3">'.$value['ClassName'].'</td>';
+					echo '<td class="col-sm-3"><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassName'].'</td>';
 					echo '<td class="col-sm-2">';
 						$instr = new CA_DO();
 						$facs=$instr->listClassInstrs($value['ClassID']);
