@@ -17,7 +17,7 @@
 			if(!empty($rows)){
 ?>			
 			<div class="row">
-			<div class="col-md-7 col-centered table-responsive">			
+			<div class="col-md-9 col-centered table-responsive">			
 				<table class="table-responsive">
 				<thead>
 				<caption id="table-caption">Currently Enrolled Students
