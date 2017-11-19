@@ -24,7 +24,7 @@
 					</caption>
 					<th class="col-sm-3">Student Name</th>
 					<th class="col-sm-3">Email</th>
-					<th class="col-sm-1">Group</th>
+					<th class="col-sm-2">Group</th>
 					<th class="col-sm-1">Remove<br/>From <br/>Class</th>
 					<th class="col-sm-1">Delete<br/>Student</th>
 					<th class="col-sm-1">Update<br/>Student</th>
@@ -39,8 +39,10 @@
 								echo 	$value['FName'] . ' ' . $value['LName'] . '</a></td>'; // links to student_mgt_pg for this student
 								// Includes mail to email link
 								echo '<td class="col-sm-3">' . '<a href="mailto:' . $value['Email'].'">' . $value['Email'] . '</a></td>';
+								
 								// ++++ Change: Created group_assignments as reusable module KM ++++ 
-								include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/group_assignments.php');
+									include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/group_assignments.php');
+								
 								// ++++ Change: Added buttons delete profile, delete class assignment KM ++++ 
 								echo '<td class="col-sm-1"><a href="../../_templates/_delete/del_class_assignment.php?cid='.$ClassID.'&stid='.$value['LoginID'].'&p='.$P;
 								echo 	'"><img class ="small_icon" src="../_images/person_delete.png" alt="Remove Student"></a></td>'; // delete class assignment						

@@ -38,25 +38,16 @@ if($LoginID != 0){ //Logged In
 							<?php
 						}
 		}
+		
 		else{
 			if(!empty($rows)){
-				?>
-					<div class="row">
-					<div class="col-md-5 col-centered">
-						<table class="table table-responsive">
-						<?php
-										foreach ($rows as $value){
-											// ++++ Change: Added group linked to class_group stub (to be developed soon) 9/5 KM ++++
-												echo '<td>' . '<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">';
-												echo   $value['GroupName'] . '</a></td>'; // links to group page for this group
-										}
-									}
-								else { echo '<td></td>';}
-									?>
-									</table>
-									</div>
-									</div>
-									<?php
+					foreach ($rows as $value){
+						// ++++ Change: Added group linked to class_group stub (to be developed soon) 9/5 KM ++++
+							echo '<td class="col-sm-2">' . '<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">';
+							echo   $value['GroupName'] . '</a></td>'; // links to group page for this group
+					}
+				}
+				else { echo '<td class="col-sm-2"></td>';}
 		}
 	  ?>
 		<?php }// End IF Login && ClassID
