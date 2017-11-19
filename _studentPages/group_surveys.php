@@ -15,13 +15,12 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/survey_model.php');
 $P='group_surveys';
 ?>
 
-<h2 class="center">Group Surveys</h2>
 <div class="container-fluid" style="padding: 20px 0px 15px 0px;">
-	
-	
 	<div class="row">
+		<div class="col-md-12 col-centered">
 		<!-- ++++ Change: Added Survey List by LoginID 10/28/17 KM ++++ -->
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/survey_list.php');?>
+		</div>
 	</div>
 </div>
 

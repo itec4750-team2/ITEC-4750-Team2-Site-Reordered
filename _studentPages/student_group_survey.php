@@ -12,7 +12,7 @@ $P='student_group_survey';
 ?>
 <div class="container-fluid" style="padding: 20px 0px 15px 0px;">
 	<div class="row">
-		<div class="col-md-7 col-centered">
+		<div class="col-md-10 col-centered">
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_create/new_survey.php');?>
 		</div>
 	</div>

@@ -5,9 +5,11 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/facultyHeader.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/facultyNav.php');
 // ++++ Change: Added survey_do object 10/28 KM ++++
 require($_SERVER['DOCUMENT_ROOT'].'/_php/_objects/survey_do.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 
 // ++++ Change: Added Page Identifier 10/10 KM ++++
 $P='yoursurveys';
+if($LoginID!=0){
 ?>
 
 <h2 class="center">Surveys You've Created</h2>
@@ -22,7 +24,10 @@ $P='yoursurveys';
 	</div>
 </div>
 	
-	<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');?>
+	<?php
+}
+	include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/facfooter.php');
+	?>
 
 </body>
 </html>

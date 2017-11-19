@@ -3,17 +3,19 @@
 if($LoginID != 0){ // Must be logged in. Role is checked in DO
 
 ?>
-<form name ="create-survey" method = "POST">
-	<div class="container">
-	<table>
-	<tr>
-		<th><label for="SurveyTitle">Enter Survey Title: </label></th>
-		<td><input type="text" name="SurveyTitle" id="SurveyTitle"></td>
-	</tr>
-	<tr>
-		<th><label for = "GroupID"> Group:</label></th>
-		<td>
-		<select name="GroupID" id="GroupID">
+<form name ="create-survey" method = "POST" class="form-horizontal col-centered col-sm-10">
+	<fieldset>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="SurveyTitle">Enter Survey Title: </label>
+		<div class="col-sm-6">
+		<input type="text" name="SurveyTitle" id="SurveyTitle" class="form-control inputColor" required>
+	</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-3" for = "GroupID"> Group:</label>
+		<div class="col-sm-6">
+		<select id="form-select" name="GroupID" class="form-control inputColor" required>
 			<option value="0" selected>Select Group</option>
 			<?php 
 				$dropdo = new DROP_DO();
@@ -23,13 +25,15 @@ if($LoginID != 0){ // Must be logged in. Role is checked in DO
 				}
 				?>
 		</select>	
-		</td>
-	</tr>	
+		</div>
+		</div>
+	
 	<?php for ($i=1; $i<11; $i++){?>
-		<tr>
-			<th><label for="Questions[]">Q# <?php echo $i;?> </label></th>
-			<td>
-				<select name = "Questions[]" id="Questions"><option value="0" selected>Select Question</option>
+		<div class="form-group">
+		<label class="control-label col-sm-3" for="Questions[]">Q# <?php echo $i;?> </label></th>
+			<div class="col-sm-6">
+				<select id="form-select" name = "Questions[]" class="form-control inputColor" required>
+				<option value="0" selected>Select Question</option>
 					<?php 
 						$dropdo = new DROP_DO();
 						$rows=$dropdo->surveyQuestions();	// Populate selection from general survey data
@@ -38,16 +42,15 @@ if($LoginID != 0){ // Must be logged in. Role is checked in DO
 						}
 					?>
 				</select>
-			</td>
+			</div>
+			</div>
 		</tr>	
 		<?php } ?>
-		</table>
-	</div>
-	<br/>
-	<div>
-		<input class="btn btn-default" type="submit" value="Submit" name="NewSurvey" id="NewSurvey">
-		<a href="yoursurveys.php" class="btn btn-default">Back to Surveys</a>
-	</div>
+		<div class="form-group">
+		<input class="btn btn-primary btn-lg submit" type="submit" value="Submit" name="NewSurvey" id="NewSurvey">
+		<a href="yoursurveys.php" class="btn btn-primary btn-lg submit" type="submit">Back to Surveys</a>
+		</div>
+	</fieldset>
 	</form>
 	<?php 
 	//Add a new survey in survey_do

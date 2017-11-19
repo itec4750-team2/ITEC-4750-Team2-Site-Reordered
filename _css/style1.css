@@ -81,20 +81,42 @@ td, th {border: 1px solid #dddddd; padding:4px;}
 }
 #table-caption{
 	text-align:center;
+	background-color: #fff;
 	color:#633393;
 	border-bottom: 3px solid #633393;
 	font-size: 1.5em;
+	padding-bottom: 10px;
 }
 .table-responsive thead tr th, .table-responsive thead {
 	border-top: 0;	
 	border-bottom: 3px solid #633393;
 	padding-bottom: 10px;
-	
 }
 
 .table-responsive thead tr th, .table-responsive tbody tr td, .table-responsive tr th, .table-responsive tr td, .table-responsive th, .table-responsive td {
 	border-left: 0 ;
 	border-right: 0 ;
+}
+
+#table-hover thead, #table-hover thead tr th{
+	border-top: 0;	
+	border-left: 0 ;
+	border-right: 0 ;
+	border-bottom: 3px solid #C6C2D6;
+	padding-bottom: 10px;
+}
+#table-hover tbody, #table-hover tbody tr td{
+	border-left: 0 ;
+	border-right: 0 ;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#table-hover tbody tr:hover{
+	background-color:DEDCF2;
+}
+
+#table-hover tbody tr:first-child td{
+	padding-top: 20px;
 }
 
 .table-responsive>tbody>tr:hover{
@@ -105,6 +127,7 @@ td, th {border: 1px solid #dddddd; padding:4px;}
 	background-color:#C2AED6;
 	color: white;
 	}
+	
 /*For IE*/
 select#form-select:active{
   outline-color: #C2AED6;
