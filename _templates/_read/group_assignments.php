@@ -16,32 +16,47 @@ if($LoginID != 0){ //Logged In
 		if($ClassID == 'all'){
 			if(!empty($rows)){
 ?>
-			<!-- <th>Group</th></tr> -->
-			<?php
-				echo '<table class="table table-hover">';
-					foreach ($rows as $value){
-					echo '<tr>';
-						echo '<td>'.'<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">';
-						echo 	$value['GroupID'].'</a></td>'; // links back to group page
-						echo '<td>'.$value['GroupName'].'</td>';
-						echo '<td><div class="center"><a href="../_templates/_delete/del_group_assignment.php?gid='.$value['GroupID'].'&stid='.$Subj.'&p='.$P;
-						echo	'"><img class ="med_icon" src="../_images/person_delete.png" alt="Delete"></a></div></td>'; // delete group assignment
-					echo '</tr>';
-					}
-				echo '</table>';
-			}
+			<div class="row">
+			<div class="col-md-5 col-centered">
+				<table class="table table-responsive">
+						<!-- <th>Group</th></tr> -->
+						<?php
+							
+								foreach ($rows as $value){
+								echo '<tr>';
+									echo '<td>'.'<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">';
+									echo 	$value['GroupID'].'</a></td>'; // links back to group page
+									echo '<td>'.$value['GroupName'].'</td>';
+									echo '<td><div class="center"><a href="../_templates/_delete/del_group_assignment.php?gid='.$value['GroupID'].'&stid='.$Subj.'&p='.$P;
+									echo	'"><img class ="small_icon" src="../_images/person_delete.png" alt="Delete"></a></div></td>'; // delete group assignment
+								echo '</tr>';
+								}
+								?>
+							</table>
+							</div>
+							</div>
+							<?php
+						}
 		}
 		else{
 			if(!empty($rows)){
-					foreach ($rows as $value){
-						// ++++ Change: Added group linked to class_group stub (to be developed soon) 9/5 KM ++++
-							echo '<td>' . '<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">';
-							echo   $value['GroupName'] . '</a></td>'; // links to group page for this group
-					}
-				}
-			else { echo '<td></td>';}
+				?>
+					<div class="row">
+					<div class="col-md-5 col-centered">
+						<table class="table table-responsive">
+						<?php
+										foreach ($rows as $value){
+											// ++++ Change: Added group linked to class_group stub (to be developed soon) 9/5 KM ++++
+												echo '<td>' . '<a href="class_group.php?gid='.$value['GroupID'].'&gname='.$value['GroupName'].'">';
+												echo   $value['GroupName'] . '</a></td>'; // links to group page for this group
+										}
+									}
+								else { echo '<td></td>';}
+									?>
+									</table>
+									</div>
+									</div>
+									<?php
 		}
-
 	  ?>
-
 		<?php }// End IF Login && ClassID
