@@ -18,7 +18,8 @@ $P = 'update_class';
 <!-- Main Content Section-->
 <main>
 	<div class="container-fluid" style="padding: 20px 0px 15px 0px;">
-
+		<div class="row">
+			<div class="col-md-5 col-centered">
 				<?php
 				// ++++ Change: Added Catch for not logged in and ClassID missing 9/30 KM ++++
 				if(isset($_GET['cid'])){$ClassID = $_GET['cid'];}
@@ -30,18 +31,17 @@ $P = 'update_class';
 						else{
 				?>
 							<!-- ++++ Change: Created reusable modules & included in form 9/30 KM ++++-->
-							<fieldset><form name="update-class" method="POST" class="form-horizontal">
+							<form name="update-class" method="POST" class="form-horizontal">
 								<!--------------------------- Get Class Info ------------------------>
 								<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/class_information.php');?>
 								<br/>
-								<legend id="table-caption">Update Class Information</legend>
+								<h3><b>Update Class Information</b></h3>
 								<!--------------- Add Instructor Assignment ------------------>
 								<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_create/instructor_assign.php');?>
 								<!--------------- Remove Instructor Assignment ------------------>
 								<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_delete/instructor_remove.php');?>
 								<!---------------------------- updateClass Form --------------------->
 								<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_update/updateClass.php');	?>
-								</fieldset>
 							</form>
 				<?php }} // End else !empty LoginID & ClassID?>
 			</div>

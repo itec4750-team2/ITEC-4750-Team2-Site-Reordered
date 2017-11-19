@@ -2,19 +2,19 @@
 	<div class="form-group">
 		<label class="control-label col-sm-4" for="ClassNO">Class Number: </label>
 		<div class="col-sm-6">
-		<input type="text" name="ClassNO" id="ClassNO" placeholder="ITEC Number" class="form-control inputColor" value= <?php echo "'". $ClassNO ."'";?>required>
+		<input type="text" name="ClassNO" id="ClassNO" placeholder="ITEC Number" class="form-control" value= <?php echo "'". $ClassNO ."'";?>required>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-4" for="ClassName">Class Name: </label>
 		<div class="col-sm-6">
-		<input type="text" name="ClassName" id="ClassName" placeholder="Class Name" class="form-control inputColor" value= <?php echo "'". $ClassName ."'";?>required>
+		<input type="text" name="ClassName" id="ClassName" placeholder="Class Name" class="form-control" value= <?php echo "'". $ClassName ."'";?>required>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-4" for="ExpDate">Class Expires: </label>
 		<div class="col-sm-6">
-		<input type="date" name="ExpDate" id="ExpDate" placeholder="Expiration Date" class="form-control inputColor" value= <?php echo "'". $ExpDate ."'";?> required>
+		<input type="date" name="ExpDate" id="ExpDate" placeholder="Expiration Date" class="form-control" value= <?php echo "'". $ExpDate ."'";?> required>
 		</div>
 	</div>
 		<!----------------- Semester DropBox ------------>
