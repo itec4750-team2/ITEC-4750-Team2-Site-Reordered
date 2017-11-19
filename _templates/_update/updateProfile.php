@@ -54,7 +54,7 @@ if(!empty($_SESSION['LoginID'])){
 						<?php 
 							if(($_SESSION['Role'] == 'Faculty')){
 						?> 
-								<input type="submit" value="Delete Profile" name="DeleteProfile" id="DeleteProfile"class="btn btn-primary btn-lg submit">
+								<input type="submit" value="Delete Profile" name="DeleteProfile" id="DeleteProfile" class="btn btn-primary btn-lg submit">
 							</div>
 						</div>
 						<?php
