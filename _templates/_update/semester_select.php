@@ -7,7 +7,7 @@
 							// -- could do similar for class names
 							$dropdo = new Drop_DO($_SESSION['LoginID']);
 							$rows=$dropdo->semSelect();
-							echo '<select name="SemesterID" class="form-control inputColor" required>'; // Open
+							echo '<select name="SemesterID" class="form-control" required>'; // Open
 							echo '<option value="'.$value['SemesterID'].'" selected>'.$value['SemesterName'].' '.$value['Year'].'</option>'; // Auto Select Current Instructor
 								foreach ($rows as $ddo) {
 								echo '<option value="'.$ddo['SemesterID'].'">'.$ddo['SemesterName'].' '.$ddo['Year'].'</option>';
