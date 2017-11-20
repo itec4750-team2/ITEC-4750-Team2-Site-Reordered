@@ -1,9 +1,9 @@
 <?php
 // ++++ Change: Added Title 10/25 KM ++++
 $title = 'Student Settings';
- include($_SERVER['DOCUMENT_ROOT'].'/_templates/_headers/studentHeader.php');
+ include('../_templates/_headers/studentHeader.php');
 	//-- Sets up data for the side navigation bar. --
- include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/studentNav.php');
+ include('../_templates/_nav/studentNav.php');
  // ++++ Change: Added Get IDs to check for login on student Settings 11/18 KM Page ++++
  include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
  $P='studentSettings';

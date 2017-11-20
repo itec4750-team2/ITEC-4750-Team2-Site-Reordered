@@ -16,12 +16,13 @@ $P='yoursurveys';
 <div class="container-fluid" style="padding: 20px 0px 15px 0px;">
 	<!-- ++++ Change: Added Survey List by LoginID 10/28/17 KM ++++ -->
 		<?php 
-		if($LoginID!=0){
+		if($LoginID!=0){?>
 			<h2 class="center">Create Group Survey</h2>
 			<h3 class="center">Using Existing Questions</h3>
+			<?php 
 			include($_SERVER['DOCUMENT_ROOT'].'/_templates/_create/create_gsurvey.php');
-		}
-		?>
+			}
+			?>
 	</div>
 </div>
 	
