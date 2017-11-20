@@ -48,7 +48,8 @@ if($LoginID != 0){ // Must be logged in. Role is checked in DO
 		<?php } ?>
 		<div class="form-group">
 		<input class="btn btn-primary btn-lg submit" type="submit" value="Submit" name="NewSurvey" id="NewSurvey">
-		<a href="yoursurveys.php" class="btn btn-primary btn-lg submit" type="submit">Back to Surveys</a>
+		<?php if($Role="Faculty"){ ?>
+		<a href="yoursurveys.php" class="btn btn-primary btn-lg submit" type="submit">Back to Surveys</a> <?php } ?>
 		</div>
 	</fieldset>
 	</form>

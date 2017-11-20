@@ -7,21 +7,36 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/survey_model.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 
 if($LoginID != 0){	
+?>
+		<div id="intro">
+			<h2>PEER EVALUATION</h2>		
+		</div>
+		<!-- User's instructions 2nd page-->
+			<p>Please select a member of your group to evaluate.
+			<br/>
+			PLEASE NOTE: You will repeat the evaluation for <span class="underline">EACH</span> group member
+				until all group members have been evaluated.
+			<br/>
+			Please choose a value for each question.
+			<br/><br/>
+			</p>
+		<!-- Evaluation Form-->
+			<!-- Drop down should list group members not evaluated. Default As from previous page -->
+<?php
 	if(!empty($GroupID)){
 		$surveydo = new Survey_DO();
 		$rows=$surveydo->loadByGroupID($LoginID, $GroupID, $GSurveyID);
 		$i = 0;
 		foreach($rows as $val){
 			if($i==0){
-				echo '<h3 class="center">'.$val['ClassName'].' - '.$val['GroupName'].': '.$val['GSurveyName'].'</h3>';
+				echo '<h3 id="table-caption">'.$val['ClassName'].' - '.$val['GroupName'].': '.$val['GSurveyName'].'</h3>';
 				echo '<br/>';
 			$i++;
 			}
 		}
-	?>	
-			<!-- Drop down should list group members not evaluated. Default As from previous page -->
-		<form name ="create-profile" method = "POST" >
-
+	?>
+		<form name ="create-survey" method = "POST" >
+	
 		<table class="table-hover" id="table-hover">
 			<tr>
 			<h2>
@@ -71,7 +86,9 @@ if($LoginID != 0){
 			</tbody>
 	</table>
 	<br/>
-	<input class="btn btn-primary btn-lg submit" type="submit" value="Finish" name="AddSurvey" id="AddSurvey">
+	<input class="btn btn-primary btn-lg submit" type="submit" value="Add Survey" name="AddSurvey" id="AddSurvey">
+	<?php if($Role=="Student"){ ?> <a class="btn btn-primary btn-lg submit" href="../../../_studentPages/yoursurveys_student.php">Back to List</a><?php } ?>
+	<?php if($Role=="Faculty"){ ?> <a class="btn btn-primary btn-lg submit" href="../../../_facultyPages/yoursurveys.php">Back to List</a><?php } ?>
 	</form>
 	<?php 
 		$aSurvey = new Survey_DO();

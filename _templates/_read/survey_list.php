@@ -49,10 +49,31 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');?>
 							echo $value['ExpDate'];
 						echo '</td>'; 
 					}
+					//if not from student view group_surveys
+					if($P=='completed_surveys'){
+						echo '<td>';
+							echo $value['ClassName'];
+						echo '</td>';
+						echo '<td>';
+							echo $value['GroupName'];
+						echo '</td>';
+						 
+						echo '<td>';
+						echo '<a href="completed_group_s.php?gid='.$value['GroupID'].'&gsid='.$value['GSurveyID'].'">'.$value['GSurveyName'].'</a>';
+						echo '</td>'; 
+						echo '<td>';
+							echo $value['ExpDate'];
+						echo '</td>'; 
+					}
+					
 					echo '</tr>';	
 				}		
 			}//If logged in
 				?>
 		</tbody>
 	</table>
+	<?php if($Role=="Faculty" && $P!="yoursurveys"){?>
+	<a class="btn btn-primary btn-lg submit" href="../../../_facultyPages/yoursurveys.php">Surveys Menu</a><?php }?>
+	<?php if($Role=="Student" && $P!="yoursurveys"){?>
+	<a class="btn btn-primary btn-lg submit" href="../../../_studentPages/yoursurveys_student.php">Surveys Menu</a><?php }?>
 </div>
