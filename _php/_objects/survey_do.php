@@ -24,7 +24,7 @@ public function addNewSurvey($LoginID, $GSurveyName){
 								return $last_id;
 					}	
 					else{ 
-						echo '<div class ="error">Please Login.</div>'; 
+						echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
 					}
 				}
 			}
@@ -53,7 +53,7 @@ public function addGroupSurvey($values){
 						$stmt->close();		
 				}
 				else{ 
-						echo '<div class ="error">Please Login.</div>'; 
+						echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
 				}	
 			}
 		}
@@ -75,7 +75,7 @@ public function addSurvey($values){
 				$stmt->close();		
 		}
 	else{ 
-			echo '<div class ="error">Please Login.</div>'; 
+			echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
 		}	
 		mysqli_close($con);	
 }
@@ -112,7 +112,47 @@ public function addSurvey($values){
 			return $all_rows; 
 		}
 		else{
-			echo "Please Login";
+			echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
+		}
+		mysqli_close($con);	
+	}
+	// Load Completed Surveys for studentPages
+	
+	public function loadCompleted($LoginID, $GSurveyID){
+		if(!empty($LoginID)){
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+			//Load by LoginID
+			$sql="SELECT DISTINCT s.GSurveyID, s.GSurveyName, r.TeamMemberID, l.FName, l.LName, a.GroupID
+				FROM login l
+				JOIN group_assign a
+				ON l.LoginID=a.LoginID
+                
+				JOIN survey_responses r
+				ON l.LoginID=r.TeamMemberID
+                
+				JOIN  group_survey_q grp
+                ON r.QuestionID=grp.QuestionID
+			  
+				JOIN gen_survey_q gen
+				ON r.QuestionID=gen.QuestionID
+
+				JOIN surveys s
+				ON r.GSurveyID=s.GSurveyID
+				
+				WHERE r.LoginID = '$LoginID' 
+				&& r.GSurveyID = '$GSurveyID'
+                ORDER BY  s.GSurveyName, r.TeamMemberID
+				";
+		$getSurvey = mysqli_query($con, $sql); 
+			// output data of each row
+			$all_rows = array();
+			while($row = mysqli_fetch_array($getSurvey)){
+				$all_rows[]=$row;
+			}
+			return $all_rows; 
+		}
+		else{
+			echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
 		}
 		mysqli_close($con);	
 	}
@@ -143,7 +183,7 @@ public function addSurvey($values){
 			return $all_rows; 
 		}
 		else{
-			echo "Please Login";
+			echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
 		}
 		mysqli_close($con);	
 	}
@@ -186,13 +226,78 @@ public function addSurvey($values){
 			return $all_rows; 
 		}
 		else{
-			echo "Please Login";
+			echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
 		}
 		mysqli_close($con);	
 	}
-		
-// -- Update
+	// ++++ Change: Added editInfo KM 11/19 ++++
+		//Load Surveys completed by current user && team-member (Subj)
+	public function editInfo($LoginID, $Subj, $GSurveyID, $GroupID){
+		if(!empty($LoginID)){
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+		$sql="SELECT DISTINCT  r.ResponseID, r.TeamMemberID, l.FName, l.LName, r.GSurveyID, grp.QuestionNum, grp.QuestionID, s.GSurveyName, gen.QuestionTxt,grp.GroupID,
+				CASE r.ResponseValue
+				WHEN 1 THEN 'Excellent'
+				WHEN 2 THEN 'Good'
+				WHEN 3 THEN 'Mediocre'
+				WHEN 4 THEN 'Bad'
+				WHEN 5 THEN 'Awful' 
+				END AS Response
 
+				FROM login l
+				JOIN group_assign a
+				ON l.LoginID=a.LoginID
+                
+				JOIN survey_responses r
+				ON l.LoginID=r.TeamMemberID
+                
+				JOIN gen_survey_q gen
+				ON r.QuestionID=gen.QuestionID
+                
+                JOIN  group_survey_q grp
+                ON gen.QuestionID=grp.QuestionID
+			  
+				JOIN surveys s
+				ON grp.GSurveyID=s.GSurveyID
+									
+				WHERE r.LoginID = '$LoginID'
+				&& r.TeamMemberID = '$Subj'
+				&& grp.GSurveyID = '$GSurveyID'
+				&& r.GSurveyID = '$GSurveyID'
+				&& grp.GroupID = '$GroupID'
+				ORDER BY grp.QuestionNum";
+			$getSurvey = mysqli_query($con, $sql); 
+			// output data of each row
+			$all_rows = array();
+			while($row = mysqli_fetch_array($getSurvey)){
+				$all_rows[]=$row;
+			}
+			return $all_rows; 
+		}
+		else{
+			echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
+		}
+		mysqli_close($con);	
+	}
+			
+// -- Update
+	// Update a survey.
+	public function updateSurvey($LoginID, $ResponseValue, $ResponseID){
+		if(!empty($LoginID)){
+			
+			include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
+						// --Update Survey				
+						$sql = "UPDATE survey_responses SET ResponseValue=? WHERE ResponseID=?;";
+							$stmt = $con->prepare($sql);
+							$stmt->bind_param("ii",  $ResponseValue, $ResponseID);
+							$stmt->execute();
+							$stmt->close();
+					}
+					else{ 
+						echo '<div><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
+					}
+					mysqli_close($con);	
+	}					
 // -- Delete
 }
 ?>

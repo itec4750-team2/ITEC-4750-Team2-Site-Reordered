@@ -1,13 +1,14 @@
 <?php
 // ++++ Change: Added Title 10/25 KM ++++
 $title = 'Student Dashboard';
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');
+include('../_templates/_headers/studentHeader.php');
+include('../_templates/_nav/studentNav.php');
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
+$P='studentDashboard';
+if($LoginID !=0){
 ?>
-
 <html>
 <body>
-
 	<div class="wrapper">
 	<!-- Main Content Section-->
 		<div id="main">
@@ -45,8 +46,9 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/studentNav.php');
 
 		</div>
 	</div>
-	<footer>
-			
-	</footer>
+<?php
+}
+include($_SERVER['DOCUMENT_ROOT'].'/_templates/_footers/footer.php');
+?>
 </body>
 </html>

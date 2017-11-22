@@ -7,31 +7,50 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/survey_model.php');
 include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 
 if($LoginID != 0){	
+?>
+		<div id="intro">
+			<h2>PEER EVALUATION</h2>		
+		</div>
+		<!-- User's instructions 2nd page-->
+			<p>Please select a member of your group to evaluate.
+			<br/>
+			PLEASE NOTE: You will repeat the evaluation for <span class="underline">EACH</span> group member
+				until all group members have been evaluated.
+			<br/>
+			Please choose a value for each question.
+			<br/><br/>
+			</p>
+		<!-- Evaluation Form-->
+			<!-- Drop down should list group members not evaluated. Default As from previous page -->
+<?php
 	if(!empty($GroupID)){
 		$surveydo = new Survey_DO();
 		$rows=$surveydo->loadByGroupID($LoginID, $GroupID, $GSurveyID);
 		$i = 0;
 		foreach($rows as $val){
 			if($i==0){
-				echo '<h3 class="center">'.$val['ClassName'].' - '.$val['GroupName'].': '.$val['GSurveyName'].'</h3>';
+				echo '<h3 id="table-caption">'.$val['ClassName'].' - '.$val['GroupName'].': '.$val['GSurveyName'].'</h3>';
 				echo '<br/>';
 			$i++;
 			}
 		}
-	?>	
-			<!-- Drop down should list group members not evaluated. Default As from previous page -->
-		<form name ="create-profile" method = "POST" >	
-		<table class="table table-striped">
-			<legend>
-				<?php 
-				include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/survey_dd.php');
-				?>
-			</legend>
+	?>
+		<form name ="create-survey" method = "POST" >
+	
+		<table class="table-hover" id="table-hover">
+			<tr>
+			<h2>
+				<?php include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/survey_dd.php');
+				?>	
+			</h2>
+			<hr id="table-caption"/>	
+			</tr>
+	
 			<thead>
 				<tr>
-					<th>#</th>
-					<th>Survey Question</th>
-					<th>Response</th>
+					<th class="col-sm-1">#</th>
+					<th class="col-sm-7">Survey Question</th>
+					<th class="col-sm-2">Response</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,16 +60,16 @@ if($LoginID != 0){
 				
 				foreach ($rows as $value){?>
 					<tr>
-						<td>
+						<td class="col-sm-1">
 							<?php echo $value['QuestionNum']; ?>
 						</td>
-						<td>
+						<td class="col-sm-7">
 						  <input type="hidden" name="Q[]" value=<?php echo $value['QuestionID'];?>>
 							
 							<?php echo $value['QuestionTxt'].'?';?>
 						</td>
-						<td>
-							<select required name="ResponseVal[]" >
+						<td class="col-sm-2">
+							<select  id="form-select" class="form-control inputColor" name="ResponseVal[]"  required >
 							  <option value="" selected>Select Response</option>
 							  <option value="1">Excellent</option>
 							  <option value="2">Good</option>
@@ -64,9 +83,12 @@ if($LoginID != 0){
 				}
 }}
 ?>
-		</tbody>
+			</tbody>
 	</table>
-	<input type="submit" value="Finish" name="AddSurvey" id="AddSurvey">
+	<br/>
+	<input class="btn btn-primary btn-lg submit" type="submit" value="Add Survey" name="AddSurvey" id="AddSurvey">
+	<?php if($Role=="Student"){ ?> <a class="btn btn-primary btn-lg submit" href="../../../_studentPages/yoursurveys_student.php">Back to List</a><?php } ?>
+	<?php if($Role=="Faculty"){ ?> <a class="btn btn-primary btn-lg submit" href="../../../_facultyPages/yoursurveys.php">Back to List</a><?php } ?>
 	</form>
 	<?php 
 		$aSurvey = new Survey_DO();

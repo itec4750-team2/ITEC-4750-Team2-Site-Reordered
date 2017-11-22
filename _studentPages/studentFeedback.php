@@ -1,8 +1,9 @@
 <?php
 // ++++ Change: Added Title 10/25 KM ++++
 $title = 'Feedback';
-include($_SERVER['DOCUMENT_ROOT'].'_templates/_headers/studentHeader.php');
-include($_SERVER['DOCUMENT_ROOT'].'_templates/_nav/studentNav.php');
+//Change: Updated for consistant paths.
+include('../_templates/_headers/studentHeader.php');
+include('../_templates/_nav/studentNav.php');
 ?>
 <main>
 	<div class="wrapper">

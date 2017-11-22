@@ -18,39 +18,8 @@ $P='all_classes';
 	include($_SERVER['DOCUMENT_ROOT'].'/_templates/_nav/getIDs.php');
 		
 	if($LoginID !=0){ // If logged in
-		$classdo = new Class_DO($_SESSION['LoginID']);
-		$rows=$classdo->loadAll($_SESSION['LoginID']);
-	?>
-		<!-- ++++ Change: Added Leave Class Button 9/29 KM ++++-->
-		<div class="row">
-		<div class="col-md-7 col-centered">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Class ID</th>
-						<th>Class Number</th>
-						<th>Class Name</th>
-						<th>Semester</th>
-						<th>Class Expire Date</th>
-						<th>Delete <br/> Class</th>
-						<th>Update <br/> Class</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-					// -- ++++ Change: Added Delete Class & Update Class Buttons 9/29 KM ++++
-					foreach ($rows as $value){
-						echo '<td><a href="class_page.php?cid='.$value['ClassID'].'">'.$value['ClassID'].'</a></td>'; // link to class_page
-						echo '<td>'.$value['ClassNO'].'</td><td>'.$value['ClassName'].'</td>';
-						echo '<td>'.$value['SemesterName']. ' '.$value['Year'].'</td>';
-						echo '<td>'. $value['ExpDate'].'</td>';
-						echo '<td><a href="../_templates/_delete/delete_class.php?cid='.$value['ClassID'].'&p='.$P;
-						echo 	'"><img class ="small_icon" src="../_images/delete_class.png" alt="Delete Class"></a></td>'; // delete class
-						echo '<td><a href="../_facultyPages/update_class.php?cid='.$value['ClassID'];
-						echo 	'"><img class ="small_icon" src="../_images/update.png" alt="Update Class"></a></td>'; // update class
-						echo '</tr>';
-					}
-					echo '</tbody></table>';
+		// ++++ Change: Moved to templates for consistency 11/18 KM ++++
+		include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/all_classes.php');
 	} // End if faculty logged in.
 	?>
 	</div>

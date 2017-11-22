@@ -1,5 +1,3 @@
-<table class="table table-hover">
-
 <!-- ------------- Student Account Info ----------->
 <?php
 // ++++ Change: Added Check for IDs module 10/8KM ++++
@@ -9,6 +7,12 @@ include($_SERVER['DOCUMENT_ROOT'].'/_templates/_read/overall_rating.php');
 if($LoginID != 0){//Logged in
 	if(empty($StID)){echo '<div class="error">No Student ID</div>';}
 	if(!empty($StID)){
+		?>
+<div class="row">
+<div class="col-md-5 col-centered">
+<table class="table table-responsive">
+<!--<caption id="table-caption">Student Information</caption>-->
+		<?php
 		$students = new Stud_DO();
 		$rows=$students->listStud($StID);
 		foreach ($rows as $value){
@@ -23,12 +27,8 @@ if($LoginID != 0){//Logged in
 			</table>
 			<br/>
 			<br/>
-	<?php } ?>
-
-		<!-- Ends student foreach -->
+	<?php } ?>	<!-- Ends student foreach -->
 		<!-- ++++ Change: Link added to update student profile info. 9/9 KM ++++ -->
-		<!-------------------- Update Student Profile Link ------------------->
-		<!---- Should be enhanced visually maybe an image button like dashboard ? -->
 		<?php
 		if(!empty($P)){
 		if($P == 'student_mgmt_pg' || $P == 'add_student'){
@@ -45,3 +45,5 @@ if($LoginID != 0){//Logged in
 }//logged in
 ?>
 </table>
+</div>
+</div>

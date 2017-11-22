@@ -7,7 +7,7 @@ if(isset($_SESSION['LoginID'])){
 }
 else{
 	$LoginID = 0;
-	echo '<a href="/login.php"'.'>Please Log In.</a>'; // Please Log In w/ link
+	echo '<div class="error"><a href="/login.php"'.'>Please Log In.</a></div>'; // Please Log In w/ link
 }
 
 if(isset($_GET['stid'])){

@@ -2,7 +2,7 @@
 // ++++ Change: Adjusted indentation 9/8 KM ++++
 
 //Change: Updated for consistant paths.
-include($_SERVER['DOCUMENT_ROOT'].'/_php/session.php');
+if(!isset($_SESSION['LoginID'])){include($_SERVER['DOCUMENT_ROOT'].'/_php/session.php');}
 include($_SERVER['DOCUMENT_ROOT'].'/_php/config.php');
 
 //redirect to student dashboard
