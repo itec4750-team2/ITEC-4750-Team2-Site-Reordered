@@ -36,7 +36,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/_php/_models/class_model.php');
 							$SemesterID = $value['SemesterID'];
 						}
 					?>	<!---------------- Show Class Info -------------->
-					<table class="table table-hover">
+					<table class="table table-responsive">
 						<h1> Deleting this Class ?</h1>
 						<tr><th>Class ID: </th><td><?php echo $ClassID ;?></td></tr>
 						<tr><th>Class Number</th><td><?php echo $ClassNO;?></td></tr>
