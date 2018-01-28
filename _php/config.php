@@ -10,10 +10,10 @@
 	
 	//-------------SERVER CONNECTION-------------
 	//connection info
-	$dbhost = '45.55.170.45';
+	$dbhost = 'mga-db.chdrdc01ua4v.us-east-2.rds.amazonaws.com';
 	$dbname = 'mga_db'; 
-	$dbuser = 'katie';
-	$dbpass = 'katiepass';
+	$dbuser = 'fcheeley';
+	$dbpass = 'fcheeley123';
 
 	//connect to db
 	@$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname); 
